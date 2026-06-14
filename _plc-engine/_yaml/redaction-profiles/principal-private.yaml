@@ -1,0 +1,103 @@
+# PLC Redaction Profile — Principal Private
+#
+# Audience: the principal themselves, viewing their own sphere's content.
+# Use case: principal review of OPC diagnostic; principal review of cycle audit
+# trail; principal review of engagement retrospective.
+# Sensitivity: LOW — principal sees nearly everything about their own sphere.
+# Most permissive profile.
+#
+# Key discipline: redact ONLY the practitioner-confidential content (consultant's
+# OPC §§ 16-17 self-assessments; consultant's practitioner reflection) and
+# anything the operator explicitly flagged as "advisor eyes only."
+
+profile:
+  name: principal-private
+  version: "1.0"
+  applies_to:
+    - principal_review_of_sphere_content
+    - principal_review_of_retrospective
+    - principal_review_of_decision_doc
+
+actor_handling:
+  actor_names: preserve
+  principal_name: preserve
+  external_actors_only: preserve
+  perception_toward_principal: preserve
+  resource_holdings: preserve
+  network_position: preserve
+  behavioral_notes: preserve
+
+tactic_handling:
+  tactic_ids: preserve
+  tactic_names: preserve
+  tactic_descriptions: preserve
+  slash_addressing: preserve
+  catalogue_source_references: preserve
+
+strategy_handling:
+  strategy_numbers: preserve
+  strategy_names: preserve
+  force_vector_summary: preserve
+
+cluster_handling:
+  cluster_codes: preserve
+  cluster_themes: preserve
+
+theorist_handling:
+  theorist_invocations: preserve
+  citation_counts: preserve
+
+gate_handling:
+  alternatives_audit_completion: preserve
+  ethical_accounting_completion: preserve
+  override_justifications: preserve
+
+opc_handling:
+  full_diagnostic_scores: preserve
+  hierarchical_id_references: preserve
+  section_15_alternatives_detail: preserve
+  section_16_practitioner_assessment: redact   # consultant's self-assessment is confidential to consultant
+  section_17_advisor_engagement: redact   # consultant's read of the engagement politics is confidential
+  section_11_harm_evaluation: preserve
+
+cycle_handling:
+  cycle_status: preserve
+  cycle_agenda: preserve
+  cycle_lessons: preserve
+  phase_log_detail: preserve
+  considered_moves_set: preserve
+  engaged_moves: preserve
+
+retrospective_handling:
+  what_principal_learned: preserve
+  what_operator_learned: redact_consultant_specific   # principal-self-mode preserves; consultant-mode redacts the practitioner-craft elements
+  uncover_payoff_log: preserve
+  pattern_recognition: preserve
+  what_didnt_work: preserve   # principal should see this; defensiveness defeats the retrospective
+  practitioner_reflection: redact   # confidential to consultant
+
+advisor_eyes_only_flags:
+  description: |
+    The operator may flag specific items during a cycle or session as
+    `advisor_eyes_only: true`. This profile honors that flag and redacts
+    those items even from the principal. Typical use cases: notes about
+    coaching readiness; observations about the principal's blind spots
+    that need to be surfaced through coaching rather than direct disclosure;
+    consultant's own working hypotheses still in formation.
+  honors_flag: true
+  redaction_style: remove   # the flagged item disappears entirely; no placeholder
+
+formatting_overrides: {}   # no formatting changes; principal sees the native form
+
+footer_disclaimer: |
+  Principal-private view. Consultant practitioner self-assessment (§ 16 + § 17)
+  and any items flagged advisor-eyes-only are not shown. All other content reflects
+  the canonical sphere state.
+
+mode_specific_behavior:
+  consultant_mode:
+    redact_consultant_practitioner_layer: true
+    show_consultant_recommendations_as_recommendations: true   # not as facts
+  principal_self_mode:
+    redact_consultant_practitioner_layer: false   # operator IS the principal; nothing to hide
+    show_no_false_confidence_priming_notes: preserve   # D12 — visible to principal-self operator

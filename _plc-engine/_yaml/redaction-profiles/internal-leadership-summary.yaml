@@ -1,0 +1,86 @@
+# PLC Redaction Profile — Internal Leadership Summary
+#
+# Audience: client organization's internal leadership team (CEO + direct reports;
+# excludes board, excludes external).
+# Use case: regular cycle-close briefings to the principal's leadership cohort.
+# Sensitivity: moderate — internal but spans the leadership team, not principal-private.
+#
+# Defaults conservative on tactic-level detail; aggressive on theorist/strategy
+# aggregation; preserves actor names (audience knows the actors) but anonymizes
+# perception-toward-principal reads beyond the principal themself.
+
+profile:
+  name: internal-leadership-summary
+  version: "1.0"
+  applies_to:
+    - cycle_close_briefings
+    - quarterly_state_of_power
+    - decision_doc_internal_distribution
+
+actor_handling:
+  actor_names: preserve   # internal audience knows the actors
+  principal_name: preserve
+  external_actors_only: redact   # external actors named only by role+org
+  perception_toward_principal:
+    own_principal: preserve
+    other_principals: aggregate_to_category   # "ambivalent" → "yellow"
+  resource_holdings: preserve_high_level   # categories yes; specifics no (e.g., "budget authority" but not the $ thresholds)
+  network_position: preserve
+  behavioral_notes: redact   # too candid for internal-team consumption
+
+tactic_handling:
+  tactic_ids: redact   # leadership doesn't need the audit reference
+  tactic_names: preserve_for_engaged_only   # only tactics actually engaged surface; considered/rejected do not
+  tactic_descriptions: aggregate_to_strategy   # "we used Strategy 7 (Coalition Preservation)" not "Tactic 0029"
+  slash_addressing: redact
+  catalogue_source_references: redact
+
+strategy_handling:
+  strategy_numbers: preserve
+  strategy_names: preserve
+  force_vector_summary: preserve
+
+cluster_handling:
+  cluster_codes: redact   # too granular for leadership audience
+  cluster_themes: aggregate_to_strategy
+
+theorist_handling:
+  theorist_invocations: aggregate   # report as "drew on game-theory + power-theory traditions" rather than naming
+  citation_counts: redact
+
+gate_handling:
+  alternatives_audit_completion: report_aggregate   # "all cycles passed § 15 audit"
+  ethical_accounting_completion: report_aggregate
+  override_justifications: aggregate_by_category   # "1 time-critical override" not full justification
+
+opc_handling:
+  full_diagnostic_scores: redact_below_section_level   # § 1 / § 2 / § 13 / § 14 headline reads only
+  hierarchical_id_references: redact
+  section_15_alternatives_detail: redact
+  section_16_practitioner_assessment: redact   # confidential to consultant
+  section_17_advisor_engagement: redact   # confidential to consultant
+
+cycle_handling:
+  cycle_status: report
+  cycle_agenda: preserve
+  cycle_lessons: preserve
+  phase_log_detail: aggregate   # summary of perception/resource shifts; not granular signals
+  considered_moves_set: redact
+  engaged_moves: preserve_high_level
+
+retrospective_handling:
+  what_principal_learned: preserve
+  what_operator_learned: redact   # consultant practitioner reflection is confidential
+  uncover_payoff_log: preserve_confirmed_only   # null results don't surface to internal audience
+  pattern_recognition: preserve
+  what_didnt_work: preserve_high_level   # categories yes; specifics no
+  practitioner_reflection: redact
+
+formatting_overrides:
+  date_precision: month_year   # "2026-06" not "2026-06-13"
+  duration_precision: weeks_or_months
+  count_precision: rounded_to_5   # "approximately 20 cycles" not "23"
+
+footer_disclaimer: |
+  Internal distribution only. Sensitive political-landscape detail aggregated for
+  leadership-summary context. Full audit trail retained in advisor's records.

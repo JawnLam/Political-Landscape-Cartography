@@ -1,0 +1,97 @@
+# PLC Redaction Profile — External Board Summary
+#
+# Audience: board of directors (including outside/independent directors).
+# Use case: quarterly state-of-power reports flowing to the board; succession-planning
+# briefings; major-decision rationale documents seen by board.
+# Sensitivity: HIGH — most external audience in regular reporting flow. Defaults
+# aggressive on redaction. Most stringent profile except for fully-public exports.
+#
+# Key discipline: never expose tactical reasoning; preserve only enough audit trail
+# to demonstrate that diligence (ALTERNATIVES-AUDIT + ETHICAL-ACCOUNTING) ran.
+
+profile:
+  name: external-board-summary
+  version: "1.0"
+  applies_to:
+    - quarterly_board_briefings
+    - succession_planning_reports
+    - major_decision_rationale_documents
+
+actor_handling:
+  actor_names: redact_to_role   # "the CFO" not "Carol Reyes"
+  principal_name: preserve   # board knows the principal
+  external_actors_only: redact_to_org_only
+  perception_toward_principal: aggregate_to_trend   # "strengthening", "stable", "weakening" — no specifics
+  resource_holdings: redact   # board doesn't need internal resource detail
+  network_position: redact
+  behavioral_notes: redact
+
+tactic_handling:
+  tactic_ids: redact
+  tactic_names: redact   # board never sees tactic names
+  tactic_descriptions: redact
+  slash_addressing: redact
+  catalogue_source_references: redact
+
+strategy_handling:
+  strategy_numbers: redact
+  strategy_names: redact
+  force_vector_summary: aggregate_to_one_sentence   # "the strategy focused on coalition preservation" — high-level only
+
+cluster_handling:
+  cluster_codes: redact
+  cluster_themes: redact
+
+theorist_handling:
+  theorist_invocations: redact   # board doesn't need scholarly attribution
+  citation_counts: redact
+
+gate_handling:
+  alternatives_audit_completion: confirm_only   # "alternatives audit completed for all decisions"
+  ethical_accounting_completion: confirm_only   # "ethical evaluation completed for all decisions"
+  override_justifications: redact   # if asked, refer to consultant's full audit trail
+  diligence_attestation: include   # high-level "yes, we did the work" attestation
+
+opc_handling:
+  full_diagnostic_scores: redact
+  hierarchical_id_references: redact
+  section_15_alternatives_detail: redact
+  section_16_practitioner_assessment: redact
+  section_17_advisor_engagement: redact
+  trajectory_summary: preserve   # § 14 high-level direction only
+
+cycle_handling:
+  cycle_status: report_aggregate   # "N cycles completed; M in progress"
+  cycle_agenda: aggregate_by_theme   # "cycles focused on succession-planning preparation"
+  cycle_lessons: redact
+  phase_log_detail: redact
+  considered_moves_set: redact
+  engaged_moves: redact
+
+retrospective_handling:
+  what_principal_learned: aggregate_to_capability_statement   # "the principal now has operational clarity on..."
+  what_operator_learned: redact
+  uncover_payoff_log: redact
+  pattern_recognition: redact
+  what_didnt_work: redact
+  practitioner_reflection: redact
+
+formatting_overrides:
+  date_precision: quarter   # "Q2 2026"
+  duration_precision: months
+  count_precision: rounded_to_10   # "approximately 20" or omit count
+
+footer_disclaimer: |
+  Board-level summary. Detailed political-landscape analysis retained in advisor's
+  privileged records. Confirmation of diligence protocols (alternatives audit;
+  ethical evaluation) attested; full record available to board chair on request
+  through appropriate channels.
+
+board_chair_escalation_protocol:
+  triggered_by: board_chair_request_for_detail
+  unlocks: nothing_automatic   # operator + principal must approve case-by-case
+  escalation_path: |
+    Board chair requests must route through the principal. Approved escalations
+    surface specific items at a level between this profile and `internal-leadership-summary`
+    — typically the diligence summaries and high-level pattern recognition,
+    never the per-cycle tactical detail.

@@ -1,0 +1,132 @@
+# PLC Redaction Profile — Audit Trail Full
+#
+# Audience: the consultant (or principal-self operator) for their own records.
+# Use case: closing out an engagement; archiving for longitudinal analysis;
+# input to structured export (see `export-schema.yaml`); the source of truth
+# from which all other redaction profiles derive.
+# Sensitivity: NONE — this is the operator's own privileged record.
+#
+# Discipline: preserve EVERYTHING. This is the no-redaction profile. All other
+# profiles derive from this one by selective redaction. Any field present in
+# any other profile is present here.
+
+profile:
+  name: audit-trail-full
+  version: "1.0"
+  applies_to:
+    - operator_archive
+    - structured_export_for_longitudinal_analysis
+    - source_of_truth_for_all_other_profiles
+
+actor_handling:
+  actor_names: preserve
+  principal_name: preserve
+  external_actors_only: preserve
+  perception_toward_principal: preserve
+  perception_history: preserve_full
+  resource_holdings: preserve
+  resource_history: preserve_full
+  network_position: preserve
+  behavioral_notes: preserve
+
+tactic_handling:
+  tactic_ids: preserve
+  tactic_names: preserve
+  tactic_descriptions: preserve
+  slash_addressing: preserve
+  catalogue_source_references: preserve
+  composed_of_moves: preserve
+
+strategy_handling:
+  strategy_numbers: preserve
+  strategy_names: preserve
+  force_vector_summary: preserve
+  theoretical_lineage: preserve
+
+cluster_handling:
+  cluster_codes: preserve
+  cluster_themes: preserve
+  adjacent_clusters: preserve
+
+theorist_handling:
+  theorist_invocations: preserve
+  citation_counts: preserve
+  canonical_works: preserve
+
+gate_handling:
+  alternatives_audit_completion: preserve
+  ethical_accounting_completion: preserve
+  override_justifications: preserve_full   # full text including operator's reasoning
+  per_cycle_gate_walkthrough_detail: preserve
+
+opc_handling:
+  full_diagnostic_scores: preserve
+  hierarchical_id_references: preserve
+  section_15_alternatives_detail: preserve
+  section_16_practitioner_assessment: preserve
+  section_17_advisor_engagement: preserve
+  section_11_harm_evaluation: preserve
+  score_history: preserve_full
+
+cycle_handling:
+  cycle_status: preserve
+  cycle_agenda: preserve
+  cycle_lessons: preserve
+  phase_log_detail: preserve_full
+  considered_moves_set: preserve
+  selected_moves_set: preserve
+  engaged_moves: preserve
+  rejection_reasons: preserve   # why considered-but-not-selected moves were rejected
+  reciprocal_update_count: preserve
+
+retrospective_handling:
+  what_principal_learned: preserve
+  what_operator_learned: preserve
+  uncover_payoff_log: preserve_full   # including null results
+  pattern_recognition: preserve
+  what_didnt_work: preserve_full
+  practitioner_reflection: preserve
+
+session_handling:
+  session_logs: preserve_all
+  files_touched_per_session: preserve
+  decisions_made_per_session: preserve
+  next_activity_recommendations_vs_chosen: preserve   # the AI proposes / operator disposes audit
+
+advisor_eyes_only_flags:
+  honors_flag: false   # operator sees their own flagged items
+  description: items flagged advisor-eyes-only are visible to the operator; they only redact in profiles destined for other audiences
+
+sphere_decisions_handling:
+  active_decisions: preserve
+  superseded_decisions: preserve   # full chain of supersession
+  elevation_criterion_application_record: preserve   # which session-level decisions were considered for elevation and why or why not
+
+formatting_overrides:
+  date_precision: full_iso   # 2026-06-13T14:32:00
+  duration_precision: days
+  count_precision: exact
+
+structured_export_alignment:
+  description: |
+    This profile produces output conforming to `export-schema.yaml` v1.0 with all
+    optional fields populated. Use this profile when generating the engagement's
+    structured export at SPHERE-CLOSE for input to longitudinal analysis.
+  required_fields_populated: all
+  optional_fields_populated: all
+
+footer_disclaimer: |
+  Full audit trail. Operator-privileged. Source of truth for all other redaction
+  profiles. Do NOT share this artifact directly with any party other than the
+  operator themselves. Other audiences require the appropriate derived profile
+  (internal-leadership-summary / external-board-summary / peer-consultant-share /
+  principal-private).
+
+derivation_relationship:
+  description: |
+    All other redaction profiles are derived from this one by selective redaction.
+    To produce an export for a specific audience: load the canonical content per
+    this profile's schema; apply the target profile's redaction rules as a
+    transformation pass; emit the redacted output. The derivation chain preserves
+    the audit relationship: an external-board-summary can always be traced back
+    to its source audit-trail-full content.

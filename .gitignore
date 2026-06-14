@@ -1,0 +1,185 @@
+# Political Landscape Cartography — .gitignore
+#
+# What this file does:
+#   - Excludes OS / editor / AI-tooling junk that should never be committed
+#   - Excludes operator-private environment + secrets files
+#   - DOES NOT exclude any PLC engine, framework, Prototype, template, or scaffolding content
+#   - DOES NOT exclude sphere cartridges by default (the audit trail is the value;
+#     sphere cartridges should be committed to the operator's own repo)
+#
+# Per-sphere customization:
+#   Each sphere may add its own `.gitignore` inside `Spheres/<sphere-name>/`
+#   to exclude sphere-specific operator-private content (e.g., principal-eyes-only
+#   draft notes, sealed export artifacts). See `OPERATOR-GUIDE.md` for guidance.
+
+# ============================================================
+# Operating system junk
+# ============================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ============================================================
+# Editor and IDE state
+# ============================================================
+# Vim
+*.swp
+*.swo
+*.swn
+*~
+.netrwhist
+
+# Emacs
+\#*\#
+.\#*
+
+# VS Code (workspace-local; user-specific)
+.vscode/
+*.code-workspace
+
+# JetBrains
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Obsidian per-user UI state (the vault config itself should be committed if shared;
+# the workspace state is local)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspaces.json
+
+# ============================================================
+# AI tooling state
+# ============================================================
+# Claude Code session state (session-specific; should not propagate)
+.claude/
+.claude.json
+
+# Cursor IDE
+.cursor/
+
+# GitHub Copilot
+.copilot/
+
+# Generic AI session caches
+.ai-cache/
+.chatcache/
+
+# ============================================================
+# Environment + secrets
+# ============================================================
+.env
+.env.local
+.env.*.local
+.envrc
+
+# Common secret file patterns — these should NEVER appear in a PLC OV folder,
+# but the exclusion is defense-in-depth
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.yaml
+secrets.yml
+*.secret
+
+# ============================================================
+# Backup + temporary files
+# ============================================================
+*.bak
+*.backup
+*.orig
+*.tmp
+*.temp
+*~
+
+# ============================================================
+# Personal source materials — DO NOT SYNC
+# ============================================================
+# The Lam 2018 Pepperdine dissertation PDF is the Methodology Author's
+# personal academic work. It stays local in the operator's working copy of
+# this OV folder, but it is NEVER pushed to any remote (GitHub or otherwise).
+# Anyone who needs the dissertation source contacts the Methodology Author
+# directly per `_frameworks/sources/Lam-2018-Pepperdine.md` (the request
+# placeholder, which DOES sync).
+_frameworks/sources/Lam-2018-Pepperdine.pdf
+
+# ============================================================
+# Log files
+# ============================================================
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================================
+# Archive + compressed files
+# ============================================================
+# (Operators occasionally extract zips into the OV folder by accident)
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# ============================================================
+# OS-generated files in specific tools
+# ============================================================
+# Python virtualenvs (in case operator uses scripts alongside PLC)
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# Node (in case any tooling lives alongside)
+node_modules/
+.npm/
+
+# ============================================================
+# Worktree state from this PLC's own design history
+# ============================================================
+# (Specific to the design-time OVE workflow; do not commit OVE design state
+# into a deployed PLC OV)
+.ove-design-state/
+
+# ============================================================
+# Export artifacts (operator-discretion)
+# ============================================================
+# Generated EXPORT-SHAREABLE artifacts that contain redacted but still
+# sensitive client material. By default, these are NOT excluded — the operator
+# should commit them as part of the audit trail. If the operator's threat
+# model requires excluding them, uncomment:
+#
+# Spheres/*/exports/
+
+# ============================================================
+# WHAT WE DO NOT EXCLUDE (preserved verbatim)
+# ============================================================
+# - All engine zone:        _plc-engine/
+# - All Prototypes:         _Prototypes/
+# - All framework zone:     _frameworks/ + _PATTERNS/
+# - All scaffolding zone:   _plc-engine/_templates/ + _plc-engine/_yaml/
+# - All root documentation: README, INSTALL, OPERATOR-GUIDE, CONTRIBUTING,
+#                           LICENSE, VERSION, CHANGELOG, AI-BOOTSTRAP,
+#                           BOOTSTRAP-NEW-SPHERE, UPDATE-PROMPT
+# - All sphere cartridges:  Spheres/  (the audit trail is the value)
+#
+# If you have a specific reason to exclude one of these, add the exclusion
+# in a per-sphere .gitignore inside Spheres/<sphere>/.gitignore — not here.
+# Modifications to this root-level .gitignore should be limited to operator-
+# universal exclusions (junk files; secrets patterns).

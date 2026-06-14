@@ -1,0 +1,268 @@
+# Political Landscape Cartography — Structured Export Schema
+# Per D23 Layer 3 mastery endpoint: longitudinal practice signals via structured export.
+# This schema defines the fields serialized when an engagement closes (SPHERE-CLOSE)
+# OR when the operator runs EXPORT-SHAREABLE with the `audit-trail-full` profile.
+#
+# Schema version: 1.0
+# Compatible with PLC v1.0+
+#
+# The export is YAML/JSON-compatible (this file uses YAML for human readability;
+# producers may emit JSON conforming to the same schema).
+#
+# Fields marked `required: true` MUST appear in any conforming export.
+# Fields marked `redactable: true` may be removed/anonymized by the redaction profile
+# in use; non-redactable fields cannot be removed without breaking the export.
+
+schema:
+  name: plc-export-schema
+  version: "1.0"
+  emits_at:
+    - sphere_close
+    - export_shareable_with_full_audit_profile
+  conforms_to_prototypes:
+    - PLC_Engagement_Retrospective
+    - PLC_Sphere_Manifest
+    - PLC_Sphere_State
+    - PLC_Sphere_Decisions
+
+engagement_metadata:
+  sphere_slug:
+    type: string
+    required: true
+    redactable: true
+    redaction_style: hash   # hash | anonymize | remove
+  sphere_name:
+    type: string
+    required: false
+    redactable: true
+    redaction_style: anonymize
+  operator_mode:
+    type: enum
+    values: [consultant, principal_self]
+    required: true
+    redactable: false
+  engagement_kind:
+    type: enum
+    values: [campaign, advisory, self_coaching, other]
+    required: true
+    redactable: false
+  engagement_horizon:
+    type: string
+    required: false
+    redactable: false
+  opened_date:
+    type: date_iso
+    required: true
+    redactable: false
+  closed_date:
+    type: date_iso
+    required: true
+    redactable: false
+  duration_days:
+    type: integer
+    required: true
+    redactable: false
+  close_reason:
+    type: enum
+    values: [end_state_achieved, end_state_unreachable, principal_exit, engagement_pause, other]
+    required: true
+    redactable: false
+
+aggregates:
+  cycles:
+    total_count:
+      type: integer
+      required: true
+    completed_count:
+      type: integer
+      required: true
+    average_duration_days:
+      type: number
+      required: false
+    sealed_count:
+      type: integer
+      required: false
+  campaigns:
+    total_count:
+      type: integer
+      required: true
+    archived_count:
+      type: integer
+      required: true
+    average_member_actors:
+      type: number
+      required: false
+  actors:
+    total_count:
+      type: integer
+      required: true
+    actor_completeness_distribution:
+      type: histogram
+      buckets: [0, 1, 2, 3, 4, 5]
+      required: true
+    perception_shift_event_count:
+      type: integer
+      required: true
+  opc_diagnostics:
+    full_count:
+      type: integer
+      required: true
+    partial_count:
+      type: integer
+      required: false
+    seed_count:
+      type: integer
+      required: false
+
+audit_trail:
+  tactics:
+    considered_count:
+      type: integer
+      required: true
+    selected_count:
+      type: integer
+      required: true
+    engaged_count:
+      type: integer
+      required: true
+    tactic_id_frequency:
+      type: map[catalogue_id -> count]
+      required: false
+      redactable: true   # tactic IDs may be sensitive in some redaction profiles
+      redaction_style: aggregate   # roll up to cluster/strategy level instead
+  strategies:
+    invoked_distribution:
+      type: map[strategy_number -> cycle_count]
+      required: true
+      redactable: false   # strategy-level is high-aggregation; safe to share
+  clusters:
+    engaged_distribution:
+      type: map[cluster_code -> cycle_count]
+      required: false
+      redactable: false
+  theorists:
+    invoked_distribution:
+      type: map[theorist_slug -> cycle_count]
+      required: true
+      redactable: false   # theorist invocations are scholarly attribution; not sensitive
+  gates:
+    alternatives_audit_completion_rate:
+      type: ratio
+      required: true
+      redactable: false
+    ethical_accounting_completion_rate:
+      type: ratio
+      required: true
+      redactable: false
+    override_count:
+      type: integer
+      required: true
+      redactable: false
+    overrides:
+      type: list[object]
+      schema:
+        cycle_id: string
+        gate: enum [alternatives_audit, ethical_accounting]
+        justification: string
+      required: false
+      redactable: true
+      redaction_style: aggregate   # report counts by reason category, not per-cycle justifications
+
+mastery_signals:
+  principal_funnel_sharpness:
+    baseline_score:
+      type: integer
+      range: [0, 5]
+      required: true
+    closing_score:
+      type: integer
+      range: [0, 5]
+      required: true
+    progression_trajectory:
+      type: list[object]
+      schema:
+        date: date_iso
+        from_score: integer
+        to_score: integer
+        reason: string
+      required: false
+      redactable: true
+      redaction_style: aggregate
+  uncover_payoff_log:
+    total_attempts:
+      type: integer
+      required: true
+    confirmed_findings:
+      type: integer
+      required: true
+    null_results:
+      type: integer
+      required: true
+    findings:
+      type: list[object]
+      schema:
+        date: date_iso
+        topic: string
+        outcome: enum [confirmed, partial, null_result, contradicted]
+        confidence: enum [low, medium, high]
+      required: false
+      redactable: true
+      redaction_style: anonymize
+  patterns_recognized:
+    type: list[object]
+    schema:
+      pattern_family: enum
+      pattern_slug: string
+      confidence_level: enum
+      sphere_specific_or_ov_wide: enum [sphere_specific, ov_wide]
+      observation_count: integer
+    required: false
+    redactable: false   # patterns are operator's longitudinal value
+
+what_didnt_work:
+  type: list[object]
+  schema:
+    category: enum [tactic_backfire, perception_misread, prediction_miss, gate_skip_regret, scope_drift, other]
+    description: string
+    cycle_id: string
+  required: true   # honest enumeration mandated by retrospective protocol
+  redactable: true
+  redaction_style: anonymize
+
+practitioner_signals:   # consultant mode only
+  applies_when:
+    operator_mode: consultant
+  section_16_baseline:
+    type: enum
+    values: [green, yellow_flagged, red_flagged]
+    required: true
+  section_16_closing:
+    type: enum
+    values: [green, yellow_flagged, red_flagged]
+    required: true
+  section_17_baseline:
+    type: enum
+    values: [green, yellow_flagged, red_flagged]
+    required: true
+  section_17_closing:
+    type: enum
+    values: [green, yellow_flagged, red_flagged]
+    required: true
+  flagged_items_mitigated:
+    type: integer
+    required: false
+  engagement_health_at_close:
+    type: enum
+    values: [healthy, strained, terminated_for_health]
+    required: false
+
+# Validation rules applied at export time
+validators:
+  - rule: required_fields_present
+    description: All `required: true` fields must be populated.
+  - rule: gate_completion_consistent
+    description: alternatives_audit_completion_rate AND ethical_accounting_completion_rate must be 0.0-1.0; if < 1.0, overrides list must explain the gap.
+  - rule: practitioner_block_required_in_consultant_mode
+    description: When operator_mode == consultant, all section_16/17 fields populated.
+  - rule: progression_trajectory_consistent
+    description: principal_funnel_sharpness baseline + trajectory must arrive at closing_score.

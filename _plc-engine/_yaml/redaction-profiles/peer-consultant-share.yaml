@@ -1,0 +1,102 @@
+# PLC Redaction Profile — Peer Consultant Share
+#
+# Audience: another consultant or coach using PLC who the operator wants to share
+# methodology insights with. This is NOT the consultant's own records (that's
+# `audit-trail-full`); this is sharing engagement learnings with a colleague.
+# Use case: pattern-recognition sharing; methodology refinement; peer-review of approach.
+# Sensitivity: HIGH on identity (sphere/actors/principal); LOW on methodology.
+#
+# Key discipline: scrub identifying information aggressively (peer must not be able
+# to recognize the client); preserve methodology and pattern detail liberally.
+# The artifact is for craft transfer, not client disclosure.
+
+profile:
+  name: peer-consultant-share
+  version: "1.0"
+  applies_to:
+    - peer_consultant_pattern_sharing
+    - methodology_refinement_dialogue
+    - third_party_review_of_approach
+
+actor_handling:
+  actor_names: anonymize   # "Carol Reyes" → "Actor-A" or "Actor-CFO"
+  principal_name: anonymize   # "Sam" → "Principal-1"
+  external_actors_only: anonymize_aggressively
+  perception_toward_principal: preserve   # methodology-relevant
+  resource_holdings: preserve_categories   # 9-type taxonomy categories yes; dollar amounts no
+  network_position: preserve   # methodology-relevant
+  behavioral_notes: preserve_generalized   # patterns yes; identifying anecdotes no
+
+tactic_handling:
+  tactic_ids: preserve   # peer consultant shares the Catalogue
+  tactic_names: preserve
+  tactic_descriptions: preserve
+  slash_addressing: preserve
+  catalogue_source_references: preserve
+
+strategy_handling:
+  strategy_numbers: preserve
+  strategy_names: preserve
+  force_vector_summary: preserve
+
+cluster_handling:
+  cluster_codes: preserve
+  cluster_themes: preserve
+
+theorist_handling:
+  theorist_invocations: preserve
+  citation_counts: preserve
+
+gate_handling:
+  alternatives_audit_completion: preserve
+  ethical_accounting_completion: preserve
+  override_justifications: preserve_anonymized   # justification text scrubbed of identifiers
+
+opc_handling:
+  full_diagnostic_scores: preserve_anonymized
+  hierarchical_id_references: preserve
+  section_15_alternatives_detail: preserve
+  section_16_practitioner_assessment: preserve   # the whole point of peer share is craft transfer
+  section_17_advisor_engagement: preserve
+
+cycle_handling:
+  cycle_status: preserve
+  cycle_agenda: anonymize   # "Q3 mandate preservation" → "operating-mandate preservation during succession-period"
+  cycle_lessons: preserve
+  phase_log_detail: preserve_anonymized
+  considered_moves_set: preserve
+  engaged_moves: preserve_anonymized
+
+retrospective_handling:
+  what_principal_learned: aggregate_to_capability_pattern   # not individual specifics
+  what_operator_learned: preserve   # craft transfer is the point
+  uncover_payoff_log: preserve_anonymized   # null results important for methodology
+  pattern_recognition: preserve   # this is the highest-value content for peer share
+  what_didnt_work: preserve_anonymized
+  practitioner_reflection: preserve   # peer-share value-add
+
+identifying_information:
+  sphere_industry: redact_to_category   # "mid-market industrial supplier" → "mid-market B2B"
+  sphere_scale_employee_count: redact_to_band   # "~2000" → "1000-5000"
+  geography: redact
+  sector_specifics: redact
+  timeline_year: redact   # "2026" → "Year 0"; offset other dates relative
+  named_competitors: redact
+
+formatting_overrides:
+  date_precision: relative_to_engagement_start   # "Cycle 6 was day 47 of engagement"
+  duration_precision: weeks
+  count_precision: exact   # for methodology analysis
+
+footer_disclaimer: |
+  Peer-consultant methodology share. All client-identifying information anonymized.
+  Catalogue references, tactical patterns, theorist invocations preserved for
+  craft-transfer value. Do not redistribute beyond named recipient without
+  re-running anonymization audit.
+
+handoff_protocol:
+  pre_send_check:
+    - confirm no actor name slips through anonymization
+    - confirm no sphere-identifying details (industry + scale + geography combination)
+    - confirm principal cannot be re-identified from authority-scope description
+  recipient_attestation_required: true   # peer agrees in writing not to attempt re-identification
