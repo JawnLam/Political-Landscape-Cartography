@@ -11,7 +11,7 @@ AI_Instructions: ""
 
 # Political Landscape Cartography — Version
 
-**1.0.0**
+**1.1.0**
 
 | Field | Value |
 |-------|-------|
