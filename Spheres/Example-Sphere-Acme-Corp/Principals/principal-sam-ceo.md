@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Principal
+type: PLC_Principal
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: principal-sam-ceo
-Title: "Sam — Principal"
+title: "Sam — Principal"
 Date_Added: 2026-04-15
 Date_Modified: 2026-06-13
 Needs_Processing: false

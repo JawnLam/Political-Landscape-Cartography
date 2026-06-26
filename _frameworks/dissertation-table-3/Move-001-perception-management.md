@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Move
+type: PLC_Move
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: move-001
-Title: "Move 001 — Perception Management"
+title: "Move 001 — Perception Management"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false

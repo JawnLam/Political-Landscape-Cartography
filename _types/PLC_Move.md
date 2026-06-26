@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-move-prototype
-Title: "PLC_Move — Prototype Definition"
+title: "PLC_Move — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -34,7 +35,7 @@ Resolves D14's deferred grain question: separate first-class Prototypes connecte
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_Move` |
+| `type` | string | Must be `PLC_Move` |
 | `Item_ID` | string | `move-<NNN>` |
 | `Title` | string | `"Move <NNN> — <Name>"` |
 | `Date_Added` | ISO date | |
@@ -123,9 +124,10 @@ PP: <+/-/0>  AA: <+/-/0>  B: <+/-/0>  C: <+/-/0>  Inc: <+/-/0>  Dec: <+/-/0>
 
 ```markdown
 ---
-Item_Prototype: PLC_Move
+type: PLC_Move
+timestamp: "2026-04-15T00:00:00Z"
 Item_ID: move-042
-Title: "Move 042 — Selective Information Exposure"
+title: "Move 042 — Selective Information Exposure"
 Date_Added: 2026-04-15
 Date_Modified: 2026-04-15
 Needs_Processing: false

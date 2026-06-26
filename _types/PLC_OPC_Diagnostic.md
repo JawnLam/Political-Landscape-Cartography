@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-opc-diagnostic-prototype
-Title: "PLC_OPC_Diagnostic — Prototype Definition"
+title: "PLC_OPC_Diagnostic — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -35,7 +36,7 @@ Per D28. Note: this is a softer D→E than the Cycle status flag — archival is
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_OPC_Diagnostic` |
+| `type` | string | Must be `PLC_OPC_Diagnostic` |
 | `Item_ID` | string | `opc-<YYYY-MM-DD>` (or `opc-<YYYY-MM-DD>-<seq>` if multiple same-day) |
 | `Title` | string | `"<Sphere Name> — OPC Diagnostic <date>"` |
 | `Date_Added` | ISO date | Diagnostic performed date |
@@ -139,9 +140,10 @@ Sections 11, 15, 16, 17 carry special operational weight (gates + consultant pre
 
 ```markdown
 ---
-Item_Prototype: PLC_OPC_Diagnostic
+type: PLC_OPC_Diagnostic
+timestamp: "2026-06-01T00:00:00Z"
 Item_ID: opc-2026-06-01
-Title: "Acme Corp — OPC Diagnostic 2026-06-01"
+title: "Acme Corp — OPC Diagnostic 2026-06-01"
 Date_Added: 2026-06-01
 Date_Modified: 2026-06-01
 Needs_Processing: false

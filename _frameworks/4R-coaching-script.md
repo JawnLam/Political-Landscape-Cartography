@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-frameworks-4r-coaching-script
-Item_Prototype: Fleeting
-Title: "4R Conversational Walk — Senior-Partner Register"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "4R Conversational Walk — Senior-Partner Register"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -156,5 +157,5 @@ The 4R conversation is the entry point. It is not the analytical engine — the 
 - ADAPT lookup card: `ADAPT.md`
 - ADAPT craft layer: `ADAPT-as-consulting-engine.md`
 - Dissertation substrate: `dissertation-substrate.md`
-- Principal funnel sharpness (related coaching diagnostic): `_Prototypes/PLC_Principal.md` § plc_Principal_Funnel_Sharpness
+- Principal funnel sharpness (related coaching diagnostic): `_types/PLC_Principal.md` § plc_Principal_Funnel_Sharpness
 - Worked example of a principal in active engagement: `Spheres/Example-Sphere-Acme-Corp/Principals/principal-sam-ceo.md`

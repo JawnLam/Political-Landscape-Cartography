@@ -1,11 +1,12 @@
 ---
-Item_Prototype: Fleeting
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-engine-07-shipping-checklist
-Title: "PLC Engine — 07 Shipping Checklist"
+title: "PLC Engine — 07 Shipping Checklist"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-type: engine
+doc_type: engine
 role: pre-ship-readiness
 scope: subject-agnostic-within-PLC
 updated: 2026-06-13
@@ -28,13 +29,13 @@ Run the checklist in order. Do not skip ahead — each section assumes the prior
 
 The schema must be locked before anything else is meaningful.
 
-- [ ] **All 16 Prototypes have definition files in `_Prototypes/PLC_*.md`** — one file per Prototype, no missing entries
+- [ ] **All 16 Prototypes have definition files in `_types/PLC_*.md`** — one file per Prototype, no missing entries
   - `PLC_Sphere_Manifest`, `PLC_Sphere_State`, `PLC_Sphere_Decisions`, `PLC_Principal`, `PLC_Actor`, `PLC_Campaign`, `PLC_Cycle`, `PLC_Session`, `PLC_OPC_Diagnostic`, `PLC_Engagement_Retrospective`, `PLC_Move`, `PLC_Tactic`, `PLC_Strategy`, `PLC_Cluster`, `PLC_Theorist`, `PLC_Pattern`
 - [ ] **Each Prototype file declares**: required fields, field types, allowed enums, relation slots (in + out), state-persistence mode, durability rule, example
 - [ ] **All 22 markdown templates exist in `_plc-engine/_templates/`** — per D29 count
 - [ ] **All 6 YAML scaffolding files exist** — 1 export schema + 5 redaction profiles per D29
 - [ ] **Master_Schema.yaml v1.22.0 (or later) has the `plc_` namespace registered** with all 16 Prototypes in the central infrastructure schema
-- [ ] **The OV-local `_Prototypes/` folder mirrors the central registry exactly** — no orphaned types, no missing types
+- [ ] **The OV-local `_types/` folder mirrors the central registry exactly** — no orphaned types, no missing types
 - [ ] **Decision Log entry exists** in `! Infrastructure Decision Log.md` for the PLC namespace registration
 - [ ] **Three reference systems do not collide**:
   - Slash addressing notation parses without ambiguity for sample cycle constituents
@@ -135,7 +136,7 @@ The OV must meet the documented OVE Conventions 1-8 verbatim.
 - [ ] **Convention 3** (engine vs sphere separation) — engine zone clearly delineated; sphere cartridges live under `Spheres/<Sphere-Name>/`
 - [ ] **Convention 4** (state file discipline) — `## Current` overwrites, `## History` accumulates, mode discipline per `06-STATE-PERSISTENCE.md`
 - [ ] **Convention 5** (session log discipline) — append-only, filename format `<date>_<NNN>_<ACTIVITY>.md`
-- [ ] **Convention 6** (OV-local `_Prototypes/` folder ships with the OV) — present and mirrored from central
+- [ ] **Convention 6** (OV-local `_types/` folder ships with the OV) — present and mirrored from central
 - [ ] **Convention 7** (UPDATE-PROMPT + install snippet) — both present with current version strings
 - [ ] **Convention 8** (four content zones documented in CONTRIBUTING) — engine / sphere / framework / scaffolding distinctly named
 

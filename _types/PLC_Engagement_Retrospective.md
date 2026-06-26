@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-engagement-retrospective-prototype
-Title: "PLC_Engagement_Retrospective — Prototype Definition"
+title: "PLC_Engagement_Retrospective — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -32,7 +33,7 @@ If the retrospective needs revision post-publication (e.g., factual correction s
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_Engagement_Retrospective` |
+| `type` | string | Must be `PLC_Engagement_Retrospective` |
 | `Item_ID` | string | `retrospective-<sphere-slug>` |
 | `Title` | string | `"<Sphere Name> — Engagement Retrospective"` |
 | `Date_Added` | ISO date | SPHERE-CLOSE session date |
@@ -127,9 +128,10 @@ If the retrospective needs revision post-publication (e.g., factual correction s
 
 ```markdown
 ---
-Item_Prototype: PLC_Engagement_Retrospective
+type: PLC_Engagement_Retrospective
+timestamp: "2026-12-18T00:00:00Z"
 Item_ID: retrospective-acme-corp
-Title: "Acme Corp — Engagement Retrospective"
+title: "Acme Corp — Engagement Retrospective"
 Date_Added: 2026-12-18
 Date_Modified: 2026-12-18
 Needs_Processing: false

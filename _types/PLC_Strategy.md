@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-strategy-prototype
-Title: "PLC_Strategy — Prototype Definition"
+title: "PLC_Strategy — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -33,7 +34,7 @@ Per D14 + D28. Same reasoning as PLC_Tactic: the 16-strategy frame is sourced sc
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_Strategy` |
+| `type` | string | Must be `PLC_Strategy` |
 | `Item_ID` | string | `strategy-<N>` (1-16) or `strategy-ext-<NNN>` for extensions |
 | `Title` | string | `"Strategy <N> — <Name>"` |
 | `Date_Added` | ISO date | |
@@ -102,9 +103,10 @@ Per D14 + D28. Same reasoning as PLC_Tactic: the 16-strategy frame is sourced sc
 
 ```markdown
 ---
-Item_Prototype: PLC_Strategy
+type: PLC_Strategy
+timestamp: "2026-04-01T00:00:00Z"
 Item_ID: strategy-7
-Title: "Strategy 7 — Coalition Preservation"
+title: "Strategy 7 — Coalition Preservation"
 Date_Added: 2026-04-01
 Date_Modified: 2026-04-01
 Needs_Processing: false

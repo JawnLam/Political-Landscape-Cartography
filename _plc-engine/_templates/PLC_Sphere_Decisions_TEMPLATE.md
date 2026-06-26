@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Sphere_Decisions
+type: PLC_Sphere_Decisions
 Item_ID: <sphere-slug>-decisions
-Title: "<Sphere Name> — Sphere Decisions Log"
+title: "<Sphere Name> — Sphere Decisions Log"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

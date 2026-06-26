@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-frameworks-strategies-readme
-Item_Prototype: Fleeting
-Title: "Strategies — Operator Notes"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Strategies — Operator Notes"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -58,7 +59,7 @@ For an operator looking up a specific strategy during MOVE-LOOKUP work:
 
 ## Cross-references
 
-- Strategy Prototype: `_Prototypes/PLC_Strategy.md`
+- Strategy Prototype: `_types/PLC_Strategy.md`
 - Strategy Template: `_plc-engine/_templates/PLC_Strategy_TEMPLATE.md`
 - Catalogue strategy facets (canonical): `_frameworks/political-warfare-catalogue/by-strategy/`
 - Catalogue tactics: `_frameworks/political-warfare-catalogue/tactics/`

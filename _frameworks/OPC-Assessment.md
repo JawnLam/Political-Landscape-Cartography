@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-frameworks-opc-assessment
-Item_Prototype: Fleeting
-Title: "OPC Assessment v3.0 — Canonical Reference + PLC Mapping"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "OPC Assessment v3.0 — Canonical Reference + PLC Mapping"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -297,9 +298,9 @@ PLC engine prose has referenced OPC sections by labels that were inherited from 
 
 ## Cross-references
 
-- Diagnostic Prototype: `_Prototypes/PLC_OPC_Diagnostic.md`
+- Diagnostic Prototype: `_types/PLC_OPC_Diagnostic.md`
 - Pattern library scaffold: `_PATTERNS/_README.md`
-- Pattern Prototype: `_Prototypes/PLC_Pattern.md`
+- Pattern Prototype: `_types/PLC_Pattern.md`
 - Gate protocol (uses § 11 + § 15): `_plc-engine/03-SESSION-PROTOCOL.md § RUN-CYCLE`
 - §§ 16 + 17 worked example: `Spheres/Example-Sphere-Acme-Corp/Practitioner-Assessment.md`
 - License & IP: `LICENSE.md`

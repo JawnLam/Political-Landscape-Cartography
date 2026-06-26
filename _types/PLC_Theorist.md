@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-theorist-prototype
-Title: "PLC_Theorist — Prototype Definition"
+title: "PLC_Theorist — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -33,7 +34,7 @@ Per D15 + D28.
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_Theorist` |
+| `type` | string | Must be `PLC_Theorist` |
 | `Item_ID` | string | `theorist-<slug>` |
 | `Title` | string | `"<Theorist Name> — Theorist"` |
 | `Date_Added` | ISO date | |
@@ -105,9 +106,10 @@ Per D15 + D28.
 
 ```markdown
 ---
-Item_Prototype: PLC_Theorist
+type: PLC_Theorist
+timestamp: "2026-04-01T00:00:00Z"
 Item_ID: theorist-schelling
-Title: "Schelling — Theorist"
+title: "Schelling — Theorist"
 Date_Added: 2026-04-01
 Date_Modified: 2026-04-01
 Needs_Processing: false

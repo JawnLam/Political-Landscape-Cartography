@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-pattern-family-ethical-dilemmas
-Item_Prototype: Fleeting
-Title: "Ethical Dilemmas — Family Overview"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Ethical Dilemmas — Family Overview"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -63,7 +64,7 @@ These are NOT canonical until populated from OPC source.
 
 - Family library: `../README.md`
 - Template: `_TEMPLATE.md`
-- Pattern Prototype: `_Prototypes/PLC_Pattern.md`
+- Pattern Prototype: `_types/PLC_Pattern.md`
 - OPC source section: `_frameworks/OPC-Assessment.md § 13.3.2`
 - Related OPC section: `_frameworks/OPC-Assessment.md § 11` (Harm & Ethical Evaluation gate — operates per-tactic; themes here operate at the engagement level)
 - Worked example: OPC § 13.3.2 in `Spheres/Example-Sphere-Acme-Corp/OPC-Diagnostics/opc-2026-06-01.md` notes "legitimate-information-asymmetry vs deceptive-information-asymmetry boundary" as the active theme

@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Move
+type: PLC_Move
 Item_ID: move-<NNN>
-Title: "Move <NNN> — <Name>"
+title: "Move <NNN> — <Name>"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

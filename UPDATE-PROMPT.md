@@ -1,11 +1,12 @@
 ---
-Item_Prototype: Fleeting
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-update-prompt
-Title: "PLC — Update Prompt"
+title: "PLC — Update Prompt"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-type: bootstrap
+doc_type: bootstrap
 role: version-update-protocol
 audience: AI
 ---
@@ -21,7 +22,7 @@ Verify the working directory:
 - `VERSION.md` exists at root
 - `AI-BOOTSTRAP.md` exists at root
 - `_plc-engine/` directory exists
-- `_Prototypes/` directory exists
+- `_types/` directory exists
 
 If any are missing, STOP. The working directory is not a PLC OV. Tell the operator and ask them to confirm the path.
 
@@ -70,7 +71,7 @@ Filter for changes outside `Spheres/`:
 
 - Modified files in `_plc-engine/`
 - Modified files in `_frameworks/` (excluding `*-extensions/` which are operator-owned)
-- Modified files in `_Prototypes/`
+- Modified files in `_types/`
 - Modified root-level files (`README.md`, `OPERATOR-GUIDE.md`, etc.)
 
 If any are present, this is a Convention 8 violation — engine/framework/scaffolding zones should not have direct edits. Report the list to the operator and recommend stashing:
@@ -114,7 +115,7 @@ Re-read `VERSION.md`. Confirm it matches the target. If it doesn't:
 Re-verify the structural sanity:
 
 - All 8 engine chapters present in `_plc-engine/`
-- All 16 Prototype files present in `_Prototypes/`
+- All 16 Prototype files present in `_types/`
 - All 22 template files present in `_plc-engine/_templates/`
 - All 6 YAML scaffolding files present in `_plc-engine/_yaml/`
 - `Spheres/` directory unchanged (same sphere count as Step 2)

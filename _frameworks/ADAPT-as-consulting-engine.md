@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-frameworks-adapt-craft-layer
-Item_Prototype: Fleeting
-Title: "ADAPT as Consulting Engine — Craft Layer"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "ADAPT as Consulting Engine — Craft Layer"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -233,5 +234,5 @@ The Methodology Author's deployment patterns across specific engagement types ac
 - 14-constituent interaction-cycle protocol mapping: `_plc-engine/03-SESSION-PROTOCOL.md § RUN-CYCLE`
 - Dissertation substrate (ADAPT layers atop): `dissertation-substrate.md`
 - OPC v3.0 (PLC's diagnostic instrument): `OPC-Assessment.md`
-- Principal funnel sharpness scale (operationalizes View 2 + View 4 mastery): `_Prototypes/PLC_Principal.md § plc_Principal_Funnel_Sharpness`
+- Principal funnel sharpness scale (operationalizes View 2 + View 4 mastery): `_types/PLC_Principal.md § plc_Principal_Funnel_Sharpness`
 - Worked example: `Spheres/Example-Sphere-Acme-Corp/Principals/principal-sam-ceo.md` (Sam's funnel reaches sharpness 4 via Cycles 6-7)

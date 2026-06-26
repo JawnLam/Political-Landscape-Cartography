@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Principal
+type: PLC_Principal
 Item_ID: principal-<slug>
-Title: "<Principal Name> — Principal"
+title: "<Principal Name> — Principal"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

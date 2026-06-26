@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-frameworks-dissertation-table-3-readme
-Item_Prototype: Fleeting
-Title: "Dissertation Table 3 — Granular Moves"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Dissertation Table 3 — Granular Moves"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -42,7 +43,7 @@ For each of the ~100 Moves in dissertation Table 3:
 
 ## Cross-references
 
-- Move Prototype: `_Prototypes/PLC_Move.md`
+- Move Prototype: `_types/PLC_Move.md`
 - Move Template: `_plc-engine/_templates/PLC_Move_TEMPLATE.md`
 - Reciprocal Tactic catalog: `_frameworks/political-warfare-catalogue/tactics/`
 - Dissertation source: `_frameworks/sources/Lam-2018-Pepperdine.pdf`

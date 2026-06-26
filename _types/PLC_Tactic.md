@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-tactic-prototype
-Title: "PLC_Tactic — Prototype Definition"
+title: "PLC_Tactic — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -36,7 +37,7 @@ Per D14 + D28 (Tactic row in mode table).
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_Tactic` |
+| `type` | string | Must be `PLC_Tactic` |
 | `Item_ID` | string | `tactic-<NNNN>` |
 | `Title` | string | `"Tactic <NNNN> — <Name>"` |
 | `Date_Added` | ISO date | Catalogue ship date or operator-extension date |
@@ -115,9 +116,10 @@ Per D14 + D28 (Tactic row in mode table).
 
 ```markdown
 ---
-Item_Prototype: PLC_Tactic
+type: PLC_Tactic
+timestamp: "2026-04-01T00:00:00Z"
 Item_ID: tactic-0029
-Title: "Tactic 0029 — Selective Disclosure Choreography"
+title: "Tactic 0029 — Selective Disclosure Choreography"
 Date_Added: 2026-04-01
 Date_Modified: 2026-04-01
 Needs_Processing: false

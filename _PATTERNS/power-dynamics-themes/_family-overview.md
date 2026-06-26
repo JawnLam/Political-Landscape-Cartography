@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-pattern-family-power-dynamics-themes
-Item_Prototype: Fleeting
-Title: "Power-Dynamics Themes — Family Overview"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Power-Dynamics Themes — Family Overview"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -59,6 +60,6 @@ These are NOT canonical until populated from OPC source.
 
 - Family library: `../README.md`
 - Template: `_TEMPLATE.md`
-- Pattern Prototype: `_Prototypes/PLC_Pattern.md`
+- Pattern Prototype: `_types/PLC_Pattern.md`
 - OPC source section: `_frameworks/OPC-Assessment.md § 13.3.1`
 - Worked example: OPC § 13.3.1 in `Spheres/Example-Sphere-Acme-Corp/OPC-Diagnostics/opc-2026-06-01.md` notes "agenda-control-vs-execution-discipline (Lukes' three-dimensional power frame)" as the active theme

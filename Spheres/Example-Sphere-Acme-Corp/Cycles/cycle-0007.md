@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Cycle
+type: PLC_Cycle
+timestamp: "2026-06-10T00:00:00Z"
 Item_ID: cycle-0007
-Title: "Cycle 0007 — Q2 mandate signal preservation"
+title: "Cycle 0007 — Q2 mandate signal preservation"
 Date_Added: 2026-05-22
 Date_Modified: 2026-06-10
 Needs_Processing: false

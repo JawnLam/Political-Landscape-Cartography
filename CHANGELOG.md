@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-changelog
-Item_Prototype: Fleeting
-Title: "Political Landscape Cartography — Changelog"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Political Landscape Cartography — Changelog"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -26,6 +27,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/) conventions w
 PLC follows semantic versioning. See `CONTRIBUTING.md` § "In-scope vs major-version-bump scope" for the categorization rules.
 
 ---
+
+## [1.1.0] — 2026-06-26
+
+Google OKF v0.1 conformance (coordinated with vault Master_Schema v1.23.0 + OVE v2.4.0). Universal Core renamed to OKF field names (Item_Prototype→type, Title→title, Tags→tags; added timestamp from Date_Modified, optional description/resource). Convention-6 folder _Prototypes/ → _types/. Date_Modified kept, time-synced with timestamp. Hugo excluded.
 
 ## [1.0.0] — 2026-06-13
 

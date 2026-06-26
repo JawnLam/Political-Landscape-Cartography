@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-sphere-decisions-prototype
-Title: "PLC_Sphere_Decisions — Prototype Definition"
+title: "PLC_Sphere_Decisions — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -32,7 +33,7 @@ If a prior decision is superseded, append a new entry citing the prior. Do not e
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_Sphere_Decisions` |
+| `type` | string | Must be `PLC_Sphere_Decisions` |
 | `Item_ID` | string | `<sphere-slug>-decisions` |
 | `Title` | string | `"<Sphere Name> — Sphere Decisions Log"` |
 | `Date_Added` | ISO date | Sphere-open date |
@@ -104,9 +105,10 @@ Examples that **don't**:
 
 ```markdown
 ---
-Item_Prototype: PLC_Sphere_Decisions
+type: PLC_Sphere_Decisions
+timestamp: "2026-06-10T00:00:00Z"
 Item_ID: acme-corp-decisions
-Title: "Acme Corp — Sphere Decisions Log"
+title: "Acme Corp — Sphere Decisions Log"
 Date_Added: 2026-04-22
 Date_Modified: 2026-06-10
 Needs_Processing: false

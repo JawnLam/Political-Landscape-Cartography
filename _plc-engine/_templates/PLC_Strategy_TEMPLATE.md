@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Strategy
+type: PLC_Strategy
 Item_ID: strategy-<N>   # 1-16 for shipped; strategy-ext-<NNN> for operator extensions
-Title: "Strategy <N> — <Name>"
+title: "Strategy <N> — <Name>"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

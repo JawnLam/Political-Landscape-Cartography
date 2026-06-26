@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-sphere-state-prototype
-Title: "PLC_Sphere_State — Prototype Definition"
+title: "PLC_Sphere_State — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -30,7 +31,7 @@ Per D27 + D28.
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_Sphere_State` |
+| `type` | string | Must be `PLC_Sphere_State` |
 | `Item_ID` | string | `<sphere-slug>-state` |
 | `Title` | string | `"<Sphere Name> — Sphere State"` |
 | `Date_Added` | ISO date | Sphere-open date |
@@ -92,9 +93,10 @@ Per D27 + D28.
 
 ```markdown
 ---
-Item_Prototype: PLC_Sphere_State
+type: PLC_Sphere_State
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: acme-corp-state
-Title: "Acme Corp — Sphere State"
+title: "Acme Corp — Sphere State"
 Date_Added: 2026-04-15
 Date_Modified: 2026-06-13
 Needs_Processing: false

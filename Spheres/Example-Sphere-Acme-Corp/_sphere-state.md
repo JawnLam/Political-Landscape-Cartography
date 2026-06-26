@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Sphere_State
+type: PLC_Sphere_State
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: acme-corp-state
-Title: "Acme Corp — Sphere State"
+title: "Acme Corp — Sphere State"
 Date_Added: 2026-04-15
 Date_Modified: 2026-06-13
 Needs_Processing: false

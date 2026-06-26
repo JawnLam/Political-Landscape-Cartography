@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-session-prototype
-Title: "PLC_Session — Prototype Definition"
+title: "PLC_Session — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -31,7 +32,7 @@ A session-in-progress file is editable; once committed at session-end, never edi
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_Session` |
+| `type` | string | Must be `PLC_Session` |
 | `Item_ID` | string | `session-<sphere-slug>-<NNN>` |
 | `Title` | string | `"<Sphere Name> — Session <NNN> — <ACTIVITY>"` |
 | `Date_Added` | ISO date | Session start date |
@@ -126,9 +127,10 @@ The two embedded gates (`ALTERNATIVES-AUDIT`, `ETHICAL-ACCOUNTING`) are NOT stan
 
 ```markdown
 ---
-Item_Prototype: PLC_Session
+type: PLC_Session
+timestamp: "2026-06-10T00:00:00Z"
 Item_ID: session-acme-corp-008
-Title: "Acme Corp — Session 008 — RUN_CYCLE"
+title: "Acme Corp — Session 008 — RUN_CYCLE"
 Date_Added: 2026-06-10
 Date_Modified: 2026-06-10
 Needs_Processing: false

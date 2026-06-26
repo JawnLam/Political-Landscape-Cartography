@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-principal-prototype
-Title: "PLC_Principal — Prototype Definition"
+title: "PLC_Principal — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -36,7 +37,7 @@ Per D27 + D28.
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_Principal` |
+| `type` | string | Must be `PLC_Principal` |
 | `Item_ID` | string | `principal-<slug>` |
 | `Title` | string | `"<Principal Name> — Principal"` (or `[PRINCIPAL]` placeholder) |
 | `Date_Added` | ISO date | Date this Principal was added to the sphere |
@@ -120,9 +121,10 @@ Per D27 + D28.
 
 ```markdown
 ---
-Item_Prototype: PLC_Principal
+type: PLC_Principal
+timestamp: "2026-06-10T00:00:00Z"
 Item_ID: principal-sam-ceo
-Title: "Sam — Principal"
+title: "Sam — Principal"
 Date_Added: 2026-04-15
 Date_Modified: 2026-06-10
 Needs_Processing: false

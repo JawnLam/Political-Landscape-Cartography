@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Sphere_Manifest
+type: PLC_Sphere_Manifest
 Item_ID: <sphere-slug>-manifest
-Title: "<Sphere Name> — Sphere Manifest"
+title: "<Sphere Name> — Sphere Manifest"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

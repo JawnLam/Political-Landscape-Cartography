@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Cycle
+type: PLC_Cycle
 Item_ID: cycle-<NNNN>
-Title: "Cycle <NNNN> — <one-line agenda summary>"
+title: "Cycle <NNNN> — <one-line agenda summary>"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

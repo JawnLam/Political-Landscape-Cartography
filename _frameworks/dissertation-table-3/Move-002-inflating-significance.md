@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Move
+type: PLC_Move
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: move-002
-Title: "Move 002 — Inflating the Significance or Magnitude of the Actor's Duties and Responsibilities"
+title: "Move 002 — Inflating the Significance or Magnitude of the Actor's Duties and Responsibilities"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false

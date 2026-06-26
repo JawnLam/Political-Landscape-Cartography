@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-readme
-Item_Prototype: Fleeting
-Title: "Political Landscape Cartography — README"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Political Landscape Cartography — README"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -73,7 +74,7 @@ Political-Landscape-Cartography-v1.0/
 │   ├── 07-SHIPPING-CHECKLIST.md
 │   ├── _templates/                    ← 22 starter scaffolds (1 per template variant)
 │   └── _yaml/                         ← export schema + 5 redaction profiles
-├── _Prototypes/                       ← 16 canonical Prototype definitions
+├── _types/                       ← 16 canonical Prototype definitions
 │   └── PLC_*.md
 ├── _frameworks/                       ← shipped substrate (sourced material)
 │   ├── sources/                       ← canonical PDFs + JSONs (ADAPT / dissertation / OPC / Catalogue source)
@@ -113,7 +114,7 @@ Political-Landscape-Cartography-v1.0/
 
 The **four content zones** (Convention 8):
 
-- **Engine zone** (`_plc-engine/` + `AI-BOOTSTRAP.md` + `BOOTSTRAP-NEW-SPHERE.md` + `_Prototypes/`) — subject-agnostic protocol code. Updated by version bumps via UPDATE-PROMPT. Do not edit by hand.
+- **Engine zone** (`_plc-engine/` + `AI-BOOTSTRAP.md` + `BOOTSTRAP-NEW-SPHERE.md` + `_types/`) — subject-agnostic protocol code. Updated by version bumps via UPDATE-PROMPT. Do not edit by hand.
 - **Framework zone** (`_frameworks/` + `_PATTERNS/`) — shipped substrate. Updated by version bumps. Do not edit; extend in `_frameworks/*-extensions/`.
 - **Sphere zone** (`Spheres/<Your-Sphere>/`) — your work. Wholly yours. Untouched by version bumps.
 - **Scaffolding zone** (`_plc-engine/_templates/` + `_plc-engine/_yaml/`) — starter forms + export schemas. Updated by version bumps; sphere-local overrides go in `Spheres/<Sphere>/_USER.md`.

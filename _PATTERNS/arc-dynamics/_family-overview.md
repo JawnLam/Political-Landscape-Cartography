@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-pattern-family-arc-dynamics
-Item_Prototype: Fleeting
-Title: "Arc Dynamics — Family Overview"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Arc Dynamics — Family Overview"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -60,6 +61,6 @@ The worked example's `pattern-family-succession-pressure-loop` is a sphere-speci
 
 - Family library: `../README.md`
 - Template: `_TEMPLATE.md`
-- Pattern Prototype: `_Prototypes/PLC_Pattern.md`
+- Pattern Prototype: `_types/PLC_Pattern.md`
 - OPC source section: `_frameworks/OPC-Assessment.md § 13.2`
 - Worked example: `Spheres/Example-Sphere-Acme-Corp/Patterns/pattern-family-succession-pressure-loop.md` (sphere-specific instance of an arc-dynamic pattern)

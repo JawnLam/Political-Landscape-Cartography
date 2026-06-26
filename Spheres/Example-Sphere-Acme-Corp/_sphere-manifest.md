@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Sphere_Manifest
+type: PLC_Sphere_Manifest
+timestamp: "2026-06-10T00:00:00Z"
 Item_ID: acme-corp-manifest
-Title: "Acme Corp — Sphere Manifest"
+title: "Acme Corp — Sphere Manifest"
 Date_Added: 2026-04-15
 Date_Modified: 2026-06-10
 Needs_Processing: false
@@ -24,7 +25,7 @@ AI_Instructions: ""
 
 # Acme Corp
 
-> **Worked example sphere shipped with PLC v1.0.** This cartridge demonstrates the populated form of every Prototype and is referenced from the Prototype definitions in `_Prototypes/`. It also serves as the F-code regression canary per `_plc-engine/07-SHIPPING-CHECKLIST.md` § 7. The sphere is consultant-mode (the discipline floor); the principal is fictional; the engagement is illustrative.
+> **Worked example sphere shipped with PLC v1.0.** This cartridge demonstrates the populated form of every Prototype and is referenced from the Prototype definitions in `_types/`. It also serves as the F-code regression canary per `_plc-engine/07-SHIPPING-CHECKLIST.md` § 7. The sphere is consultant-mode (the discipline floor); the principal is fictional; the engagement is illustrative.
 
 ## Charter
 Help Sam (CEO) navigate the family-board succession politics through 2026 without losing operating mandate. PLC applied as the political-landscape backbone; ADAPT applied at the principal coaching layer. Engagement runs through 2026-Q4 with possible extension contingent on Q4 board action.

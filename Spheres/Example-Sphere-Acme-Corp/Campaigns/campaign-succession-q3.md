@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Campaign
+type: PLC_Campaign
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: campaign-succession-q3
-Title: "Succession-Q3 — Campaign"
+title: "Succession-Q3 — Campaign"
 Date_Added: 2026-05-01
 Date_Modified: 2026-06-13
 Needs_Processing: false

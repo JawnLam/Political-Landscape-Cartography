@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Actor
+type: PLC_Actor
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: actor-robert-board-chair
-Title: "Robert Hayes — Board Chair (family)"
+title: "Robert Hayes — Board Chair (family)"
 Date_Added: 2026-04-22
 Date_Modified: 2026-06-13
 Needs_Processing: false

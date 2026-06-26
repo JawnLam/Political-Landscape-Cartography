@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-sphere-manifest-prototype
-Title: "PLC_Sphere_Manifest — Prototype Definition"
+title: "PLC_Sphere_Manifest — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -28,7 +29,7 @@ The identity card and charter of a sphere (one political landscape, typically on
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_Sphere_Manifest` |
+| `type` | string | Must be `PLC_Sphere_Manifest` |
 | `Item_ID` | string | `<sphere-slug>-manifest` (kebab-case) |
 | `Title` | string | `"<Sphere Name> — Sphere Manifest"` |
 | `Date_Added` | ISO date | Sphere-open date |
@@ -87,9 +88,10 @@ The identity card and charter of a sphere (one political landscape, typically on
 
 ```markdown
 ---
-Item_Prototype: PLC_Sphere_Manifest
+type: PLC_Sphere_Manifest
+timestamp: "2026-06-10T00:00:00Z"
 Item_ID: acme-corp-manifest
-Title: "Acme Corp — Sphere Manifest"
+title: "Acme Corp — Sphere Manifest"
 Date_Added: 2026-04-15
 Date_Modified: 2026-06-10
 Needs_Processing: false

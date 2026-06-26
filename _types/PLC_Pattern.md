@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-pattern-prototype
-Title: "PLC_Pattern — Prototype Definition"
+title: "PLC_Pattern — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -35,7 +36,7 @@ Per D28.
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_Pattern` |
+| `type` | string | Must be `PLC_Pattern` |
 | `Item_ID` | string | `pattern-<slug>` |
 | `Title` | string | `"<Pattern Name> — Pattern"` |
 | `Date_Added` | ISO date | |
@@ -126,9 +127,10 @@ Per D28.
 
 ```markdown
 ---
-Item_Prototype: PLC_Pattern
+type: PLC_Pattern
+timestamp: "2026-11-22T00:00:00Z"
 Item_ID: pattern-family-succession-pressure-loop
-Title: "Family-Succession-Pressure-Loop — Pattern"
+title: "Family-Succession-Pressure-Loop — Pattern"
 Date_Added: 2026-06-09
 Date_Modified: 2026-11-22
 Needs_Processing: false

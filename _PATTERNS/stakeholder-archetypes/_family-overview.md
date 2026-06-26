@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-pattern-family-stakeholder-archetypes
-Item_Prototype: Fleeting
-Title: "Stakeholder Archetypes — Family Overview"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Stakeholder Archetypes — Family Overview"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -57,5 +58,5 @@ These archetypes are NOT yet drafted as `Pattern-<slug>.md` files in this folder
 
 - Family library: `../README.md`
 - Template: `_TEMPLATE.md`
-- Pattern Prototype: `_Prototypes/PLC_Pattern.md`
+- Pattern Prototype: `_types/PLC_Pattern.md`
 - OPC source section: `_frameworks/OPC-Assessment.md § 2.2.1`

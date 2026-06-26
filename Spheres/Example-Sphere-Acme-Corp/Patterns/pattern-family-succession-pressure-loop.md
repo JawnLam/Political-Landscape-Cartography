@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Pattern
+type: PLC_Pattern
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: pattern-family-succession-pressure-loop
-Title: "Family-Succession-Pressure-Loop — Pattern"
+title: "Family-Succession-Pressure-Loop — Pattern"
 Date_Added: 2026-06-09
 Date_Modified: 2026-06-13
 Needs_Processing: false

@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Cluster
+type: PLC_Cluster
 Item_ID: cluster-<CNN>   # C01-C84 for shipped; cluster-ext-<NNN> for operator extensions
-Title: "Cluster <CNN> — <Name>"
+title: "Cluster <CNN> — <Name>"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

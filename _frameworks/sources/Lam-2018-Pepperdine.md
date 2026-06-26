@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-frameworks-sources-lam-2018-pepperdine
-Item_Prototype: Fleeting
-Title: "Lam 2018 Pepperdine Dissertation — Request for Source"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Lam 2018 Pepperdine Dissertation — Request for Source"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false

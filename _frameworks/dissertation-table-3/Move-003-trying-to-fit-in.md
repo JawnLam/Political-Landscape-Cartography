@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Move
+type: PLC_Move
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: move-003
-Title: "Move 003 — Trying to Fit In With the Culture"
+title: "Move 003 — Trying to Fit In With the Culture"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false

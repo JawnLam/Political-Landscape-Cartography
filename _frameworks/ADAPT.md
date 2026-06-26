@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-frameworks-adapt-lookup
-Item_Prototype: Fleeting
-Title: "ADAPT Loop — Lookup Card"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "ADAPT Loop — Lookup Card"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false

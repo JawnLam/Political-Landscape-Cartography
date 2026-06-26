@@ -1,11 +1,12 @@
 ---
-Item_Prototype: Fleeting
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-engine-01-what-is-plc
-Title: "PLC Engine — 01 What Is Political Landscape Cartography"
+title: "PLC Engine — 01 What Is Political Landscape Cartography"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-type: engine
+doc_type: engine
 role: concept-definition
 scope: subject-agnostic-within-PLC
 updated: 2026-06-13

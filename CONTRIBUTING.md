@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-contributing
-Item_Prototype: Fleeting
-Title: "Political Landscape Cartography — Contributing Guide"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Political Landscape Cartography — Contributing Guide"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -30,7 +31,7 @@ PLC has four content zones. Contribution rules differ per zone.
 
 | Zone | Path pattern | Contribution allowed? | Triggers version bump? |
 |------|--------------|-----------------------|------------------------|
-| **Engine** | `_plc-engine/`, `AI-BOOTSTRAP.md`, `BOOTSTRAP-NEW-SPHERE.md`, `_Prototypes/` | Yes, but high bar | Yes — minor or major depending on shape |
+| **Engine** | `_plc-engine/`, `AI-BOOTSTRAP.md`, `BOOTSTRAP-NEW-SPHERE.md`, `_types/` | Yes, but high bar | Yes — minor or major depending on shape |
 | **Framework** | `_frameworks/`, `_PATTERNS/` | Yes (extensions); shipped substrate is Mode E | Minor (extensions); major (changes to shipped) |
 | **Sphere** | `Spheres/<sphere>/` | No — spheres are per-operator | N/A — never shipped |
 | **Scaffolding** | `_plc-engine/_templates/`, `_plc-engine/_yaml/` | Yes | Minor |
@@ -44,7 +45,7 @@ PLC has four content zones. Contribution rules differ per zone.
 - New session activities — requires showing the activity isn't expressible as a combination of existing 15
 - Changes to the 12 relation families — requires showing the family doesn't exist or has a documented analytic gap
 - New mandatory gates inside RUN-CYCLE — extremely high bar; the current ALTERNATIVES-AUDIT + ETHICAL-ACCOUNTING gates are minimal-sufficient
-- Prototype definition changes (`_Prototypes/PLC_*.md`) — schema additions trigger minor bumps; required-field changes or removals trigger major bumps
+- Prototype definition changes (`_types/PLC_*.md`) — schema additions trigger minor bumps; required-field changes or removals trigger major bumps
 
 **Framework contributions** include:
 

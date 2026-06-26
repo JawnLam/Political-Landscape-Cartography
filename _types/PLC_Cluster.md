@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-cluster-prototype
-Title: "PLC_Cluster — Prototype Definition"
+title: "PLC_Cluster — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -34,7 +35,7 @@ Per D14 + D28.
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_Cluster` |
+| `type` | string | Must be `PLC_Cluster` |
 | `Item_ID` | string | `cluster-<CNN>` (e.g., `cluster-C12`) |
 | `Title` | string | `"Cluster <CNN> — <Name>"` |
 | `Date_Added` | ISO date | |
@@ -95,9 +96,10 @@ Per D14 + D28.
 
 ```markdown
 ---
-Item_Prototype: PLC_Cluster
+type: PLC_Cluster
+timestamp: "2026-04-01T00:00:00Z"
 Item_ID: cluster-C12
-Title: "Cluster C12 — Information-Choreography"
+title: "Cluster C12 — Information-Choreography"
 Date_Added: 2026-04-01
 Date_Modified: 2026-04-01
 Needs_Processing: false

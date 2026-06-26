@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-version
-Item_Prototype: Fleeting
-Title: "Political Landscape Cartography — Version"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Political Landscape Cartography — Version"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -14,7 +15,7 @@ AI_Instructions: ""
 
 | Field | Value |
 |-------|-------|
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Release date | 2026-06-13 |
 | Codename | (none) |
 | Methodology Author | Cong "Jawn" Lam |

@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Pattern
+type: PLC_Pattern
 Item_ID: pattern-<slug>
-Title: "<Theme Name> — Pattern"
+title: "<Theme Name> — Pattern"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

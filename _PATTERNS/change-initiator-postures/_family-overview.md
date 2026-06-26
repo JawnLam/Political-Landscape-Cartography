@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-pattern-family-change-initiator-postures
-Item_Prototype: Fleeting
-Title: "Change-Initiator Postures — Family Overview"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Change-Initiator Postures — Family Overview"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -58,6 +59,6 @@ These are NOT canonical until populated from OPC source. The 10 actual postures 
 
 - Family library: `../README.md`
 - Template: `_TEMPLATE.md`
-- Pattern Prototype: `_Prototypes/PLC_Pattern.md`
+- Pattern Prototype: `_types/PLC_Pattern.md`
 - OPC source section: `_frameworks/OPC-Assessment.md § 13.1.1`
 - Worked example: Sam's "earned-mandate" posture sharpened across cycles in `Spheres/Example-Sphere-Acme-Corp/` (Cycle-0007 close evidence)

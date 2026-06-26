@@ -1,11 +1,12 @@
 ---
-Item_Prototype: Fleeting
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-engine-06-state-persistence
-Title: "PLC Engine — 06 State Persistence"
+title: "PLC Engine — 06 State Persistence"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-type: engine
+doc_type: engine
 role: state-persistence-contract
 scope: subject-agnostic-within-PLC
 updated: 2026-06-13
@@ -96,7 +97,7 @@ If you find yourself wanting to edit a history entry: **stop.** The correct move
 
 ```
 ---
-Item_Prototype: PLC_Actor
+type: PLC_Actor
 plc_Actor_ID: A-Carol-CFO
 plc_Sphere: [[_sphere-manifest]]
 plc_Current_Perception_Toward_Principal: defensive
@@ -203,7 +204,7 @@ The D → E transition is operator-explicit and frontmatter-mediated. The patter
 
 ```yaml
 ---
-Item_Prototype: PLC_Cycle
+type: PLC_Cycle
 plc_Cycle_ID: C-0012
 plc_Cycle_Status: closed         # planning | active | engaged | closed | e_immutable
 plc_Update_Mode: D               # flips to E when plc_Cycle_Status: e_immutable

@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Session
+type: PLC_Session
 Item_ID: session-<sphere-slug>-<NNN>
-Title: "<Sphere Name> — Session <NNN> — <ACTIVITY>"
+title: "<Sphere Name> — Session <NNN> — <ACTIVITY>"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

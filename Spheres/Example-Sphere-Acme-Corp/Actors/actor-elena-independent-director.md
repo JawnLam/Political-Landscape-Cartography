@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Actor
+type: PLC_Actor
+timestamp: "2026-06-01T00:00:00Z"
 Item_ID: actor-elena-independent-director
-Title: "Elena Park — Independent Director"
+title: "Elena Park — Independent Director"
 Date_Added: 2026-05-08
 Date_Modified: 2026-06-01
 Needs_Processing: false

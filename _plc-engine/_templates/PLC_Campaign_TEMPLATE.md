@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Campaign
+type: PLC_Campaign
 Item_ID: campaign-<slug>
-Title: "<Campaign Name> — Campaign"
+title: "<Campaign Name> — Campaign"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

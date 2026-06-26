@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Session
+type: PLC_Session
 Item_ID: session-<sphere-slug>-<NNN>
-Title: "<Sphere Name> — Session <NNN> — QUARTERLY_AUDIT"
+title: "<Sphere Name> — Session <NNN> — QUARTERLY_AUDIT"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

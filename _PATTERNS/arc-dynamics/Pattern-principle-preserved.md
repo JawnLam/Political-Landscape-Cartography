@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Pattern
+type: PLC_Pattern
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: pattern-principle-preserved
-Title: "Principle Preserved — Pattern"
+title: "Principle Preserved — Pattern"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -61,4 +62,4 @@ Material objective lost but a key principle or precedent is upheld
 
 - Family overview: `_family-overview.md`
 - OPC v3.0 canonical reference: `_frameworks/OPC-Assessment.md § 13.2.2`
-- Pattern Prototype: `_Prototypes/PLC_Pattern.md`
+- Pattern Prototype: `_types/PLC_Pattern.md`

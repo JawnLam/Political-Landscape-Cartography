@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Pattern
+type: PLC_Pattern
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: pattern-values-collision
-Title: "Values Collision — Pattern"
+title: "Values Collision — Pattern"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -61,4 +62,4 @@ A choice point where ethical commitments and tactical interests conflict
 
 - Family overview: `_family-overview.md`
 - OPC v3.0 canonical reference: `_frameworks/OPC-Assessment.md § 13.2.1`
-- Pattern Prototype: `_Prototypes/PLC_Pattern.md`
+- Pattern Prototype: `_types/PLC_Pattern.md`

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Fleeting
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-ai-bootstrap
-Title: "Political Landscape Cartography — AI Bootstrap"
+title: "Political Landscape Cartography — AI Bootstrap"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -61,7 +62,7 @@ Plus, if present at root: `{ROOT}/_USER.md`.
 ### 2. Mandatory environment checks
 
 - **Folder writability.** Verify you can write to `{ROOT}/<Sphere>/Sessions/`, `<Sphere>/_sphere-state.md`, `<Sphere>/Cycles/`, and `<Sphere>/Diagnostics/`. If read-only, declare **sandbox mode** in the readiness statement. **Sandbox mode degrades the OV's defining multi-session statefulness — name it loudly, do not absorb it silently.**
-- **Existing spheres.** List the subfolders at `{ROOT}/` (excluding `_plc-engine/`, `_frameworks/`, `_Prototypes/`, `Example-Sphere-*`, and dot/underscore-prefixed). Each non-example subfolder is a candidate active sphere.
+- **Existing spheres.** List the subfolders at `{ROOT}/` (excluding `_plc-engine/`, `_frameworks/`, `_types/`, `Example-Sphere-*`, and dot/underscore-prefixed). Each non-example subfolder is a candidate active sphere.
 - **Mode determination.** If continuing an existing sphere, read `plc_Operator_Mode` from the sphere manifest. If opening a new sphere, CQ2 of `BOOTSTRAP-NEW-SPHERE.md` asks this explicitly.
 
 ### 3. Decide the path
@@ -104,7 +105,7 @@ If you cannot complete pre-flight (missing files, ambiguous user message, read-o
 │   ├── _templates/                                              ← 22 markdown + 6 YAML scaffolds
 │   ├── redaction-profiles/                                      ← 5 audience-aware YAML profiles
 │   └── _meta/
-├── _Prototypes/                                                 ← 16 PLC_*.md Prototype definitions
+├── _types/                                                 ← 16 PLC_*.md Prototype definitions
 ├── _frameworks/                                                 ← reference: ADAPT, OPC, dissertation, Catalogue
 │   ├── ADAPT.md
 │   ├── OPC-Assessment.md

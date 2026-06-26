@@ -1,11 +1,12 @@
 ---
-Item_Prototype: Fleeting
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-engine-00-start-here
-Title: "PLC Engine — 00 START HERE"
+title: "PLC Engine — 00 START HERE"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-type: engine
+doc_type: engine
 role: assistant-entry-point
 scope: subject-agnostic-within-PLC
 updated: 2026-06-13
@@ -41,7 +42,7 @@ If neither exists, default to:
 
 ## Identifying the active sphere
 
-When the operator says *"continue the Acme sphere"* or names a sphere, identify the matching subfolder at the OV root. Existing spheres are operator-extended subfolders, excluding `_plc-engine/`, `_frameworks/`, `_Prototypes/`, `Example-Sphere-Acme-Corp/`, and dot/underscore-prefixed paths.
+When the operator says *"continue the Acme sphere"* or names a sphere, identify the matching subfolder at the OV root. Existing spheres are operator-extended subfolders, excluding `_plc-engine/`, `_frameworks/`, `_types/`, `Example-Sphere-Acme-Corp/`, and dot/underscore-prefixed paths.
 
 If the operator wants to **open a new sphere**, route to `BOOTSTRAP-NEW-SPHERE.md` at OV root.
 

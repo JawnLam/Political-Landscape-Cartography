@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-actor-prototype
-Title: "PLC_Actor — Prototype Definition"
+title: "PLC_Actor — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -32,7 +33,7 @@ A person (or institutional role) in the sphere's political landscape whose dispo
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_Actor` |
+| `type` | string | Must be `PLC_Actor` |
 | `Item_ID` | string | `actor-<slug>` |
 | `Title` | string | `"<Actor Name> — <Role>"` (or `[ACTOR-N]` placeholder) |
 | `Date_Added` | ISO date | Date added to sphere |
@@ -124,9 +125,10 @@ A person (or institutional role) in the sphere's political landscape whose dispo
 
 ```markdown
 ---
-Item_Prototype: PLC_Actor
+type: PLC_Actor
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: actor-carol-cfo
-Title: "Carol Reyes — CFO"
+title: "Carol Reyes — CFO"
 Date_Added: 2026-04-22
 Date_Modified: 2026-06-13
 Needs_Processing: false

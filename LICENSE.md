@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-license
-Item_Prototype: Fleeting
-Title: "Political Landscape Cartography — License"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Political Landscape Cartography — License"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -12,7 +13,7 @@ AI_Instructions: ""
 
 **Copyright © 2026 Cong "Jawn" Lam. All Rights Reserved.**
 
-Political Landscape Cartography ("PLC"), the Operating Volume in which it ships, and all materials within this folder — including but not limited to the engine (`_plc-engine/`), Prototypes (`_Prototypes/`), templates and scaffolding (`_plc-engine/_templates/`, `_plc-engine/_yaml/`), frameworks (`_frameworks/`), pattern seeds (`_PATTERNS/`), the bootstrap protocols (`AI-BOOTSTRAP.md`, `BOOTSTRAP-NEW-SPHERE.md`, `UPDATE-PROMPT.md`), the operator-facing documentation (`README.md`, `INSTALL.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`), and all worked examples — are the proprietary intellectual property of Cong "Jawn" Lam (the "Methodology Author").
+Political Landscape Cartography ("PLC"), the Operating Volume in which it ships, and all materials within this folder — including but not limited to the engine (`_plc-engine/`), Prototypes (`_types/`), templates and scaffolding (`_plc-engine/_templates/`, `_plc-engine/_yaml/`), frameworks (`_frameworks/`), pattern seeds (`_PATTERNS/`), the bootstrap protocols (`AI-BOOTSTRAP.md`, `BOOTSTRAP-NEW-SPHERE.md`, `UPDATE-PROMPT.md`), the operator-facing documentation (`README.md`, `INSTALL.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`), and all worked examples — are the proprietary intellectual property of Cong "Jawn" Lam (the "Methodology Author").
 
 PLC's authorship draws on, organizes, and operationalizes:
 

@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Actor
+type: PLC_Actor
 Item_ID: actor-<slug>
-Title: "<Actor Name> — <Role>"
+title: "<Actor Name> — <Role>"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: true   # stub — needs population

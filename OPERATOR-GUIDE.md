@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-operator-guide
-Item_Prototype: Fleeting
-Title: "Political Landscape Cartography — Operator Guide"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Political Landscape Cartography — Operator Guide"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -26,7 +27,7 @@ You will write into exactly one of these zones at any time. Understanding which 
 
 | Zone | Path pattern | You may edit? | Updates via |
 |------|--------------|---------------|-------------|
-| **Engine** | `_plc-engine/`, `AI-BOOTSTRAP.md`, `BOOTSTRAP-NEW-SPHERE.md`, `_Prototypes/` | NO | UPDATE-PROMPT (version bumps) |
+| **Engine** | `_plc-engine/`, `AI-BOOTSTRAP.md`, `BOOTSTRAP-NEW-SPHERE.md`, `_types/` | NO | UPDATE-PROMPT (version bumps) |
 | **Framework** | `_frameworks/`, `_PATTERNS/` | NO (extend via `*-extensions/`) | UPDATE-PROMPT |
 | **Sphere** | `Spheres/<Your-Sphere>/` | YES — fully yours | Never; preserved across updates |
 | **Scaffolding** | `_plc-engine/_templates/`, `_plc-engine/_yaml/` | NO (override per-sphere via `_USER.md`) | UPDATE-PROMPT |
@@ -137,9 +138,9 @@ If these defaults don't fit your style, override in `Spheres/<sphere>/_USER.md`:
 
 ```markdown
 ---
-Item_Prototype: Fleeting
+type: Fleeting
 Item_ID: <sphere-slug>-user
-Title: "<Sphere Name> — User Register Overrides"
+title: "<Sphere Name> — User Register Overrides"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

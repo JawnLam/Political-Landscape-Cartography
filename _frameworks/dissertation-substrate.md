@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-frameworks-dissertation-substrate
-Item_Prototype: Fleeting
-Title: "Dissertation Substrate — Deep Schema Reference"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Dissertation Substrate — Deep Schema Reference"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -201,7 +202,7 @@ This 3-part build/use/protect framing is from the dissertation directly. The 4R 
 ## Cross-references
 
 - Source PDF: `sources/Lam-2018-Pepperdine.pdf`
-- The interaction cycle as PLC's `PLC_Cycle` Prototype: `_Prototypes/PLC_Cycle.md`
+- The interaction cycle as PLC's `PLC_Cycle` Prototype: `_types/PLC_Cycle.md`
 - Slash addressing as reference system #1 (per D18): `_plc-engine/04-SCHEMA.md § three reference systems`
 - 4R client-facing dashboard: `4R.md`
 - 4R coaching script: `4R-coaching-script.md`

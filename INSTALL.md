@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-install
-Item_Prototype: Fleeting
-Title: "Political Landscape Cartography — Install Guide"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "Political Landscape Cartography — Install Guide"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -78,7 +79,7 @@ README.md
 UPDATE-PROMPT.md
 VERSION.md
 _PATTERNS/
-_Prototypes/
+_types/
 _frameworks/
 _plc-engine/
 .gitignore
@@ -139,7 +140,7 @@ Major version bumps (e.g., v1.x → v2.0) introduce schema-breaking changes that
 | Update prompt fails partway through; engine zone partially updated | Partial UPDATE-PROMPT execution | `git stash` your sphere zone, `git pull` cleanly, then `git stash pop` to restore your sphere |
 | Multiple sphere cartridges appear in `Spheres/` from different engagements; AI gets confused | No active-sphere designation | Tell the AI explicitly which sphere is active at session start: "Active sphere: `Spheres/<Name>/`" |
 | AI claims engine chapters are missing when you can see them on disk | AI didn't load Tier 1 reads at session start | Re-issue: "Read Tier 1 engine chapters per `_plc-engine/00-START-HERE.md` Phase 0 before proceeding" |
-| Master_Schema namespace conflicts when integrating with central vault infrastructure | Central + OV-local `_Prototypes/` not synchronized | Run the schema-registration step deferred to SHIP-PREP; see `_plc-engine/07-SHIPPING-CHECKLIST.md` § 1 |
+| Master_Schema namespace conflicts when integrating with central vault infrastructure | Central + OV-local `_types/` not synchronized | Run the schema-registration step deferred to SHIP-PREP; see `_plc-engine/07-SHIPPING-CHECKLIST.md` § 1 |
 
 If the symptom is not listed here: check `OPERATOR-GUIDE.md` § "Symptom → Cause → Fix" for the operator-facing failure modes, then open an issue at the project repo with the symptom description and your OV version.
 

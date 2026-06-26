@@ -1,11 +1,12 @@
 ---
-Item_Prototype: Fleeting
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-engine-05-writing-for-ai
-Title: "PLC Engine — 05 Writing for AI"
+title: "PLC Engine — 05 Writing for AI"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-type: engine
+doc_type: engine
 role: writing-discipline
 scope: subject-agnostic-within-PLC
 updated: 2026-06-13
@@ -69,10 +70,10 @@ Every file the AI parses has YAML frontmatter at the top. Schemas and per-Item s
 
 When drafting any file with YAML frontmatter:
 
-- Six Universal Core fields: `Item_Prototype`, `Item_ID`, `Title`, `Date_Added`, `Date_Modified`, `Needs_Processing`
+- Six Universal Core fields: `type`, `Item_ID`, `Title`, `Date_Added`, `Date_Modified`, `Needs_Processing`
 - Property naming: prefix `plc_` (lowercase); body `Title_Snake_Case`; acronyms fully capitalized
 - Enum identifiers: `plc_<lowercase_plural>`
-- `Item_Prototype: PLC_<TypeName>` on Items; `Item_Prototype: Fleeting` on non-Item files
+- `type: PLC_<TypeName>` on Items; `type: Fleeting` on non-Item files
 - `AI_Instructions: ""` field present even when empty (matches OVE_OV_Manifest pattern)
 
 These are not subject-specific stylistic choices. They are vault-compatibility defaults inherited from `_meta/CONVENTIONS.md`.

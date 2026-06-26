@@ -1,7 +1,8 @@
 ---
 Item_ID: plc-patterns-readme
-Item_Prototype: Fleeting
-Title: "PLC Pattern Library — README"
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
+title: "PLC Pattern Library — README"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -64,7 +65,7 @@ For OV-wide operator-extended patterns (3+ engagements confirmed):
 
 ## Cross-references
 
-- Pattern Prototype definition: `_Prototypes/PLC_Pattern.md`
+- Pattern Prototype definition: `_types/PLC_Pattern.md`
 - Pattern Template: `_plc-engine/_templates/PLC_Pattern_TEMPLATE.md`
 - D10 lock decision: `_design-decisions.md` § D10
 - OPC Assessment v3.0 (canonical source): `_frameworks/OPC-Assessment.md`

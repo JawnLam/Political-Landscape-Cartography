@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Actor
+type: PLC_Actor
+timestamp: "2026-06-09T00:00:00Z"
 Item_ID: actor-david-coo
-Title: "David Chen — COO"
+title: "David Chen — COO"
 Date_Added: 2026-04-22
 Date_Modified: 2026-06-09
 Needs_Processing: false

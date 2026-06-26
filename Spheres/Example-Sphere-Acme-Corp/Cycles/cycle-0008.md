@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Cycle
+type: PLC_Cycle
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: cycle-0008
-Title: "Cycle 0008 — Robert coalition mapping"
+title: "Cycle 0008 — Robert coalition mapping"
 Date_Added: 2026-06-10
 Date_Modified: 2026-06-13
 Needs_Processing: false

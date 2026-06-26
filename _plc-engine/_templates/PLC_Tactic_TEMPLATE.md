@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Tactic
+type: PLC_Tactic
 Item_ID: tactic-<NNNN>
-Title: "Tactic <NNNN> — <Name>"
+title: "Tactic <NNNN> — <Name>"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

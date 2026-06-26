@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Engagement_Retrospective
+type: PLC_Engagement_Retrospective
 Item_ID: retrospective-<sphere-slug>
-Title: "<Sphere Name> — Engagement Retrospective"
+title: "<Sphere Name> — Engagement Retrospective"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

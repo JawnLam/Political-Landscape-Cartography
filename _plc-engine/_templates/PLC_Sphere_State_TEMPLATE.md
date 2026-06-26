@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Sphere_State
+type: PLC_Sphere_State
 Item_ID: <sphere-slug>-state
-Title: "<Sphere Name> — Sphere State"
+title: "<Sphere Name> — Sphere State"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

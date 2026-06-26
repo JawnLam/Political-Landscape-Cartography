@@ -1,11 +1,12 @@
 ---
-Item_Prototype: Fleeting
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-engine-03-session-protocol
-Title: "PLC Engine — 03 Session Protocol"
+title: "PLC Engine — 03 Session Protocol"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-type: engine
+doc_type: engine
 role: session-protocol
 scope: subject-agnostic-within-PLC
 updated: 2026-06-13

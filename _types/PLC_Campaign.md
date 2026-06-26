@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Prototype
+type: Prototype
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-campaign-prototype
-Title: "PLC_Campaign — Prototype Definition"
+title: "PLC_Campaign — Prototype Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
@@ -31,7 +32,7 @@ A bounded political effort with a defined end-state — a multi-cycle thread the
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `Item_Prototype` | string | Must be `PLC_Campaign` |
+| `type` | string | Must be `PLC_Campaign` |
 | `Item_ID` | string | `campaign-<slug>` |
 | `Title` | string | `"<Campaign Name> — Campaign"` |
 | `Date_Added` | ISO date | Campaign start |
@@ -114,9 +115,10 @@ A bounded political effort with a defined end-state — a multi-cycle thread the
 
 ```markdown
 ---
-Item_Prototype: PLC_Campaign
+type: PLC_Campaign
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: campaign-succession-q3
-Title: "Succession-Q3 — Campaign"
+title: "Succession-Q3 — Campaign"
 Date_Added: 2026-05-01
 Date_Modified: 2026-06-13
 Needs_Processing: false

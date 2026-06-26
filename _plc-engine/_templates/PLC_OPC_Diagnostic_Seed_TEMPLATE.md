@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_OPC_Diagnostic
+type: PLC_OPC_Diagnostic
 Item_ID: opc-<YYYY-MM-DD>-seed
-Title: "<Sphere Name> — OPC Seed Diagnostic <YYYY-MM-DD>"
+title: "<Sphere Name> — OPC Seed Diagnostic <YYYY-MM-DD>"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false

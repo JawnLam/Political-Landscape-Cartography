@@ -1,7 +1,8 @@
 ---
-Item_Prototype: Fleeting
+type: Fleeting
+timestamp: "2026-06-01T00:00:00Z"
 Item_ID: acme-corp-practitioner-assessment
-Title: "Acme Corp — Practitioner Assessment (§§ 16 + 17)"
+title: "Acme Corp — Practitioner Assessment (§§ 16 + 17)"
 Date_Added: 2026-04-15
 Date_Modified: 2026-06-01
 Needs_Processing: false

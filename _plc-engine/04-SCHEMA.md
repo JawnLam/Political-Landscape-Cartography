@@ -1,11 +1,12 @@
 ---
-Item_Prototype: Fleeting
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-engine-04-schema
-Title: "PLC Engine — 04 Schema"
+title: "PLC Engine — 04 Schema"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-type: engine
+doc_type: engine
 role: schema-reference
 scope: subject-agnostic-within-PLC
 updated: 2026-06-13
@@ -45,8 +46,8 @@ Every Item carries six universal fields plus its specific keys:
 ```yaml
 ---
 Item_ID: <slug-or-uuid>
-Item_Prototype: PLC_<TypeName>
-Title: "<Human-readable title>"
+type: PLC_<TypeName>
+title: "<Human-readable title>"
 Date_Added: YYYY-MM-DD
 Date_Modified: YYYY-MM-DD
 Needs_Processing: false
@@ -290,12 +291,12 @@ Full mode contract in `06-STATE-PERSISTENCE.md`. Quick summary per Prototype:
 
 PLC inherits all conventions from `_meta/CONVENTIONS.md`:
 
-- **Convention 1** — Six Universal Core frontmatter fields (`Item_Prototype`, `Item_ID`, `Title`, `Date_Added`, `Date_Modified`, `Needs_Processing`)
+- **Convention 1** — Six Universal Core frontmatter fields (`type`, `Item_ID`, `Title`, `Date_Added`, `Date_Modified`, `Needs_Processing`)
 - **Convention 2** — Case rules: core keys `Title_Snake_Case`; namespace prefixes `lowercase_snake_case`; acronyms fully capitalized; body after prefix `Title_Snake_Case`; enum identifiers `lowercase_snake_case`
 - **Convention 3** — One namespace per OV: `plc_` (Political Landscape Cartography)
-- **Convention 4** — Every Prototype gets its own `Item_Prototype` value (`PLC_<TypeName>`); non-Item files use `Item_Prototype: Fleeting`
+- **Convention 4** — Every Prototype gets its own `type` value (`PLC_<TypeName>`); non-Item files use `type: Fleeting`
 - **Convention 5** — Schema-of-namespace declared in `_plc-engine/_meta/SCHEMA-OF-SCHEMAS.md`
-- **Convention 6** — `_Prototypes/` folder at OV root with one `.md` file per Prototype (16 files)
+- **Convention 6** — `_types/` folder at OV root with one `.md` file per Prototype (16 files)
 - **Convention 7** — Install-and-update pattern (see `INSTALL.md`, `OPERATOR-GUIDE.md`, `UPDATE-PROMPT.md`)
 - **Convention 8** — Engine vs operator-content boundary (4 zones — Engine, Operator-Private, Operator-Extension, Shipped Examples)
 
@@ -311,7 +312,7 @@ Political-Landscape-Cartography/                    ← OV root
 │   ├── _templates/                                  ← 22 markdown + YAML scaffolds
 │   ├── redaction-profiles/                          ← 5 audience YAML profiles
 │   └── _meta/                                       ← SCHEMA-OF-SCHEMAS, CONVENTIONS, FAILURE-MODES
-├── _Prototypes/                                     ← 16 PLC_*.md definition files (Convention 6)
+├── _types/                                     ← 16 PLC_*.md definition files (Convention 6)
 ├── _frameworks/                                     ← engine zone (canonical reference)
 │   ├── ADAPT.md
 │   ├── OPC-Assessment.md (or split per section)
@@ -333,7 +334,7 @@ Political-Landscape-Cartography/                    ← OV root
     └── _PATTERNS/<pattern>.md                        ← sphere-extensible (operator-curated archetypes)
 ```
 
-The operator's extended sphere cartridges live as top-level folders at OV root, parallel to the shipped example sphere. Per Convention 8, `git pull` updates the engine + shipped examples + `_Prototypes/` + `_frameworks/` + canonical `_PATTERNS/` without disturbing operator-extended spheres.
+The operator's extended sphere cartridges live as top-level folders at OV root, parallel to the shipped example sphere. Per Convention 8, `git pull` updates the engine + shipped examples + `_types/` + `_frameworks/` + canonical `_PATTERNS/` without disturbing operator-extended spheres.
 
 ## Frontmatter conventions (per Convention 1 + Convention 2)
 
@@ -342,8 +343,8 @@ All Items declare frontmatter in this order:
 ```yaml
 ---
 Item_ID: <slug>
-Item_Prototype: PLC_<TypeName>
-Title: "<Human-readable title>"
+type: PLC_<TypeName>
+title: "<Human-readable title>"
 plc_<...>: <PLC-specific fields per Prototype>
 Date_Added: YYYY-MM-DD
 Date_Modified: YYYY-MM-DD
@@ -354,4 +355,4 @@ AI_Instructions: ""
 
 The `_extends_prototype: PLC_<TypeName>` header in Templates points to the canonical Prototype definition for validation traceability.
 
-When in doubt about a specific Prototype's required fields, consult `_Prototypes/PLC_<TypeName>.md`.
+When in doubt about a specific Prototype's required fields, consult `_types/PLC_<TypeName>.md`.

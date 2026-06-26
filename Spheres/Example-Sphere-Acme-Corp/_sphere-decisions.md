@@ -1,7 +1,8 @@
 ---
-Item_Prototype: PLC_Sphere_Decisions
+type: PLC_Sphere_Decisions
+timestamp: "2026-06-10T00:00:00Z"
 Item_ID: acme-corp-decisions
-Title: "Acme Corp — Sphere Decisions Log"
+title: "Acme Corp — Sphere Decisions Log"
 Date_Added: 2026-04-15
 Date_Modified: 2026-06-10
 Needs_Processing: false

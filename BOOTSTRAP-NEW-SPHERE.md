@@ -1,11 +1,12 @@
 ---
-Item_Prototype: Fleeting
+type: Fleeting
+timestamp: "2026-06-13T00:00:00Z"
 Item_ID: bootstrap-new-sphere
-Title: "PLC — Bootstrap a New Sphere"
+title: "PLC — Bootstrap a New Sphere"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-type: bootstrap
+doc_type: bootstrap
 role: new-sphere-intake
 scope: subject-agnostic-within-PLC
 updated: 2026-06-13
@@ -254,7 +255,7 @@ Once CQ1-CQ8 are answered (and CQ9-CQ10 optionally addressed), the AI materializ
 Every materialized file conforms to Conventions 1-2:
 
 - Six Universal Core fields present
-- `Item_Prototype: PLC_<Type>`
+- `type: PLC_<Type>`
 - `plc_*` namespace on properties
 - `plc_<lowercase_plural>` for enum identifiers
 - `AI_Instructions: ""` field present

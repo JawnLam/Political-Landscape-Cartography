@@ -1,7 +1,7 @@
 ---
-Item_Prototype: PLC_Theorist
+type: PLC_Theorist
 Item_ID: theorist-<slug>
-Title: "<Theorist Name> — Theorist"
+title: "<Theorist Name> — Theorist"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false
