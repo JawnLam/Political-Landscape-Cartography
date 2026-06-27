@@ -1,13 +1,13 @@
 ---
-type: Prototype
+type: Type
 timestamp: "2026-06-13T00:00:00Z"
-Item_ID: plc-theorist-prototype
-title: "PLC_Theorist — Prototype Definition"
+Item_ID: plc-theorist-type
+title: "PLC_Theorist — Type Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-prototype_namespace: plc
-prototype_version: "1.0"
+type_namespace: plc
+type_version: "1.0"
 ---
 
 # PLC_Theorist
@@ -16,7 +16,7 @@ prototype_version: "1.0"
 
 A **scholarly source-of-authority** — one of the 50 theorists in the Political Warfare Catalogue (per D15). Each Theorist is a first-class entity carrying citation counts, intellectual lineage notes, and links to the Tactics that cite them. Per D15, the Theorist canon is the **defensible scholarly substrate** that grounds PLC's recommendations — the published methodology README's "Foundations" section names all 50 with citation counts.
 
-Per D15 + D19 + D20. The only Authority Prototype shipped as a first-class Item (per D19 Q2 lock — `PLC_Source` deferred).
+Per D15 + D19 + D20. The only Authority Type shipped as a first-class Item (per D19 Q2 lock — `PLC_Source` deferred).
 
 ## Cardinality and grain
 
@@ -86,7 +86,7 @@ Per D15 + D28.
 
 ## Relation slots
 
-| Direction | Relation | Target Prototype | Cardinality |
+| Direction | Relation | Target Type | Cardinality |
 |-----------|----------|------------------|-------------|
 | Out | `plc_Citing_Tactics` | PLC_Tactic | 0..N (reciprocal of `plc_Cites_Theorists`) |
 | Out | `plc_Primary_For_Strategies` | PLC_Strategy | 0..N |
@@ -173,7 +173,7 @@ Foundational work on strategic signaling, commitment, and the structure of barga
 - The political action is fundamentally about legitimacy or identity, not information or incentive (other theorists fit better — e.g., Lukes for legitimacy, Tilly for identity-mobilization)
 
 ## Citing Tactics
-(... 130 Tactic links — abbreviated in this prototype example ...)
+(... 130 Tactic links — abbreviated in this type example ...)
 
 ## Invoked In Cycles
 - [[cycle-0007]] — Q2 mandate signal preservation

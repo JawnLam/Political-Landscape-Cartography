@@ -115,7 +115,7 @@ Re-read `VERSION.md`. Confirm it matches the target. If it doesn't:
 Re-verify the structural sanity:
 
 - All 8 engine chapters present in `_plc-engine/`
-- All 16 Prototype files present in `_types/`
+- All 16 Type files present in `_types/`
 - All 22 template files present in `_plc-engine/_templates/`
 - All 6 YAML scaffolding files present in `_plc-engine/_yaml/`
 - `Spheres/` directory unchanged (same sphere count as Step 2)
@@ -136,7 +136,7 @@ Summarize the sphere-impacting changes to the operator.
 
 For each sphere enumerated in Step 2:
 
-- Read `_sphere-manifest.md` frontmatter. Verify all currently-required fields per the new Prototype definitions are present. If new required fields were added in the bump, surface as a TODO.
+- Read `_sphere-manifest.md` frontmatter. Verify all currently-required fields per the new Type definitions are present. If new required fields were added in the bump, surface as a TODO.
 - Check `_sphere-state.md` for the `## Decided` + `## OPC Current Summary` + `## State History` structure.
 - Spot-check three random Items per sphere (one Actor, one Cycle, one Session log) for frontmatter conformance.
 

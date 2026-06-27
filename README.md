@@ -47,7 +47,7 @@ Read in this order: `README.md` (this file) → `_plc-engine/01-WHAT-IS-PLC.md` 
 
 ### Path 3 — Methodology study only
 
-If you're researching the methodology without intent to deploy: start with `_plc-engine/01-WHAT-IS-PLC.md`, then `_plc-engine/04-SCHEMA.md` (the 16-prototype data model), then the dissertation source at `_frameworks/sources/`. The Catalogue at `_frameworks/political-warfare-catalogue/` is browsable independently of the Operating Volume protocol.
+If you're researching the methodology without intent to deploy: start with `_plc-engine/01-WHAT-IS-PLC.md`, then `_plc-engine/04-SCHEMA.md` (the 16-type data model), then the dissertation source at `_frameworks/sources/`. The Catalogue at `_frameworks/political-warfare-catalogue/` is browsable independently of the Operating Volume protocol.
 
 ## How PLC is shipped
 
@@ -74,7 +74,7 @@ Political-Landscape-Cartography-v1.0/
 │   ├── 07-SHIPPING-CHECKLIST.md
 │   ├── _templates/                    ← 22 starter scaffolds (1 per template variant)
 │   └── _yaml/                         ← export schema + 5 redaction profiles
-├── _types/                       ← 16 canonical Prototype definitions
+├── _types/                       ← 16 canonical Type definitions
 │   └── PLC_*.md
 ├── _frameworks/                       ← shipped substrate (sourced material)
 │   ├── sources/                       ← canonical PDFs + JSONs (ADAPT / dissertation / OPC / Catalogue source)
@@ -228,7 +228,7 @@ See `_plc-engine/01-WHAT-IS-PLC.md` § "When PLC is the right form / not" for th
 
 ## Version
 
-See `VERSION.md`. PLC ships under semantic versioning: major bumps introduce schema-breaking changes; minor bumps add Prototypes/Templates/Catalogue extensions or substantively revise engine chapters; patch bumps correct documentation or template typos. The CHANGELOG documents every release.
+See `VERSION.md`. PLC ships under semantic versioning: major bumps introduce schema-breaking changes; minor bumps add Types/Templates/Catalogue extensions or substantively revise engine chapters; patch bumps correct documentation or template typos. The CHANGELOG documents every release.
 
 ## License
 

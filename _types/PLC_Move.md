@@ -1,13 +1,13 @@
 ---
-type: Prototype
+type: Type
 timestamp: "2026-06-13T00:00:00Z"
-Item_ID: plc-move-prototype
-title: "PLC_Move — Prototype Definition"
+Item_ID: plc-move-type
+title: "PLC_Move — Type Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-prototype_namespace: plc
-prototype_version: "1.0"
+type_namespace: plc
+type_version: "1.0"
 ---
 
 # PLC_Move
@@ -16,7 +16,7 @@ prototype_version: "1.0"
 
 The **smallest unit of political action** per D20 — a granular move from the Lam 2018 dissertation Table 3 with the **PP/AA/B/C/Inc/Dec signature**. Moves are the atoms; Tactics are higher-order compositions of Moves (see `PLC_Tactic.md`). Per D14, the Move catalog (~100 entries from dissertation Table 3) and the Tactic catalog (782 from the Political Warfare Catalogue) coexist at different grains.
 
-Resolves D14's deferred grain question: separate first-class Prototypes connected by reciprocal `plc_Composed_Of` ↔ `plc_Appears_In_Tactics` relations.
+Resolves D14's deferred grain question: separate first-class Types connected by reciprocal `plc_Composed_Of` ↔ `plc_Appears_In_Tactics` relations.
 
 ## Cardinality and grain
 
@@ -107,7 +107,7 @@ PP: <+/-/0>  AA: <+/-/0>  B: <+/-/0>  C: <+/-/0>  Inc: <+/-/0>  Dec: <+/-/0>
 
 ## Relation slots
 
-| Direction | Relation | Target Prototype | Cardinality |
+| Direction | Relation | Target Type | Cardinality |
 |-----------|----------|------------------|-------------|
 | In | `plc_Composed_Of` (from Tactic) | PLC_Tactic | 0..N |
 | In | (cycle selection) | PLC_Cycle | 0..N |

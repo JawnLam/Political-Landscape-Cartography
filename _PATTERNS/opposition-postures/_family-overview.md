@@ -62,6 +62,6 @@ These are NOT canonical until populated from OPC source.
 
 - Family library: `../README.md`
 - Template: `_TEMPLATE.md`
-- Pattern Prototype: `_types/PLC_Pattern.md`
+- Pattern Type: `_types/PLC_Pattern.md`
 - OPC source section: `_frameworks/OPC-Assessment.md § 13.1.2`
 - Worked example: Carol Reyes' "shadow-CEO consolidation" posture in `Spheres/Example-Sphere-Acme-Corp/Actors/actor-carol-cfo.md`; 3-stage observation history in `Spheres/Example-Sphere-Acme-Corp/Patterns/pattern-family-succession-pressure-loop.md`

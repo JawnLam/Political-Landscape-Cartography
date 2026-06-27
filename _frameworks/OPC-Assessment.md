@@ -300,7 +300,7 @@ PLC engine prose has referenced OPC sections by labels that were inherited from 
 
 - Diagnostic Prototype: `_types/PLC_OPC_Diagnostic.md`
 - Pattern library scaffold: `_PATTERNS/_README.md`
-- Pattern Prototype: `_types/PLC_Pattern.md`
+- Pattern Type: `_types/PLC_Pattern.md`
 - Gate protocol (uses § 11 + § 15): `_plc-engine/03-SESSION-PROTOCOL.md § RUN-CYCLE`
 - §§ 16 + 17 worked example: `Spheres/Example-Sphere-Acme-Corp/Practitioner-Assessment.md`
 - License & IP: `LICENSE.md`

@@ -13,7 +13,7 @@ AI_Instructions: ""
 
 **Copyright © 2026 Cong "Jawn" Lam. All Rights Reserved.**
 
-Political Landscape Cartography ("PLC"), the Operating Volume in which it ships, and all materials within this folder — including but not limited to the engine (`_plc-engine/`), Prototypes (`_types/`), templates and scaffolding (`_plc-engine/_templates/`, `_plc-engine/_yaml/`), frameworks (`_frameworks/`), pattern seeds (`_PATTERNS/`), the bootstrap protocols (`AI-BOOTSTRAP.md`, `BOOTSTRAP-NEW-SPHERE.md`, `UPDATE-PROMPT.md`), the operator-facing documentation (`README.md`, `INSTALL.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`), and all worked examples — are the proprietary intellectual property of Cong "Jawn" Lam (the "Methodology Author").
+Political Landscape Cartography ("PLC"), the Operating Volume in which it ships, and all materials within this folder — including but not limited to the engine (`_plc-engine/`), Types (`_types/`), templates and scaffolding (`_plc-engine/_templates/`, `_plc-engine/_yaml/`), frameworks (`_frameworks/`), pattern seeds (`_PATTERNS/`), the bootstrap protocols (`AI-BOOTSTRAP.md`, `BOOTSTRAP-NEW-SPHERE.md`, `UPDATE-PROMPT.md`), the operator-facing documentation (`README.md`, `INSTALL.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`), and all worked examples — are the proprietary intellectual property of Cong "Jawn" Lam (the "Methodology Author").
 
 PLC's authorship draws on, organizes, and operationalizes:
 
@@ -96,7 +96,7 @@ Use of PLC inside an organization, by an organization, or as part of any commerc
 
 Creation of any derivative work based on PLC requires written permission. Derivative works include but are not limited to:
 
-- Forks, adaptations, or modifications of the engine, Prototypes, frameworks, or scaffolding
+- Forks, adaptations, or modifications of the engine, Types, frameworks, or scaffolding
 - Translations
 - Tool ports (e.g., implementing PLC's protocols in a different file format, application, or platform)
 - Methodology variants drawing substantially on PLC's structure, principles, or substrate

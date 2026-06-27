@@ -28,7 +28,7 @@ AI_Instructions: ""
 PLC follows semantic versioning with the conventions documented in `CONTRIBUTING.md`:
 
 - **MAJOR** (`v1.x` → `v2.0`) — schema-breaking changes; required-field changes; mode contract changes; reference-system changes; relation family removals; principle removals
-- **MINOR** (`v1.0` → `v1.1`) — additive changes; new Prototypes; new Templates; new YAML scaffolding; Catalogue extensions; new patterns; new principles; new session activities; chapter revisions that don't break references
+- **MINOR** (`v1.0` → `v1.1`) — additive changes; new Types; new Templates; new YAML scaffolding; Catalogue extensions; new patterns; new principles; new session activities; chapter revisions that don't break references
 - **PATCH** (`v1.0.0` → `v1.0.1`) — typo corrections; documentation clarifications; markdown rendering fixes; formatting
 
 ## Compatibility matrix
@@ -44,5 +44,5 @@ This file is the canonical version reference. `README.md`, `CHANGELOG.md`, and `
 The version is also embedded in:
 
 - The folder name (`Political-Landscape-Cartography-v1.0`)
-- Each Prototype file's `prototype_version: "1.0"` frontmatter
+- Each Type file's `type_version: "1.0"` frontmatter
 - Each YAML scaffolding file's `version: "1.0"` header

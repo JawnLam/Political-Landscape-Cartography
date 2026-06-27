@@ -167,7 +167,7 @@ When `UPDATE-PROMPT.md` runs to upgrade your OV:
 
 1. **Your sphere cartridges in `Spheres/` are preserved verbatim.** Untouched.
 2. **The engine, frameworks, and scaffolding zones get updated.** Your local edits to these zones are overwritten — that's why Convention 8 says don't edit them.
-3. **Templates and Prototypes are updated.** Per-sphere overrides (in `_USER.md`) persist.
+3. **Templates and Types are updated.** Per-sphere overrides (in `_USER.md`) persist.
 
 If you have local edits to engine/framework/scaffolding zones (you shouldn't, but it happens), stash them before update:
 

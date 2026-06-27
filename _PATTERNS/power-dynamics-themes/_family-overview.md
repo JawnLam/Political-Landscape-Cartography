@@ -60,6 +60,6 @@ These are NOT canonical until populated from OPC source.
 
 - Family library: `../README.md`
 - Template: `_TEMPLATE.md`
-- Pattern Prototype: `_types/PLC_Pattern.md`
+- Pattern Type: `_types/PLC_Pattern.md`
 - OPC source section: `_frameworks/OPC-Assessment.md § 13.3.1`
 - Worked example: OPC § 13.3.1 in `Spheres/Example-Sphere-Acme-Corp/OPC-Diagnostics/opc-2026-06-01.md` notes "agenda-control-vs-execution-discipline (Lukes' three-dimensional power frame)" as the active theme

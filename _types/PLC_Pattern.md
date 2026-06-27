@@ -1,22 +1,22 @@
 ---
-type: Prototype
+type: Type
 timestamp: "2026-06-13T00:00:00Z"
-Item_ID: plc-pattern-prototype
-title: "PLC_Pattern — Prototype Definition"
+Item_ID: plc-pattern-type
+title: "PLC_Pattern — Type Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-prototype_namespace: plc
-prototype_version: "1.0"
+type_namespace: plc
+type_version: "1.0"
 ---
 
 # PLC_Pattern
 
 ## Purpose
 
-An **operator-discovered or seeded political pattern** — a recurring archetype, posture, arc, or dynamic in the sphere's political landscape. Per D10, six pattern families seed at ship from OPC sections; the family enum makes a single Prototype carry all six. Operators extend during engagements via UNCOVER work and quarterly audits.
+An **operator-discovered or seeded political pattern** — a recurring archetype, posture, arc, or dynamic in the sphere's political landscape. Per D10, six pattern families seed at ship from OPC sections; the family enum makes a single Type carry all six. Operators extend during engagements via UNCOVER work and quarterly audits.
 
-Per D10 + D20 (Q3 lock — single Prototype with `plc_Pattern_Family` enum).
+Per D10 + D20 (Q3 lock — single Type with `plc_Pattern_Family` enum).
 
 ## Cardinality and grain
 
@@ -109,7 +109,7 @@ Per D28.
 
 ## Relation slots
 
-| Direction | Relation | Target Prototype | Cardinality |
+| Direction | Relation | Target Type | Cardinality |
 |-----------|----------|------------------|-------------|
 | Out | `plc_Sphere` | PLC_Sphere_Manifest | 0..1 (only sphere-specific) |
 | Out | `plc_Related_Theorists` | PLC_Theorist | 0..N |

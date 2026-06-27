@@ -69,7 +69,7 @@ In principal-self mode:
 - ENGAGEMENT-AUDIT does not apply (consultant-specific)
 - The AI register adds *no-false-confidence priming* — when the AI does not have evidence to confirm the operator's read, it says so once, proposes a Detection step, then stops. This applies the dissertation's perception-gap discipline recursively to the AI-operator interaction itself, preventing the AI from becoming a source of confirmation bias for a principal already vulnerable to compounding perception gaps under client pressure
 
-The same schema, the same 16 Prototypes, and the same 12 relation families serve both modes. The fork lives only at the OPERATOR-GUIDE and protocol layer.
+The same schema, the same 16 Types, and the same 12 relation families serve both modes. The fork lives only at the OPERATOR-GUIDE and protocol layer.
 
 ## What PLC is NOT
 
@@ -78,7 +78,7 @@ The same schema, the same 16 Prototypes, and the same 12 relation families serve
 - **Not a single-tactic dictionary.** PLC integrates four substrates into a working container with state, gates, relations, and lifecycle. Looking up a specific tactic in the Catalogue without the surrounding diagnostic + gate + audit-trail discipline is using the Catalogue, not using PLC
 - **Not value-neutral but value-explicit.** PLC catalogs every observed tactic (including the ethically gray ones — Email shaming, Emotional manipulation, Making it personal, Reputation Assassination, Crisis Manufacturing, etc.) for *identification* purposes. Tactical *suggestion* is gated behind OPC § 15 alternatives audit and OPC § 11 harm + ethical evaluation. Operator can override any gate; overrides are logged. The discipline is structural accountability, not censorship
 - **Not for arbitrary organizational contexts.** PLC's substrate was derived from for-profit organizations of 200+ employees that are non-family-operated, non-public-sector, non-NGO, and non-educational. The `plc_Domain_Validity` flag (`in_scope | adjacent | out_of_scope`) names this honestly. Operators outside the substrate's sample frame must explicitly acknowledge they are applying constructs derived elsewhere
-- **Not for single-conversation political dilemmas.** PLC is built for work that unfolds over weeks, months, and years. A one-off "should I take this meeting?" question is better served by a well-crafted prompt or a thinking-tools framework, not a sphere cartridge with 16 Prototypes and 15 session activities
+- **Not for single-conversation political dilemmas.** PLC is built for work that unfolds over weeks, months, and years. A one-off "should I take this meeting?" question is better served by a well-crafted prompt or a thinking-tools framework, not a sphere cartridge with 16 Types and 15 session activities
 
 ## Distinguishing properties
 
@@ -89,7 +89,7 @@ What makes PLC distinct as an OV:
 3. **12 relation families enabling graph traversal.** Resource graph (`holds-resource` / `owes`) + Network alignment (`allied-with` / `coalitioned-with` / `brokers-between`) + Information flow (`informs` / `bypasses`) + Temporal predictive (`forecasts`) — these are exactly the network structures human memory cannot hold under client pressure but the OV can
 4. **Mandatory ethical gates.** ALTERNATIVES-AUDIT (OPC § 15) + ETHICAL-ACCOUNTING (OPC § 11) embedded inside RUN-CYCLE. Cycle log frontmatter carries gate-completion timestamps and override records. Searchable across cycles. Accountability through structure, not through censorship
 5. **782-tactic corpus with theorist lineage.** Each tactic carries `theorists_cited` per the dissertation's grounding canon. Theorist-pattern recognition becomes an UNCOVER finding type: *"Carol has deployed Schelling-derived tactics in 7 of the last 9 cycles — she's operating from a strategic-game-theory frame"* — a connection the operator cannot make from memory
-6. **Multi-grain Items.** PLC has 16 first-class Prototypes spanning grains from Move (single political verb) → Tactic (composed pattern) → Strategy (16 meta-strategies) → Cluster (84 thematic families) → Cycle (one 14-constituent interaction) → Campaign (an Interest tree) → Actor (long-lived dossier) → Principal (the flagged protagonist) → Sphere (the political landscape itself). Each grain is queryable
+6. **Multi-grain Items.** PLC has 16 first-class Types spanning grains from Move (single political verb) → Tactic (composed pattern) → Strategy (16 meta-strategies) → Cluster (84 thematic families) → Cycle (one 14-constituent interaction) → Campaign (an Interest tree) → Actor (long-lived dossier) → Principal (the flagged protagonist) → Sphere (the political landscape itself). Each grain is queryable
 
 ## When PLC is the right form
 

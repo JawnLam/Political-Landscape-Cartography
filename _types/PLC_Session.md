@@ -1,20 +1,20 @@
 ---
-type: Prototype
+type: Type
 timestamp: "2026-06-13T00:00:00Z"
-Item_ID: plc-session-prototype
-title: "PLC_Session — Prototype Definition"
+Item_ID: plc-session-type
+title: "PLC_Session — Type Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-prototype_namespace: plc
-prototype_version: "1.0"
+type_namespace: plc
+type_version: "1.0"
 ---
 
 # PLC_Session
 
 ## Purpose
 
-Append-only log of one AI-operator working session. Captures the activity performed, the files touched, the decisions made, and the next-activity recommendation. Per D22 + D24, a single Prototype carries all 15 session activities via the `plc_Activity` enum.
+Append-only log of one AI-operator working session. Captures the activity performed, the files touched, the decisions made, and the next-activity recommendation. Per D22 + D24, a single Type carries all 15 session activities via the `plc_Activity` enum.
 
 ## Cardinality and grain
 
@@ -112,7 +112,7 @@ The two embedded gates (`ALTERNATIVES-AUDIT`, `ETHICAL-ACCOUNTING`) are NOT stan
 
 ## Relation slots
 
-| Direction | Relation | Target Prototype | Cardinality |
+| Direction | Relation | Target Type | Cardinality |
 |-----------|----------|------------------|-------------|
 | Out | `plc_Sphere` | PLC_Sphere_Manifest | 1 |
 | Out | `plc_Files_Touched` | varies | 0..N |

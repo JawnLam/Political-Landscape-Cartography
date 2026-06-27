@@ -1,13 +1,13 @@
 ---
-type: Prototype
+type: Type
 timestamp: "2026-06-13T00:00:00Z"
-Item_ID: plc-engagement-retrospective-prototype
-title: "PLC_Engagement_Retrospective — Prototype Definition"
+Item_ID: plc-engagement-retrospective-type
+title: "PLC_Engagement_Retrospective — Type Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-prototype_namespace: plc
-prototype_version: "1.0"
+type_namespace: plc
+type_version: "1.0"
 ---
 
 # PLC_Engagement_Retrospective
@@ -16,7 +16,7 @@ prototype_version: "1.0"
 
 The one-shot synthesis artifact at engagement close — the **Layer 2 mastery endpoint** per D23. Captures what was learned across the engagement (not within a single cycle): pattern recognition, UNCOVER-payoff log, what the operator now knows that they didn't at sphere-open, lessons that should propagate forward to other engagements (in consultant mode) or to the operator's ongoing practice (in principal-self mode).
 
-Per D29 (added as the 16th Prototype during Q12). Distinct from per-cycle lessons (which live in `PLC_Cycle § Lessons`) — this is the cross-cycle retrospective.
+Per D29 (added as the 16th Type during Q12). Distinct from per-cycle lessons (which live in `PLC_Cycle § Lessons`) — this is the cross-cycle retrospective.
 
 ## Cardinality and grain
 
@@ -112,7 +112,7 @@ If the retrospective needs revision post-publication (e.g., factual correction s
 
 ## Relation slots
 
-| Direction | Relation | Target Prototype | Cardinality |
+| Direction | Relation | Target Type | Cardinality |
 |-----------|----------|------------------|-------------|
 | Out | `plc_Sphere` | PLC_Sphere_Manifest | 1 |
 | Out | `plc_Performed_In_Session` | PLC_Session | 1 |

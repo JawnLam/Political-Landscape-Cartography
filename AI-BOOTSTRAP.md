@@ -105,7 +105,7 @@ If you cannot complete pre-flight (missing files, ambiguous user message, read-o
 │   ├── _templates/                                              ← 22 markdown + 6 YAML scaffolds
 │   ├── redaction-profiles/                                      ← 5 audience-aware YAML profiles
 │   └── _meta/
-├── _types/                                                 ← 16 PLC_*.md Prototype definitions
+├── _types/                                                 ← 16 PLC_*.md Type definitions
 ├── _frameworks/                                                 ← reference: ADAPT, OPC, dissertation, Catalogue
 │   ├── ADAPT.md
 │   ├── OPC-Assessment.md
@@ -139,7 +139,7 @@ These come from `_plc-engine/02-PRINCIPLES.md` in full; the short version:
 
 - About what PLC is → `_plc-engine/01-WHAT-IS-PLC.md`
 - About the session protocol → `_plc-engine/03-SESSION-PROTOCOL.md`
-- About the schema (Prototypes, properties, relationships) → `_plc-engine/04-SCHEMA.md`
+- About the schema (Types, properties, relationships) → `_plc-engine/04-SCHEMA.md`
 - About state persistence (Mode A/C/D/E per file) → `_plc-engine/06-STATE-PERSISTENCE.md`
 - About a worked example → `Example-Sphere-Acme-Corp/`
 - About a specific tactic by ID → `_frameworks/political-warfare-catalogue/tactics/<NNNN>-<slug>.md`

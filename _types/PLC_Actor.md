@@ -1,20 +1,20 @@
 ---
-type: Prototype
+type: Type
 timestamp: "2026-06-13T00:00:00Z"
-Item_ID: plc-actor-prototype
-title: "PLC_Actor — Prototype Definition"
+Item_ID: plc-actor-type
+title: "PLC_Actor — Type Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-prototype_namespace: plc
-prototype_version: "1.0"
+type_namespace: plc
+type_version: "1.0"
 ---
 
 # PLC_Actor
 
 ## Purpose
 
-A person (or institutional role) in the sphere's political landscape whose disposition materially affects what the principal can accomplish. The central strategic Prototype — the cast that every cycle reasons against. Per D6, vocabulary is "Actor" (not "cast member" or "stakeholder"); D26 forbids cross-sphere sharing (same human at two organizations = two Actor files).
+A person (or institutional role) in the sphere's political landscape whose disposition materially affects what the principal can accomplish. The central strategic Type — the cast that every cycle reasons against. Per D6, vocabulary is "Actor" (not "cast member" or "stakeholder"); D26 forbids cross-sphere sharing (same human at two organizations = two Actor files).
 
 ## Cardinality and grain
 
@@ -104,7 +104,7 @@ A person (or institutional role) in the sphere's political landscape whose dispo
 
 ## Relation slots
 
-| Direction | Relation | Target Prototype | Cardinality |
+| Direction | Relation | Target Type | Cardinality |
 |-----------|----------|------------------|-------------|
 | Out | `plc_Sphere` | PLC_Sphere_Manifest | 1 |
 | Out | `plc_Coalitions` | PLC_Actor | 0..N (symmetric) |

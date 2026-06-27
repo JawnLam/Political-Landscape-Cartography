@@ -62,4 +62,4 @@ What is owed by those with the standing to resist, and what is reasonable to exp
 
 - Family overview: `_family-overview.md`
 - OPC v3.0 canonical reference: `_frameworks/OPC-Assessment.md § 13.3.2`
-- Pattern Prototype: `_types/PLC_Pattern.md`
+- Pattern Type: `_types/PLC_Pattern.md`

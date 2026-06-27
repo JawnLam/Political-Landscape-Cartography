@@ -1,13 +1,13 @@
 ---
-type: Prototype
+type: Type
 timestamp: "2026-06-13T00:00:00Z"
-Item_ID: plc-sphere-manifest-prototype
-title: "PLC_Sphere_Manifest — Prototype Definition"
+Item_ID: plc-sphere-manifest-type
+title: "PLC_Sphere_Manifest — Type Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-prototype_namespace: plc
-prototype_version: "1.0"
+type_namespace: plc
+type_version: "1.0"
 ---
 
 # PLC_Sphere_Manifest
@@ -73,11 +73,11 @@ The identity card and charter of a sphere (one political landscape, typically on
 
 ## Relation slots
 
-| Direction | Relation | Target Prototype | Cardinality |
+| Direction | Relation | Target Type | Cardinality |
 |-----------|----------|------------------|-------------|
 | Out | `plc_Principals` | PLC_Principal | 1..N |
 | Out | `plc_Active_Campaigns` | PLC_Campaign | 0..N (rollup of currently-active campaigns) |
-| In (implicit) | `plc_Sphere` from every other Prototype in the sphere | All | N |
+| In (implicit) | `plc_Sphere` from every other Type in the sphere | All | N |
 
 ## Reciprocal-update discipline
 

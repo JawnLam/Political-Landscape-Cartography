@@ -30,11 +30,11 @@ Every file in a PLC sphere falls into one of five durability modes. The mode det
 
 Modes A and E preserve audit integrity. Mode C is the only mode that *replaces* state — and it's only used where history is captured in a sibling file. Mode D is the workhorse — it gives operators current state at the top and history below, in one file.
 
-## Mode discipline by Prototype
+## Mode discipline by Type
 
-Every Prototype has a documented mode. Violating it corrupts the audit trail.
+Every Type has a documented mode. Violating it corrupts the audit trail.
 
-| Prototype | Mode | Notes |
+| Type | Mode | Notes |
 |-----------|------|-------|
 | PLC_Sphere_Manifest | C | Identity & charter; rarely changes; no history kept |
 | PLC_Sphere_State | D | `## Decided` section + `## OPC Current Summary` section rollup; `## State History` for material shifts |
@@ -71,9 +71,9 @@ Every Mode D file has at least these two sections:
 <everything here is append-only; chronological log of material shifts>
 ```
 
-The history section's exact name depends on the Prototype:
+The history section's exact name depends on the Type:
 
-| Prototype | History section name |
+| Type | History section name |
 |-----------|---------------------|
 | PLC_Sphere_State | `## State History` |
 | PLC_Principal | `## Engagement History` + `## Mastery History` |
@@ -127,7 +127,7 @@ The `## Current` block is overwritten as state changes. The history blocks grow 
 
 ## The Cycle lifecycle — Mode D → E
 
-PLC_Cycle is the only Prototype that changes modes. This is by design — the dissertation's 14-constituent cycle is recursive and revisable during execution; closed cycles are immutable audit records.
+PLC_Cycle is the only Type that changes modes. This is by design — the dissertation's 14-constituent cycle is recursive and revisable during execution; closed cycles are immutable audit records.
 
 ### State machine
 

@@ -62,4 +62,4 @@ Tension between commitment to people and commitment to standards
 
 - Family overview: `_family-overview.md`
 - OPC v3.0 canonical reference: `_frameworks/OPC-Assessment.md § 13.3.1`
-- Pattern Prototype: `_types/PLC_Pattern.md`
+- Pattern Type: `_types/PLC_Pattern.md`

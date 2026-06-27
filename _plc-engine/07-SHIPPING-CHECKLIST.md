@@ -29,12 +29,12 @@ Run the checklist in order. Do not skip ahead — each section assumes the prior
 
 The schema must be locked before anything else is meaningful.
 
-- [ ] **All 16 Prototypes have definition files in `_types/PLC_*.md`** — one file per Prototype, no missing entries
+- [ ] **All 16 Types have definition files in `_types/PLC_*.md`** — one file per Type, no missing entries
   - `PLC_Sphere_Manifest`, `PLC_Sphere_State`, `PLC_Sphere_Decisions`, `PLC_Principal`, `PLC_Actor`, `PLC_Campaign`, `PLC_Cycle`, `PLC_Session`, `PLC_OPC_Diagnostic`, `PLC_Engagement_Retrospective`, `PLC_Move`, `PLC_Tactic`, `PLC_Strategy`, `PLC_Cluster`, `PLC_Theorist`, `PLC_Pattern`
-- [ ] **Each Prototype file declares**: required fields, field types, allowed enums, relation slots (in + out), state-persistence mode, durability rule, example
+- [ ] **Each Type file declares**: required fields, field types, allowed enums, relation slots (in + out), state-persistence mode, durability rule, example
 - [ ] **All 22 markdown templates exist in `_plc-engine/_templates/`** — per D29 count
 - [ ] **All 6 YAML scaffolding files exist** — 1 export schema + 5 redaction profiles per D29
-- [ ] **Master_Schema.yaml v1.22.0 (or later) has the `plc_` namespace registered** with all 16 Prototypes in the central infrastructure schema
+- [ ] **Master_Schema.yaml v1.22.0 (or later) has the `plc_` namespace registered** with all 16 Types in the central infrastructure schema
 - [ ] **The OV-local `_types/` folder mirrors the central registry exactly** — no orphaned types, no missing types
 - [ ] **Decision Log entry exists** in `! Infrastructure Decision Log.md` for the PLC namespace registration
 - [ ] **Three reference systems do not collide**:
@@ -50,9 +50,9 @@ All 8 engine chapters must exist, be readable end-to-end, and cross-reference co
 - [ ] `_plc-engine/01-WHAT-IS-PLC.md` — definition + 4 substrate authorities + bimodal operator model + boundaries
 - [ ] `_plc-engine/02-PRINCIPLES.md` — all 12 principles (P1-P12) with anti-patterns
 - [ ] `_plc-engine/03-SESSION-PROTOCOL.md` — 9-step lifecycle + 15 activities + 2 gates + Audit Mode + Quality Gates
-- [ ] `_plc-engine/04-SCHEMA.md` — 16 Prototypes + 12 relation families + 3 reference systems + mastery scales + state-persistence summary
+- [ ] `_plc-engine/04-SCHEMA.md` — 16 Types + 12 relation families + 3 reference systems + mastery scales + state-persistence summary
 - [ ] `_plc-engine/05-WRITING-FOR-AI.md` — 4 audiences + AI/operator conventions + tone + 9 F-codes + quality checks
-- [ ] `_plc-engine/06-STATE-PERSISTENCE.md` — 5 modes + per-Prototype mapping + Current/History discipline + cycle lifecycle + reciprocal-update + status-flag pattern
+- [ ] `_plc-engine/06-STATE-PERSISTENCE.md` — 5 modes + per-Type mapping + Current/History discipline + cycle lifecycle + reciprocal-update + status-flag pattern
 - [ ] `_plc-engine/07-SHIPPING-CHECKLIST.md` — this file
 
 For each chapter:
@@ -160,7 +160,7 @@ Run a synthetic check against each of the 9 documented failure modes. Each check
 - [ ] **No `.DS_Store` or system junk** in the shipping zone
 - [ ] **`.gitignore` is verified working** — `git status --ignored` shows expected exclusions
 - [ ] **Spot-read three random engine chapter sections.** Tone consistent. Imperative voice. No emojis.
-- [ ] **Spot-read three random Prototype definitions.** Each clearly defines its required fields, relation slots, mode.
+- [ ] **Spot-read three random Type definitions.** Each clearly defines its required fields, relation slots, mode.
 - [ ] **VERSION.md, CHANGELOG.md, README.md, INSTALL.md** all reference the same version string
 - [ ] **Tag the release.** If using git: tag matches folder convention.
 
@@ -170,7 +170,7 @@ Run this AFTER Sections 1-10 pass.
 
 - [ ] **Migration guide written** — `MIGRATION-vX-to-vX+1.md` exists with explicit instructions for sphere cartridges built on the prior major version
 - [ ] **Breaking changes enumerated** in CHANGELOG with prefix `BREAKING:`
-- [ ] **`PLC` namespace bump** in Master_Schema (if Prototypes added, removed, or had required-field changes) — explicit Decision Log entry
+- [ ] **`PLC` namespace bump** in Master_Schema (if Types added, removed, or had required-field changes) — explicit Decision Log entry
 - [ ] **Backwards-compatibility path** documented or explicitly disclaimed
 - [ ] **Operator notification mechanism** — UPDATE-PROMPT for this major bump explicitly warns about breaking changes before applying
 - [ ] **Pilot upgrade** — at least one sphere from the prior major version successfully upgraded using the migration guide; resulting cartridge passes Section 7 spot-checks

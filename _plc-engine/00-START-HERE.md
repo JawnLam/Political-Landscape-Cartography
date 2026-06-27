@@ -86,10 +86,10 @@ Do not read these up front. Load them when the activity that needs them is propo
 
 | File | Load when |
 |------|-----------|
-| `04-SCHEMA.md` | Reading or writing Prototypes; reciprocal-update discipline questions |
+| `04-SCHEMA.md` | Reading or writing Types; reciprocal-update discipline questions |
 | `06-STATE-PERSISTENCE.md` | Session-end state work; recovery procedure invocation |
 | `07-SHIPPING-CHECKLIST.md` | SHIP-PREP activity (for the published methodology, not for sphere work) |
-| `_meta/SCHEMA-OF-SCHEMAS.md` | Audit mode; Prototype validation questions |
+| `_meta/SCHEMA-OF-SCHEMAS.md` | Audit mode; Type validation questions |
 | `_meta/CONVENTIONS.md` | When a frontmatter or naming question surfaces |
 | `_meta/FAILURE-MODES.md` | When consulting a specific F-code beyond the inline reference |
 | `_frameworks/political-warfare-catalogue/INDEX.json` | MOVE-LOOKUP or THEORIST-LOOKUP activity (read first; load 1-5 tactic files only on demand) |

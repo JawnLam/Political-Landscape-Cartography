@@ -59,6 +59,6 @@ These are NOT canonical until populated from OPC source. The 10 actual postures 
 
 - Family library: `../README.md`
 - Template: `_TEMPLATE.md`
-- Pattern Prototype: `_types/PLC_Pattern.md`
+- Pattern Type: `_types/PLC_Pattern.md`
 - OPC source section: `_frameworks/OPC-Assessment.md § 13.1.1`
 - Worked example: Sam's "earned-mandate" posture sharpened across cycles in `Spheres/Example-Sphere-Acme-Corp/` (Cycle-0007 close evidence)

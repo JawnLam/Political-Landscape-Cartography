@@ -14,11 +14,11 @@ updated: 2026-06-13
 
 # 04 — SCHEMA
 
-> **The structural contract every Item in PLC conforms to. 16 first-class Prototypes + 12 relation families + state-persistence summary + reference-system specifications.**
+> **The structural contract every Item in PLC conforms to. 16 first-class Types + 12 relation families + state-persistence summary + reference-system specifications.**
 
-## The 16 first-class Prototypes
+## The 16 first-class Types
 
-| # | Prototype | Cardinality | Grain | Lives at |
+| # | Type | Cardinality | Grain | Lives at |
 |---|---|---|---|---|
 | 1 | `PLC_Sphere_Manifest` | 1 per sphere | sphere-identity | `<Sphere>/_sphere-manifest.md` |
 | 2 | `PLC_Sphere_State` | 1 per sphere | sphere-state-rollup | `<Sphere>/_sphere-state.md` |
@@ -37,7 +37,7 @@ updated: 2026-06-13
 | 15 | `PLC_Theorist` | 50 (canonical) + operator-extensible | intellectual lineage | `_frameworks/political-warfare-catalogue/by-theorist/<name>.md` |
 | 16 | `PLC_Pattern` | 60+ (from OPC §§ 13 + 2.2) + operator-extensible | situational archetype | `_PATTERNS/<name>.md` (OV-root canonical) + `<Sphere>/_PATTERNS/<name>.md` (sphere-extensible) |
 
-Prototypes 1-10 are *sphere-content* (live inside operator-extended sphere cartridges). Prototypes 11-16 are *OV-content* (live at OV root; shipped canonical reference).
+Types 1-10 are *sphere-content* (live inside operator-extended sphere cartridges). Types 11-16 are *OV-content* (live at OV root; shipped canonical reference).
 
 ### Required Universal Core fields (per Convention 1)
 
@@ -57,9 +57,9 @@ Needs_Processing: false
 
 Plus `AI_Instructions: ""` per OVE_OV_Manifest pattern.
 
-### Per-Prototype required body sections
+### Per-Type required body sections
 
-| Prototype | Required body sections |
+| Type | Required body sections |
 |---|---|
 | `PLC_Sphere_Manifest` | Sphere identity; Domain validity; Operator mode; Principals declared; Engagement metadata; Sphere-close criteria; Initial cast inventory |
 | `PLC_Sphere_State` | `## Decided` rollup; `## OPC Current Summary`; `## Open Threads`; `## Recent Sessions`; `## Active Campaigns`; `## Engagement State` |
@@ -212,7 +212,7 @@ The AI session-end protocol enforces:
 
 1. Rewriting `## Current` sections in place with the new current values
 2. Appending new entries to `## ... History` sections without touching prior entries
-3. Section headers are explicit and consistent across Items of the same Prototype
+3. Section headers are explicit and consistent across Items of the same Type
 
 Operators editing manually should respect the same discipline. The convention is documented in OPERATOR-GUIDE so manual edits don't inadvertently corrupt history.
 
@@ -270,9 +270,9 @@ A subjective 0-5 scale (`not-started` / `introduced` / `recognized` / `applied` 
 
 ## State-persistence mode summary (per D28)
 
-Full mode contract in `06-STATE-PERSISTENCE.md`. Quick summary per Prototype:
+Full mode contract in `06-STATE-PERSISTENCE.md`. Quick summary per Type:
 
-| Prototype | Mode | Discipline |
+| Type | Mode | Discipline |
 |---|---|---|
 | `PLC_Sphere_Manifest` | C — overwrite | Identity rarely changes; rewrite on change |
 | `PLC_Sphere_State` | C — overwrite | Rewritten every session end |
@@ -294,9 +294,9 @@ PLC inherits all conventions from `_meta/CONVENTIONS.md`:
 - **Convention 1** — Six Universal Core frontmatter fields (`type`, `Item_ID`, `Title`, `Date_Added`, `Date_Modified`, `Needs_Processing`)
 - **Convention 2** — Case rules: core keys `Title_Snake_Case`; namespace prefixes `lowercase_snake_case`; acronyms fully capitalized; body after prefix `Title_Snake_Case`; enum identifiers `lowercase_snake_case`
 - **Convention 3** — One namespace per OV: `plc_` (Political Landscape Cartography)
-- **Convention 4** — Every Prototype gets its own `type` value (`PLC_<TypeName>`); non-Item files use `type: Fleeting`
+- **Convention 4** — Every Type gets its own `type` value (`PLC_<TypeName>`); non-Item files use `type: Fleeting`
 - **Convention 5** — Schema-of-namespace declared in `_plc-engine/_meta/SCHEMA-OF-SCHEMAS.md`
-- **Convention 6** — `_types/` folder at OV root with one `.md` file per Prototype (16 files)
+- **Convention 6** — `_types/` folder at OV root with one `.md` file per Type (16 files)
 - **Convention 7** — Install-and-update pattern (see `INSTALL.md`, `OPERATOR-GUIDE.md`, `UPDATE-PROMPT.md`)
 - **Convention 8** — Engine vs operator-content boundary (4 zones — Engine, Operator-Private, Operator-Extension, Shipped Examples)
 
@@ -345,7 +345,7 @@ All Items declare frontmatter in this order:
 Item_ID: <slug>
 type: PLC_<TypeName>
 title: "<Human-readable title>"
-plc_<...>: <PLC-specific fields per Prototype>
+plc_<...>: <PLC-specific fields per Type>
 Date_Added: YYYY-MM-DD
 Date_Modified: YYYY-MM-DD
 Needs_Processing: false
@@ -353,6 +353,6 @@ AI_Instructions: ""
 ---
 ```
 
-The `_extends_prototype: PLC_<TypeName>` header in Templates points to the canonical Prototype definition for validation traceability.
+The `_extends_type: PLC_<TypeName>` header in Templates points to the canonical Type definition for validation traceability.
 
-When in doubt about a specific Prototype's required fields, consult `_types/PLC_<TypeName>.md`.
+When in doubt about a specific Type's required fields, consult `_types/PLC_<TypeName>.md`.

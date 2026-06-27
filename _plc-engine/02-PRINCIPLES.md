@@ -139,7 +139,7 @@ The `plc_Operator_Mode` flag (`consultant | principal_self`) determines which pr
 - AI register adds **no-false-confidence priming**: when the AI does not have evidence to confirm the operator's read, say so once, propose a Detection step, then stop
 - Quarterly check-ins use base 3-part protocol only (perception-gap audit, Eight Benefits inventory, Actor-trajectory review)
 
-Same 16 Prototypes, same 12 relation families, same 15 session activities serve both modes. The fork lives at OPERATOR-GUIDE + worked-example layer and at register-discipline level.
+Same 16 Types, same 12 relation families, same 15 session activities serve both modes. The fork lives at OPERATOR-GUIDE + worked-example layer and at register-discipline level.
 
 ## P10 — You propose, the operator disposes
 

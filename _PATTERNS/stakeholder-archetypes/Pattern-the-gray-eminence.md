@@ -72,4 +72,4 @@ The power behind the throne
 
 - Family overview: `_family-overview.md`
 - OPC v3.0 canonical reference: `_frameworks/OPC-Assessment.md § 2.2.1`
-- Pattern Prototype: `_types/PLC_Pattern.md`
+- Pattern Type: `_types/PLC_Pattern.md`

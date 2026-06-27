@@ -62,4 +62,4 @@ Resistance that operates through back-channels and never declares itself
 
 - Family overview: `_family-overview.md`
 - OPC v3.0 canonical reference: `_frameworks/OPC-Assessment.md § 13.1.2`
-- Pattern Prototype: `_types/PLC_Pattern.md`
+- Pattern Type: `_types/PLC_Pattern.md`

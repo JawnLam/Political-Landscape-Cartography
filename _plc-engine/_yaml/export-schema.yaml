@@ -19,7 +19,7 @@ schema:
   emits_at:
     - sphere_close
     - export_shareable_with_full_audit_profile
-  conforms_to_prototypes:
+  conforms_to_types:
     - PLC_Engagement_Retrospective
     - PLC_Sphere_Manifest
     - PLC_Sphere_State

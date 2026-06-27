@@ -61,7 +61,7 @@ If you prefer not to use git: download the OV as a zip from the project page and
 # Should print the OV's current version
 cat VERSION.md
 
-# Should show the engine + frameworks + Prototypes + scaffolding
+# Should show the engine + frameworks + Types + scaffolding
 ls -la
 ```
 

@@ -1,13 +1,13 @@
 ---
-type: Prototype
+type: Type
 timestamp: "2026-06-13T00:00:00Z"
-Item_ID: plc-sphere-state-prototype
-title: "PLC_Sphere_State — Prototype Definition"
+Item_ID: plc-sphere-state-type
+title: "PLC_Sphere_State — Type Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-prototype_namespace: plc
-prototype_version: "1.0"
+type_namespace: plc
+type_version: "1.0"
 ---
 
 # PLC_Sphere_State
@@ -72,7 +72,7 @@ Per D27 + D28.
 
 ## Relation slots
 
-| Direction | Relation | Target Prototype | Cardinality |
+| Direction | Relation | Target Type | Cardinality |
 |-----------|----------|------------------|-------------|
 | Out | `plc_Sphere` | PLC_Sphere_Manifest | 1 |
 | Out | `plc_Latest_OPC_Diagnostic` | PLC_OPC_Diagnostic | 1 |

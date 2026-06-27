@@ -1,13 +1,13 @@
 ---
-type: Prototype
+type: Type
 timestamp: "2026-06-13T00:00:00Z"
-Item_ID: plc-opc-diagnostic-prototype
-title: "PLC_OPC_Diagnostic — Prototype Definition"
+Item_ID: plc-opc-diagnostic-type
+title: "PLC_OPC_Diagnostic — Type Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-prototype_namespace: plc
-prototype_version: "1.0"
+type_namespace: plc
+type_version: "1.0"
 ---
 
 # PLC_OPC_Diagnostic
@@ -16,7 +16,7 @@ prototype_version: "1.0"
 
 A structured sphere-diagnostic instance using the **OPC Assessment v3.0** framework — 17 sections with 6-level hierarchical IDs. Each diagnostic is a point-in-time snapshot of the sphere's political-capital state. The Sphere_State file rolls up the latest diagnostic's headline reads; the diagnostic file itself carries the full structured scoring.
 
-Per D7 + D27. Distinct from the `plc_OPC_Diagnostic_Seed` block in `_sphere-state.md` (which is a thin seed captured at sphere-open) — this Prototype is the **full ~90-minute structured assessment**.
+Per D7 + D27. Distinct from the `plc_OPC_Diagnostic_Seed` block in `_sphere-state.md` (which is a thin seed captured at sphere-open) — this Type is the **full ~90-minute structured assessment**.
 
 ## Cardinality and grain
 
@@ -120,7 +120,7 @@ Sections 11, 15, 16, 17 carry special operational weight (gates + consultant pre
 
 ## Relation slots
 
-| Direction | Relation | Target Prototype | Cardinality |
+| Direction | Relation | Target Type | Cardinality |
 |-----------|----------|------------------|-------------|
 | Out | `plc_Sphere` | PLC_Sphere_Manifest | 1 |
 | Out | `plc_Performed_In_Session` | PLC_Session | 1 |

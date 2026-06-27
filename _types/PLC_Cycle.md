@@ -1,20 +1,20 @@
 ---
-type: Prototype
+type: Type
 timestamp: "2026-06-13T00:00:00Z"
-Item_ID: plc-cycle-prototype
-title: "PLC_Cycle — Prototype Definition"
+Item_ID: plc-cycle-type
+title: "PLC_Cycle — Type Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-prototype_namespace: plc
-prototype_version: "1.0"
+type_namespace: plc
+type_version: "1.0"
 ---
 
 # PLC_Cycle
 
 ## Purpose
 
-The interaction-cycle protocol (14 operational constituents per PLC's walk-through) from the Lam 2018 dissertation, instantiated as a first-class Item. Each Cycle is one disciplined pass through Agenda → Decide → Act → Perceive → Track (with the dissertation's interaction-cycle constituents including alternatives audit + ethical accounting gates). The **central operational Prototype** — RUN-CYCLE writes here; ANALYZE-CYCLE reads from here; the audit trail flows through here.
+The interaction-cycle protocol (14 operational constituents per PLC's walk-through) from the Lam 2018 dissertation, instantiated as a first-class Item. Each Cycle is one disciplined pass through Agenda → Decide → Act → Perceive → Track (with the dissertation's interaction-cycle constituents including alternatives audit + ethical accounting gates). The **central operational Type** — RUN-CYCLE writes here; ANALYZE-CYCLE reads from here; the audit trail flows through here.
 
 Per D20 + D24 + D28 + D9. Embeds the two mandatory gates (ALTERNATIVES-AUDIT + ETHICAL-ACCOUNTING) per D9.
 
@@ -25,7 +25,7 @@ Per D20 + D24 + D28 + D9. Embeds the two mandatory gates (ALTERNATIVES-AUDIT + E
 
 ## Durability mode
 
-**Mode D → E.** The only Prototype with mode transition.
+**Mode D → E.** The only Type with mode transition.
 
 - During `cycle_status: planning | active | engaged | closed` → Mode D (revisable)
 - On `cycle_status: e_immutable` → Mode E (sealed; no edits)
@@ -128,7 +128,7 @@ The cycle body mirrors the 14-constituent dissertation protocol with the two emb
 
 ## Relation slots
 
-| Direction | Relation | Target Prototype | Cardinality |
+| Direction | Relation | Target Type | Cardinality |
 |-----------|----------|------------------|-------------|
 | Out | `plc_Sphere` | PLC_Sphere_Manifest | 1 |
 | Out | `plc_Campaign` | PLC_Campaign | 0..1 |
@@ -213,7 +213,7 @@ AI_Instructions: ""
 ---
 ```
 
-(Full body would include all 14-constituent sections — abbreviated here for the prototype definition.)
+(Full body would include all 14-constituent sections — abbreviated here for the type definition.)
 
 ## Anti-patterns
 

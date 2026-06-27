@@ -58,5 +58,5 @@ These archetypes are NOT yet drafted as `Pattern-<slug>.md` files in this folder
 
 - Family library: `../README.md`
 - Template: `_TEMPLATE.md`
-- Pattern Prototype: `_types/PLC_Pattern.md`
+- Pattern Type: `_types/PLC_Pattern.md`
 - OPC source section: `_frameworks/OPC-Assessment.md § 2.2.1`

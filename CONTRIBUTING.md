@@ -19,7 +19,7 @@ Three orienting reads, in order:
 
 1. `README.md` — what PLC is
 2. `_plc-engine/01-WHAT-IS-PLC.md` — the methodology's claim and boundary
-3. `_plc-engine/04-SCHEMA.md` — the 16-prototype data model
+3. `_plc-engine/04-SCHEMA.md` — the 16-type data model
 
 If you've never deployed PLC end-to-end, contributing engine-zone changes is premature. The methodology's correctness shows up in cycle-execution discipline; without that experience, proposed engine changes tend to ship the wrong abstraction.
 
@@ -45,7 +45,7 @@ PLC has four content zones. Contribution rules differ per zone.
 - New session activities — requires showing the activity isn't expressible as a combination of existing 15
 - Changes to the 12 relation families — requires showing the family doesn't exist or has a documented analytic gap
 - New mandatory gates inside RUN-CYCLE — extremely high bar; the current ALTERNATIVES-AUDIT + ETHICAL-ACCOUNTING gates are minimal-sufficient
-- Prototype definition changes (`_types/PLC_*.md`) — schema additions trigger minor bumps; required-field changes or removals trigger major bumps
+- Type definition changes (`_types/PLC_*.md`) — schema additions trigger minor bumps; required-field changes or removals trigger major bumps
 
 **Framework contributions** include:
 
@@ -57,7 +57,7 @@ PLC has four content zones. Contribution rules differ per zone.
 
 **Scaffolding contributions** include:
 
-- New template variants for an existing Prototype (e.g., adding a `PLC_Actor_External_TEMPLATE.md` for external-actor stubs)
+- New template variants for an existing Type (e.g., adding a `PLC_Actor_External_TEMPLATE.md` for external-actor stubs)
 - New redaction profiles for unrepresented audiences (e.g., a `regulatory-disclosure.yaml`)
 - Refinements to `export-schema.yaml` for additional longitudinal-signal fields
 
@@ -78,7 +78,7 @@ Patch bumps may proceed without UPDATE-PROMPT changes; the operator runs `git pu
 
 ### Minor bumps (`v1.0` → `v1.1`)
 
-- New Prototypes (additive only)
+- New Types (additive only)
 - New Templates (additive only)
 - New YAML scaffolding (additive only)
 - New Catalogue tactics / theorists / clusters / strategies via the extensions namespaces
@@ -92,7 +92,7 @@ Minor bumps require an UPDATE-PROMPT entry. They do NOT require migration guides
 
 ### Major bumps (`v1.0` → `v2.0`)
 
-- Required-field changes or removals on existing Prototypes
+- Required-field changes or removals on existing Types
 - Mode contract changes (e.g., a Mode E file becoming Mode D)
 - Reference system changes (the three reference systems per D18 are load-bearing)
 - Existing gate semantics changing
@@ -115,7 +115,7 @@ See `_plc-engine/07-SHIPPING-CHECKLIST.md` § "Major Bump Addendum" for the full
 
 Between `v1.0` and `v2.0`, these do not change:
 
-- The 16 Prototype types (additions are minor; removals are major)
+- The 16 Type types (additions are minor; removals are major)
 - The 5 durability modes (A/C/D/E/D→E)
 - The 12 relation families
 - The three reference systems (slash addressing / OPC hierarchical IDs / Catalogue Reference IDs)

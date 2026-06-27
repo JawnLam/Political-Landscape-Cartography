@@ -1,13 +1,13 @@
 ---
-type: Prototype
+type: Type
 timestamp: "2026-06-13T00:00:00Z"
-Item_ID: plc-strategy-prototype
-title: "PLC_Strategy — Prototype Definition"
+Item_ID: plc-strategy-type
+title: "PLC_Strategy — Type Definition"
 Date_Added: 2026-06-13
 Date_Modified: 2026-06-13
 Needs_Processing: false
-prototype_namespace: plc
-prototype_version: "1.0"
+type_namespace: plc
+type_version: "1.0"
 ---
 
 # PLC_Strategy
@@ -86,7 +86,7 @@ Per D14 + D28. Same reasoning as PLC_Tactic: the 16-strategy frame is sourced sc
 
 ## Relation slots
 
-| Direction | Relation | Target Prototype | Cardinality |
+| Direction | Relation | Target Type | Cardinality |
 |-----------|----------|------------------|-------------|
 | Out | `plc_Tactics` | PLC_Tactic | 1..N |
 | Out | `plc_Theorists_Primary` | PLC_Theorist | 0..N |
