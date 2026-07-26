@@ -7,7 +7,14 @@ Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false
 plc_Sphere: "[[<sphere-slug>-manifest]]"
 plc_Session_Number: <NNN>
-plc_Activity: SCAN   # SPHERE_OPEN | SPHERE_CLOSE | PRACTITIONER_ASSESSMENT | ACTOR_UPDATE | CAMPAIGN_LIFECYCLE | ANALYZE_CYCLE | FORECAST_CYCLE | SCAN | UNCOVER | MOVE_LOOKUP | THEORIST_LOOKUP | EXPORT_SHAREABLE
+plc_Activity: SCAN
+# One of the 16 standalone activities (per D24; full enum in _types/PLC_Session.md):
+#   SPHERE_OPEN* | SPHERE_CLOSE* | PRACTITIONER_ASSESSMENT | OPC_DIAGNOSE* | ACTOR_UPDATE | CAMPAIGN_LIFECYCLE
+#   | RUN_CYCLE* | ANALYZE_CYCLE | FORECAST_CYCLE | QUARTERLY_AUDIT* | SCAN | UNCOVER | ESTIMATE
+#   | MOVE_LOOKUP | THEORIST_LOOKUP | EXPORT_SHAREABLE
+# * = ships a dedicated template (PLC_Session_<ACTIVITY>_TEMPLATE.md) — use that one instead.
+#   This generic template is the fallback for the other 11. The two embedded gates
+#   (ALTERNATIVES-AUDIT, ETHICAL-ACCOUNTING) are not activities — they fire inside RUN_CYCLE.
 plc_Session_Started_At: "<YYYY-MM-DDTHH:MM:SS>"
 plc_Session_Ended_At: "<YYYY-MM-DDTHH:MM:SS>"
 plc_Operator_Mode: consultant
@@ -20,7 +27,7 @@ AI_Instructions: ""
 
 # <Sphere Name> — Session <NNN> — <ACTIVITY>
 
-> Generic session template — use this when the activity is not RUN_CYCLE, OPC_DIAGNOSE, or QUARTERLY_AUDIT (those have specialized templates). Adapt the `## Activity-Specific Block` to fit the activity's protocol per `03-SESSION-PROTOCOL.md`.
+> Generic session template — the fallback for any of the 16 activities that does **not** ship a dedicated variant. Five do: RUN_CYCLE, OPC_DIAGNOSE, QUARTERLY_AUDIT, SPHERE_OPEN, SPHERE_CLOSE (per `03-SESSION-PROTOCOL.md` § session-file naming / D29) — use those instead. For the other eleven, adapt the `## Activity-Specific Block` to fit the activity's protocol per `03-SESSION-PROTOCOL.md`.
 
 ## Activity Recap
 <One paragraph: what activity ran; what triggered it; what was accomplished.>
@@ -46,6 +53,7 @@ AI_Instructions: ""
 - ANALYZE_CYCLE: cycle analyzed + key lessons extracted
 - FORECAST_CYCLE: forecast horizon + scenarios + confidence
 - SCAN: scope scanned + findings
+- ESTIMATE: target actor + probes run + credence/depth updates (the trail itself lives in the Detection Record)
 - CAMPAIGN_LIFECYCLE: lifecycle transitions + reasons
 - PRACTITIONER_ASSESSMENT: §§ 16-17 outcomes
 - SPHERE_CLOSE: closure reason + retrospective draft status>

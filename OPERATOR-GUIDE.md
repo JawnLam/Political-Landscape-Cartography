@@ -52,6 +52,33 @@ PLC is the WRONG form when any of these are true:
 
 When the wrong-form signal is present, name it. Telling the principal "this isn't the right tool for this question; here's what is" earns trust. Forcing PLC onto a non-fit corrupts both this engagement's audit trail and your own pattern recognition across engagements.
 
+## What changed in v1.2 (the LSPI integration) — for operators upgrading from v1.1
+
+The spine you know is unchanged: read state, propose an activity, one question at a time, both gates before execution, write before you end. **Every v1.2 addition is optional** — your existing cycles remain valid, and a v1.1-style lightweight cycle is still legitimate for simple, single-lever work. What changed is what's available *inside* the beats:
+
+| Beat | v1.1 | v1.2 |
+|------|------|------|
+| Session open | AI reads Tier 1 + sphere state; proposes from 15 activities | Same, from **16**; sphere state adds an **Open Estimation** rollup — who's under active estimation, probe budgets, which way margins are leaning |
+| Your read of a target | A perception label on the Actor file (`ambivalent`); your confidence lived in your head | A **Detection Record**: competing hypotheses about how the target loads the decision, each with a working credence and a depth guess. Your gut's disagreement with the record is visible and actionable |
+| Reducing uncertainty | No procedure — SCAN, re-read, "get a feel" | **ESTIMATE** (new activity): design a probe priced by what it would change, the AI pre-registers what each hypothesis predicts, you run the probe in the world, report back, update. Budget-capped so probing can't become procrastination |
+| Reading signals | Face value, or ad-hoc suspicion | **Depth decoder**: how strategically is this person signaling? Suspicion dial set by the sphere's measured intensity — protects against being played AND against paranoia. A stall or "let's see the numbers first" is data, not noise |
+| Planning a move | Pick tactics; binary gate: *do I hold the required resources?* | Assemble a **plan**; augmented gate: does the *set* close the target's margin? Does each member earn its cost given the others? Worth the prize? Multi-resource plans where nothing works alone now correctly pass |
+| Gate fails | One route: spawn a sub-cycle for the missing resource | Four routes: acquire / **rescope the objective** / abandon / **re-probe** — "I don't know enough yet" is a legitimate, logged gate outcome |
+| Ethical gates | ALTERNATIVES-AUDIT + ETHICAL-ACCOUNTING | Unchanged |
+| Executing | Move logged with tactic ID + prose | Same, plus the move lands in the cycle's **Operation Record** as a typed line; multi-lever cycles declare a **stance** (adapt lever-by-lever vs pre-commit) |
+| Why-did-I-do-that | Prose decisions; sequences hard to reconstruct | **σ/Guard log** separates sequencing choices from readings-of-the-world; any past trace is replayable |
+| Cycle close | Lessons; projections informally compared | Projections (′) and realizations both persist by rule — the record can't lose your forecast |
+| Quarterly | Perception-gap, Eight Benefits, stale actors | Same, plus **forecast calibration** (were your projections right?) and **belief hygiene** (stale reads, un-re-priced resources) |
+
+The honest trade: the v1.1 volume recorded your *conclusions*; v1.2 structures the *process* — hypotheses before reads, predictions before probes, plans before gates. That is roughly double the logging on an estimation-heavy cycle (see the worked example: `cycle-0009` vs `cycle-0008`), and it buys calibration, defensibility, and a memory that outlasts any session.
+
+Two disciplines to internalize before your first v1.2 cycle:
+
+- **P13 — the numbers are scaffolding, not answers.** The credences, margins, and worth judgments are your own structured reasoning, uncalibrated until your quarterly record says otherwise. If the AI ever quotes them at you as findings, or defends the arithmetic against your gut, that's a violation — say "P13."
+- **When your gut disagrees with an estimate, say so.** That disagreement doesn't get overruled; it becomes probe material. The machinery exists to sharpen your judgment, not to outvote it.
+
+Where to learn the machinery: skim `_plc-engine/08-ESTIMATION.md` once (the operational chapter), then read the worked example's `Detection/detection-robert-board-chair.md` and `Cycles/cycle-0009.md` in the Acme sphere — format only; its content is fiction (F4b).
+
 ## Daily operations
 
 The shape of an active PLC engagement:
@@ -59,12 +86,13 @@ The shape of an active PLC engagement:
 | Frequency | Activity | Time |
 |-----------|----------|------|
 | Per session-start | AI re-reads sphere state | ~5 min |
-| Per cycle | RUN-CYCLE (14 constituents + 2 gates) | 90-150 min |
+| Per cycle | RUN-CYCLE (14 constituents + 2 gates; augmented gate if estimating) | 90-150 min |
 | Per cycle | Phase log appended as signals arrive | minutes per signal |
 | Per cycle close | ANALYZE-CYCLE (lessons extracted before they fade) | ~45 min |
+| Event-driven | ESTIMATE when a load-bearing read is soft or a gate routes to re-probe (v1.2+) | 45-90 min + probe runtime in the world |
 | Event-driven | ACTOR-UPDATE when material perception/resource signals come in | 30-60 min |
 | Event-driven | UNCOVER when an unknown blocks tactical reasoning | 45-90 min |
-| Quarterly | QUARTERLY-AUDIT (3-part base + 4 consultant additions in consultant mode) | ~2 hours |
+| Quarterly | QUARTERLY-AUDIT (5-part base — perception-gap, Eight Benefits, actor-trajectory, forecast calibration, belief hygiene — + 4 consultant additions in consultant mode) | ~2 hours |
 | Engagement-end | SPHERE-CLOSE + retrospective | half-day |
 
 You should not need to manage cadence manually. The AI's session-end recommendations build the queue; the operator disposes (per P10). Following the AI's recommendation is the default, but you can defer or override at any session start.
@@ -106,6 +134,12 @@ The operator's primary reference. Search the symptom column for what's matching.
 | AI says "based on what you've told me before" without me having told it that | Hallucinated context | Tell it: "Cite the file and section where I stated that. If no citation, retract." |
 | I have two principals and the AI gets confused about whose agenda is active | Multi-principal sphere without `plc_Coprincipal_Conflict_Discipline` populated | Open the manifest. Populate the field. Tell the AI: "Re-read the manifest. Note the conflict-discipline. Confirm whose agenda is active for this cycle." |
 | Sphere bootstrap CQs were answered but no manifest got materialized | Bootstrap session closed without materialization step | Re-open the bootstrap session; run § 11 of `BOOTSTRAP-NEW-SPHERE.md` (Sphere materialization). |
+| AI quotes a credence or margin at me like it's a fact ("there's a 55% chance Robert…") | P13 violation — scaffolding numbers presented as findings | Say: "P13 — attach epistemic status and give me the directional conclusion only." If it defends the arithmetic against your stated read, that's the gut-override anti-pattern; your disagreement goes INTO the differential |
+| AI keeps proposing "one more probe" on a target | VoI stop-rule not being applied, or budget missing | Ask: "What decision would this probe change? What's the budget remaining?" If it can't answer the first, the probe is entropy-chasing — act instead. If no budget exists on the cycle, set one |
+| The gate rejected a plan because no single resource was "enough" | The M1 scale error — worth of one member tested against the total margin | Point at `08-ESTIMATION.md` § augmented gate: sufficiency is PLAN-level; a set that jointly closes the margin passes. The worked example's cycle-0009 gate block is the pattern |
+| AI treats everyone as manipulating me (or nobody) | Depth bias `b` not calibrated to the sphere | Ask: "What OPC political-intensity reading justifies the current b?" Cooperative sphere → b near 0; adversarial → near 1. Unconditional suspicion is a defect (M3), not prudence |
+| AI writes slash notation I've never seen anywhere | F10 generation violation — invented notation | Say: "F10 — copy a validated pattern from cycle-0009 or write plain English and flag it." Fabricated notation poisons the record |
+| AI cites "what happened at Acme" as evidence in my sphere | F4b — worked-example bleed | Say: "F4b — the example sphere is fiction. Formats only, never facts." |
 
 ### Symptoms specific to consultant mode
 
@@ -172,7 +206,7 @@ When `UPDATE-PROMPT.md` runs to upgrade your OV:
 If you have local edits to engine/framework/scaffolding zones (you shouldn't, but it happens), stash them before update:
 
 ```bash
-cd /path/to/Political-Landscape-Cartography-v1.0
+cd /path/to/Political-Landscape-Cartography
 git stash push -m "pre-update local edits"
 # Run UPDATE-PROMPT
 git stash pop

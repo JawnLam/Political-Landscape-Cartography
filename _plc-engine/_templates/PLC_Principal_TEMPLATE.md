@@ -42,6 +42,16 @@ AI_Instructions: ""
 ### Mastery Signals
 <Evidence of the current sharpness level. What earned this score; what would justify moving up.>
 
+### Current Resource Holdings (v1.2+, optional)
+<LSPI's **R**. A MULTISET — quantities matter: two banked favors ≠ one. One row per distinct holding; carry the count.>
+
+| Resource (carrier) | Qty | Effect signature (cells, sign, rough cost) | Durability | Convertibility edge / gain-cycle |
+|--------------------|-----|--------------------------------------------|------------|----------------------------------|
+| <type> | <n> | <e.g., Adv/c + ·i2; cost <cost>> | durable \| fragile | <r₁ ⇝ r₂, edge type, rough rate — or "none"> |
+
+- **Ledger discipline:** an execution deducts exactly once; a closed sub-cycle's flowback appends exactly once. No leaks, no duplications (resource conservation, Theorem 13.4) — eyeballed at QUARTERLY-AUDIT belief hygiene.
+- **Protection note:** <which durable low-yield holdings are being spent to defend which fragile high-yield ones>
+
 ## Engagement History
 <Append-only. Material role / scope / status shifts. Dated.>
 

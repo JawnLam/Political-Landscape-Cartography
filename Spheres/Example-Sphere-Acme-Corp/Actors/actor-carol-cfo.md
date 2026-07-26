@@ -4,7 +4,7 @@ timestamp: "2026-06-13T00:00:00Z"
 Item_ID: actor-carol-cfo
 title: "Carol Reyes — CFO"
 Date_Added: 2026-04-22
-Date_Modified: 2026-06-13
+Date_Modified: 2026-07-08
 Needs_Processing: false
 plc_Sphere: "[[acme-corp-manifest]]"
 plc_Actor_Name: "Carol Reyes"
@@ -18,7 +18,7 @@ plc_Coalitions:
 plc_Opposed_By:
   - "[[principal-sam-ceo]]"
 plc_Actor_Completeness: 3
-plc_Last_Updated_Cycle: "[[cycle-0008]]"
+plc_Last_Updated_Cycle: "[[cycle-0010]]"
 AI_Instructions: ""
 ---
 
@@ -28,6 +28,8 @@ AI_Instructions: ""
 
 ### Profile
 CFO, 6 years tenure. Joined under prior CEO (predecessor to Sam). Background: public-company controller; CPA; previously held finance leadership at two regional manufacturers. Reports to Sam but has independent reporting line to audit committee. Reputation in the org: rigorous, risk-averse, politically careful. Reputation outside the org: well-regarded in regional industry-finance circles; quoted in industry press 3-4 times per year on supply-chain finance topics.
+
+**OPC archetype (propagated from [[opc-2026-06-01]] § 13.1.2):** § 13.1.2.3 `covert_operator` — hidden opposition working through indirect means. Sphere extension: shadow-CEO consolidation via finance-committee restructure, memo-timing pressure, and channel narrowing.
 
 ### Perception Toward Principal
 **Defensive** since 2026-06-10 (confirmed at Cycle-0008 cold-reading). Three of three indicators present:
@@ -59,6 +61,7 @@ Communication style: precise, written-preference, formal. Late-Friday timing of 
 
 ## Perception History
 
+- 2026-07-08: `defensive` **held**. Carol cleared Sam's Q3 succession agenda item on the finance-committee consent agenda within four days of filing, with a note reserving the committee's right to comment at the board session. **This is not a posture shift and is recorded so that it cannot later be read as one.** She was asked to exercise authority she already holds, on a procedurally ordinary item, where a hold would have been the visibly irregular option — compliance under those conditions is evidence about the procedure, not about her. The three defensive indicators are all still standing: memo timing unchanged, committee staffing unchanged, 1:1 cadence still email-only. Coaching note logged for Sam, who read the clearance as a thaw. (Source: [[cycle-0010]] § Phase Log, session [[2026-07-08_013_RUN-CYCLE]].)
 - 2026-06-13: Confirmed `defensive` after Cycle-0008 cold-reading (3/3 indicators present). No shift; status maintained.
 - 2026-06-10: Shifted `unaware` → `defensive` per budget-memo episode + finance-committee restructure analysis. (Source: [[cycle-0007]] § Phase Log + § Refinement.)
 - 2026-05-08: Finance-committee restructure observed; defensive precursor signals surfaced (1 of 3 indicators present at that point).
@@ -74,8 +77,8 @@ Communication style: precise, written-preference, formal. Late-Friday timing of 
 ## Cross-References
 
 - Sphere: [[acme-corp-manifest]]
-- Most recent cycle: [[cycle-0008]] (post-capability-gate; first move engaged; actor touched)
-- Prior cycle: [[cycle-0007]] (closed; defensive shift detected here)
+- Most recent cycle: [[cycle-0010]] (target of the acquisition sub-cycle; cleared the item, posture held)
+- Prior cycles: [[cycle-0009]] (Carol is the Adv option in Robert's matrix), [[cycle-0008]] (post-capability-gate; first move engaged), [[cycle-0007]] (closed; defensive shift detected here)
 - Coalitions: [[actor-david-coo]]
 - Opposition: [[principal-sam-ceo]]
 - Member of campaign: [[campaign-succession-q3]]

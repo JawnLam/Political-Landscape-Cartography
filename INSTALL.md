@@ -36,19 +36,19 @@ The OV folder belongs alongside your other working-document folders. If you use 
 Examples:
 
 ```
-~/Documents/Political-Landscape-Cartography-v1.0/
-~/Obsidian/<Vault>/Political-Landscape-Cartography-v1.0/
-~/work/<engagement>/Political-Landscape-Cartography-v1.0/
+~/Documents/Political-Landscape-Cartography/
+~/Obsidian/<Vault>/Political-Landscape-Cartography/
+~/work/<engagement>/Political-Landscape-Cartography/
 ```
 
-**Folder name MUST follow the major.minor convention** (Convention 1): `Political-Landscape-Cartography-v<major>.<minor>`. The version suffix is load-bearing — UPDATE-PROMPT relies on it to detect the version you're upgrading from.
+**Keep the folder name `Political-Landscape-Cartography`** — unversioned. The installed version is read from `VERSION.md`, which is what UPDATE-PROMPT uses to detect the version you're upgrading from; the folder name carries no version suffix, so an in-place upgrade never requires renaming the folder.
 
 ### 2. Clone the OV
 
 ```bash
 # From the parent folder where you want PLC installed
-git clone https://github.com/<org>/Political-Landscape-Cartography-v1.0.git Political-Landscape-Cartography-v1.0
-cd Political-Landscape-Cartography-v1.0
+git clone https://github.com/<org>/Political-Landscape-Cartography.git Political-Landscape-Cartography
+cd Political-Landscape-Cartography
 ```
 
 *(Replace `<org>` with the actual GitHub organization at publication. Until publication, contact the methodology author for the source location.)*
@@ -82,10 +82,11 @@ _PATTERNS/
 _types/
 _frameworks/
 _plc-engine/
+Spheres/
 .gitignore
 ```
 
-`Spheres/` is created automatically when you open your first sphere. It does not exist in a fresh install.
+A fresh install ships `Spheres/` containing one folder: `Spheres/Example-Sphere-Acme-Corp/`, the shipped worked example. Your own sphere cartridges are created alongside it when you open your first sphere. The example teaches format only — never cite its content as fact in a live sphere (that's failure mode F4b).
 
 ### 4. Open the first session
 
@@ -119,7 +120,7 @@ The AI runs the bootstrap protocol — one question at a time per P3. Plan ~60-9
 When a new PLC version releases, run UPDATE-PROMPT to upgrade in place. Your sphere cartridges (in `Spheres/`) are preserved verbatim; only the engine + frameworks + scaffolding zones get updated.
 
 ```bash
-cd /path/to/Political-Landscape-Cartography-v1.0
+cd /path/to/Political-Landscape-Cartography
 # Read the UPDATE-PROMPT and follow its instructions
 cat UPDATE-PROMPT.md
 ```
@@ -130,7 +131,7 @@ Major version bumps (e.g., v1.x → v2.0) introduce schema-breaking changes that
 
 | Symptom | Likely cause | Fix |
 |---------|--------------|-----|
-| AI says "I can't find `AI-BOOTSTRAP.md`" | You're not in the OV folder | `cd` into the cloned `Political-Landscape-Cartography-v1.0/` before starting the session |
+| AI says "I can't find `AI-BOOTSTRAP.md`" | You're not in the OV folder | `cd` into the cloned `Political-Landscape-Cartography/` before starting the session |
 | AI starts asking multi-bullet questionnaires | AI hasn't read the engine | Tell it: "Read `_plc-engine/02-PRINCIPLES.md` § P3 before continuing" — F1 prevention |
 | AI tries to infer your name from the file path | F3 violation | Tell it: "Use the `[OPERATOR]` placeholder. Per P5 / F3, you may not infer my identity." |
 | `[[wikilinks]]` show as raw text instead of rendering | Your markdown viewer doesn't support Obsidian-style links | Use Obsidian, or accept that wikilinks are still parseable as text references; the AI handles both |
@@ -150,14 +151,14 @@ PLC has no global state — uninstall is just deleting the folder.
 
 ```bash
 # WARNING — this deletes your sphere cartridges along with the engine
-rm -rf /path/to/Political-Landscape-Cartography-v1.0/
+rm -rf /path/to/Political-Landscape-Cartography/
 ```
 
 To preserve sphere cartridges across an uninstall, move `Spheres/` out first:
 
 ```bash
-mv Political-Landscape-Cartography-v1.0/Spheres ~/PLC-spheres-archive/
-rm -rf Political-Landscape-Cartography-v1.0/
+mv Political-Landscape-Cartography/Spheres ~/PLC-spheres-archive/
+rm -rf Political-Landscape-Cartography/
 ```
 
 The `Spheres/` folder is portable — it can be moved into a future PLC install of the same major version, and the engagement resumes from where it left off. Major-version migrations require running the migration guide; cross-version sphere portability is not guaranteed without it.

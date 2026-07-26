@@ -4,24 +4,24 @@ timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-move-type
 title: "PLC_Move — Type Definition"
 Date_Added: 2026-06-13
-Date_Modified: 2026-06-13
+Date_Modified: 2026-07-24
 Needs_Processing: false
 type_namespace: plc
-type_version: "1.0"
+type_version: "1.2"
 ---
 
 # PLC_Move
 
 ## Purpose
 
-The **smallest unit of political action** per D20 — a granular move from the Lam 2018 dissertation Table 3 with the **PP/AA/B/C/Inc/Dec signature**. Moves are the atoms; Tactics are higher-order compositions of Moves (see `PLC_Tactic.md`). Per D14, the Move catalog (~100 entries from dissertation Table 3) and the Tactic catalog (782 from the Political Warfare Catalogue) coexist at different grains.
+The **smallest unit of political action** per D20 — a granular move from the Lam 2018 dissertation Table 3 with the **PP/AA/B/C/Inc/Dec signature**. Moves are the atoms; Tactics are higher-order compositions of Moves (see `PLC_Tactic.md`). Per D14, the Move catalog (**148 rows** from dissertation Table 3) and the Tactic catalog (782 from the Political Warfare Catalogue) coexist at different grains. The row count is authoritative from `_frameworks/dissertation-table-3/Table-3-Manifest.md`; the "~100" estimate carried at v1.0 was wrong and any surviving instance of it is stale.
 
 Resolves D14's deferred grain question: separate first-class Types connected by reciprocal `plc_Composed_Of` ↔ `plc_Appears_In_Tactics` relations.
 
 ## Cardinality and grain
 
-- **~100 ship-shipped + N operator-extended.** Shipped from `_frameworks/dissertation-table-3/`.
-- **Lives at**: `_frameworks/dissertation-table-3/Move-<NNN>.md` (3-digit sequence)
+- **148 rows + N operator-extended.** Shipped from `_frameworks/dissertation-table-3/`. **3 of the 148 are authored Move files** (`Move-001`–`Move-003`); the other 145 exist only as rows in `Table-3-Manifest.md` and are carried as backlog in `ROADMAP.md`. A Move file you cannot find probably was never authored — read the manifest row rather than inferring a file.
+- **Lives at**: `_frameworks/dissertation-table-3/Move-<NNN>-<slug>.md` (3-digit zero-padded sequence + kebab-case slug)
 - Operator extensions live in `_frameworks/dissertation-table-3-extensions/`
 
 ## Durability mode
@@ -41,7 +41,7 @@ Resolves D14's deferred grain question: separate first-class Types connected by 
 | `Date_Added` | ISO date | |
 | `Date_Modified` | ISO date | |
 | `Needs_Processing` | boolean | Default `false` |
-| `plc_Move_Number` | integer | Sequence within Table 3 (1-100ish) |
+| `plc_Move_Number` | integer | Row number within Table 3 (1-148) |
 | `plc_Move_Name` | string | Short name as in Table 3 |
 | `plc_Move_Source` | enum | `dissertation_table_3 \| operator_extended` |
 | `plc_Move_Signature` | object | The 6-field PP/AA/B/C/Inc/Dec structure |
@@ -51,7 +51,7 @@ Resolves D14's deferred grain question: separate first-class Types connected by 
 | `plc_Move_Signature.C` | enum | `+ \| - \| 0` — Cost direction |
 | `plc_Move_Signature.Inc` | enum | `+ \| - \| 0` — Incentive direction |
 | `plc_Move_Signature.Dec` | enum | `+ \| - \| 0` — Decentive direction |
-| `plc_Resource_Types_Required` | list[enum] | Subset of 9-type taxonomy needed to execute this Move |
+| `plc_Resource_Types_Required` | list[enum] | Subset of `money \| hard_assets \| credibility \| attributes \| legitimacy \| information \| access \| title \| tribe` (dissertation 9-type taxonomy) `\| other` (v1.2+) — `other` REQUIRES a `## Resources Required` line naming the actual carrier. The nine are a non-exhaustive basis for elicitation, not a closed list; see `PLC_Actor.md` § `plc_Resources_Held` |
 | `plc_Appears_In_Tactics` | list[link] | `[[tactic-<NNNN>]]` per Tactic that composes this Move (reciprocal of PLC_Tactic.plc_Composed_Of) |
 | `plc_Slash_Operators_Used` | list[string] | Greek operators from dissertation slash notation that this Move invokes (e.g., `α`, `δ`, `Σ`) |
 | `plc_Citing_Cycles` | list[link] | Cycles that selected this Move |
@@ -90,7 +90,7 @@ PP: <+/-/0>  AA: <+/-/0>  B: <+/-/0>  C: <+/-/0>  Inc: <+/-/0>  Dec: <+/-/0>
 <Conditions where the Move's signature would backfire or be wasted.>
 
 ## Resources Required
-<Subset of 9-type taxonomy with brief specifics.>
+<Subset of 9-type taxonomy with brief specifics — plus any `other` carrier, which MUST be named here (v1.2+).>
 
 ## Appears In Tactics
 <Reciprocal of `plc_Composed_Of` from Tactic side. Auto-populated/maintained.>
@@ -127,62 +127,72 @@ PP: <+/-/0>  AA: <+/-/0>  B: <+/-/0>  C: <+/-/0>  Inc: <+/-/0>  Dec: <+/-/0>
 type: PLC_Move
 timestamp: "2026-04-15T00:00:00Z"
 Item_ID: move-042
-title: "Move 042 — Selective Information Exposure"
+title: "Move 042 — Seeking Opportunities for Exposure to Superiors and Other Influential Individuals"
 Date_Added: 2026-04-15
 Date_Modified: 2026-04-15
 Needs_Processing: false
 plc_Move_Number: 42
-plc_Move_Name: "Selective Information Exposure"
+plc_Move_Name: "Seeking Opportunities for Exposure to Superiors and Other Influential Individuals"
 plc_Move_Source: dissertation_table_3
 plc_Move_Signature:
   PP: "+"
   AA: "0"
   B: "0"
   C: "0"
-  Inc: "+"
+  Inc: "0"
   Dec: "0"
-plc_Resource_Types_Required: [information, access]
+plc_Resource_Types_Required: [access, attributes]
 plc_Appears_In_Tactics:
-  - "[[tactic-0029]]"
-  - "[[tactic-0301]]"
+  - "[[tactic-0078]]"
+  - "[[tactic-0081]]"
+  - "[[tactic-0307]]"
 plc_Slash_Operators_Used: ["α", "δ"]
-plc_Citing_Cycles:
-  - "[[cycle-0007]]"
+plc_Citing_Cycles: []
 AI_Instructions: ""
 ---
 
-# Move 042 — Selective Information Exposure
+# Move 042 — Seeking Opportunities for Exposure to Superiors and Other Influential Individuals
 
 ## Signature
-PP: `+`  AA: `0`  C: `0`  B: `0`  Inc: `+`  Dec: `0`
+PP: `+`  AA: `0`  B: `0`  C: `0`  Inc: `0`  Dec: `0`
 
-## Description
-Principal pushes by revealing specific information to specific actors at specific times. Actor-acceptance is neutral (the actor's posture toward the principal does not need to shift for this move to work). Adds incentive structure (information asymmetry creates new actor positioning). No direct cost or benefit; the move's force is incentive-side.
+**Dissertation Table 3 classifications (row 42):**
+- **Option Affected:** Preferred Position
+- **Consideration Affected:** Varied
+- **Effect on Component(s):** Varied
+- **LSPI component:** `varied`
+
+The actor acts, so `PP: +`. Everything else is `0` — not because the move is inert, but because Table 3 records this row's Consideration and Effect as *Varied*, and a Varied cell has no sign to transcribe. Do not resolve a Varied cell into `+` or `-` to make the signature look complete; the ambiguity is the datum.
+
+## Description (verbatim from the manifest row)
+
+Seeking opportunities for exposure to superiors and other influential individuals.
 
 ## When to Use
-- Cycle needs `PP: +` force vector
-- Information asymmetry exists that the principal controls
-- Actor's incentive structure is the lever, not their disposition
-- Two-step plays where information exposure now enables a follow-up move
+- Long-horizon positioning where the target's read of the actor has not formed yet
+- Contexts where the actor's contribution is real but is being observed only through an intermediary
+- Before any move that requires the target to already know who the actor is
 
 ## When Not to Use
-- Cycle needs disposition shift (use a `AA: +` move instead)
-- Information is symmetric (no asymmetry to exploit)
-- Risk of information backfire (target actor may weaponize the exposure)
+- The target's read is already formed and favorable — exposure adds risk, not information
+- The exposure route runs through a channel the opposition controls
+- The actor has nothing to be observed doing yet; premature exposure fixes a weak read
 
 ## Resources Required
-- **Information**: the asymmetric signal itself
-- **Access**: the channel to deliver to the target
+- **Access**: proximity to the superiors and influential individuals in question — the scarce carrier here
+- **Attributes**: whatever the exposure is meant to display, which must exist before it can be seen
 
 ## Appears In Tactics
-- [[tactic-0029]] — Selective Disclosure Choreography
-- [[tactic-0301]] — Asymmetric Briefing Cascade
+Per `INDEX-lspi.json` `provenance.lam_table3_refs`, three corpus tactics descend from row 42:
+- [[tactic-0078]] — Shadow Promotion (informal access to leadership *is* the exposure)
+- [[tactic-0081]] — Proximity Mapping (maps the exposure pathways this Move exploits)
+- [[tactic-0307]] — The Politics of Presence (exposure as the point of attendance)
 
 ## Slash Addressing Notes
-Typically appears as `α.<principal>/δ.<info-signal>/<target-actor>` — principal-operator + information-asymmetry-element + target.
+Typically appears as `α.<actor>/δ.<observable-attribute>/<target-superior>` — actor-operator + the attribute the exposure puts on display + the observing target.
 
 ## Citing Cycles
-- [[cycle-0007]] — Q2 mandate signal preservation (selected as part of Tactic 0301)
+(Auto-populated as cycles select this Move.)
 ```
 
 ## Anti-patterns

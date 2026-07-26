@@ -16,6 +16,9 @@ plc_Coalitions: []
 plc_Opposed_By: []
 plc_Actor_Completeness: 0   # Stub — name + role only
 plc_Last_Updated_Cycle: ""
+# --- Optional LSPI fields (v1.2+; leave empty on a stub — populated by ESTIMATE) ---
+plc_Estimated_By: []   # [[detection-<slug>]] — reciprocal of the Detection Record's plc_Target_Actor
+plc_Depth_Estimate: ""   # ℓ̂_T + credence + as-of date
 AI_Instructions: ""
 ---
 
@@ -32,7 +35,7 @@ AI_Instructions: ""
 <Unknown — pending first ACTOR-UPDATE>
 
 ### Resources Held
-<TBD>
+<TBD — at first ACTOR-UPDATE, capture per-resource effect signature + durability (v1.2+, optional; see the Full template).>
 
 ### Network Position
 <TBD>

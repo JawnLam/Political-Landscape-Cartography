@@ -37,11 +37,20 @@ AI_Instructions: ""
 <count> updates: <brief summary of what reverse-pointers got wired>
 
 ## Gate Outcomes
+- **Augmented gate (v1.2+, optional):** **Verdict:** PASS | acquire `<q>` | rescope | re-probe | abandon. **Route fired:** <possession ∌ / sufficiency / inclusion / affordability / none — PASS>. **If re-probe:** VoI rationale <what decision the probe could change; why it beats acting now>; probe budget remaining: <n>.
 - **ALTERNATIVES-AUDIT § 15:** Completed <ISO datetime>. <Brief: how many of 10 approaches surfaced moves into considered set.> OR **Skipped — override:** <justification>
 - **ETHICAL-ACCOUNTING § 11:** Completed <ISO datetime>. <Brief: any flagged categories.> OR **Skipped — override:** <justification>
 
 ## Activity-Specific Block (RUN_CYCLE)
-<Which of the 14 constituents completed this session. What remains for follow-up sessions.>
+<Which of the 14 constituents completed this session (formal spine: the LSPI lifecycle/failure/non-destructive rule states — see 03-SESSION-PROTOCOL "The LSPI formal spine"). What remains for follow-up sessions.>
+
+- **Cycle status transition:** <from> → <to>, <ISO datetime> — trigger: <what fired it>   # planning | active | engaged | closed | mooted | abandoned | e_immutable  (mooted, abandoned: v1.2+; abandon is admissible from any state)
+- **Stance:** <adaptive | pre_committed_resource_careful | pre_committed_resource_batched> — <rationale, or "unchanged">
+- **σ-forks encountered:** <count>; logged to cycle σ / Guard Log: <yes/no>
+- **Guards resolved:** <possession / perception-validation readings made this session>
+- **Operation Record entries appended:** <count> (append-only; projections primed; no overwrites)
+- **Spawns / resumes:** <sub-cycles spawned or resumed this session, or "none">
+- **Probe budget:** <remaining / not in use this cycle>
 
 ## Open Threads
 - <items raised but not resolved this session>

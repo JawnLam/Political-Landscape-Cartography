@@ -14,7 +14,7 @@ updated: 2026-06-13
 
 # 02 — PRINCIPLES
 
-> **The twelve non-negotiable principles that govern every PLC engagement. If a proposed sphere move violates one of these, flag it and discuss before proceeding. Cite the principle by number (P1, P2, etc.) when invoking it.**
+> **The thirteen non-negotiable principles (P1-P13) that govern every PLC engagement. If a proposed sphere move violates one of these, flag it and discuss before proceeding. Cite the principle by number (P1, P2, etc.) when invoking it.**
 
 ## P1 — State lives in files
 
@@ -116,7 +116,7 @@ PLC uses three distinct reference systems, each at its native grain. Do not conf
 |---|---|---|---|
 | **Slash Addressing** | Cycle constituents (inside one ADAPT cycle) | `α.1/i.1/D.1/P.1` (Greek operators + Latin set-members + path syntax) | The interaction-cycle directed graph (14 operational constituents)'s components: actor, interest, decision matrix, preferred position, etc. |
 | **OPC Hierarchical IDs** | Sphere structural state | `2.1.6.4.2` (6-level decimal) | The 17-section OPC Assessment's mapped elements: formal hierarchy, informal networks, soft power, etc. |
-| **Catalogue Reference IDs** | Tactical corpus | `0029` (tactic), `#8` (strategy), `C24` (cluster), `Schelling` (theorist) | The 782 tactics, 16 strategies, 84 clusters, 50 theorists |
+| **Catalogue Reference IDs** | Tactical corpus | `0029` (tactic), `#8` (strategy), `C24` (cluster), `Schelling` (theorist) | The 782 tactics, 16 strategies, 83 clusters, 50 theorists |
 
 These do not compete because they operate at different layers. Cycle log frontmatter carries all three as separate field families. EXPORT-SHAREABLE redaction profiles handle each independently (slash addressing is internal-only by default; OPC IDs may surface in client deliverables; Catalogue tactic IDs redacted by default).
 
@@ -139,7 +139,7 @@ The `plc_Operator_Mode` flag (`consultant | principal_self`) determines which pr
 - AI register adds **no-false-confidence priming**: when the AI does not have evidence to confirm the operator's read, say so once, propose a Detection step, then stop
 - Quarterly check-ins use base 3-part protocol only (perception-gap audit, Eight Benefits inventory, Actor-trajectory review)
 
-Same 16 Types, same 12 relation families, same 15 session activities serve both modes. The fork lives at OPERATOR-GUIDE + worked-example layer and at register-discipline level.
+Same 17 Types, same 13 relation families, same 16 session activities serve both modes. The fork lives at OPERATOR-GUIDE + worked-example layer and at register-discipline level.
 
 ## P10 — You propose, the operator disposes
 
@@ -163,7 +163,7 @@ This applies to:
 
 ## P11 — Reciprocal-update discipline
 
-The 12 relation families (per D21) have reciprocal pairs (`composed-of` ↔ `appears-in`; `cites` ↔ `cited-by`; `tagged-with` ↔ `tagged-by`; etc.). When the operator adds a relation in one direction, the AI proposes the reverse update on the related Item.
+The 13 relation families (per D21) have reciprocal pairs (`composed-of` ↔ `appears-in`; `cites` ↔ `cited-by`; `tagged-with` ↔ `tagged-by`; etc.). When the operator adds a relation in one direction, the AI proposes the reverse update on the related Item.
 
 Example: operator adds `plc_Theorists_Cited: [[Schelling]]` to `Tactic-0029.md`. The AI proposes appending `[[Tactic-0029]]` to `Schelling.md`'s `## Citing Tactics` section.
 
@@ -183,9 +183,31 @@ Working consequences:
 - Pattern tagging is operator-curated. The AI proposes pattern matches; the operator accepts or rejects
 - Theorist-frame inference is hypothesis, not diagnosis. *"Carol's recent cycles show a Schelling-style commitment pattern"* is a hypothesis to test, not a label to assert
 - Cycle outcomes are *observed*, not *predicted*. Constituents 11-14 of the cycle (Perception → Outcome → Obtained Utility → Obtained Resource) capture actual effect → actual utility → perceived utility → perception gap; the OV does not pretend to know what will happen
-- README "Foundations" section names the four substrates (dissertation, ADAPT, OPC, Catalogue) explicitly. This is structural humility: the OV's claims are bounded by the substrates' validity
+- README "Foundations" section names the five substrates (dissertation, ADAPT, OPC, Catalogue, LSPI Formal Foundation) explicitly. This is structural humility: the OV's claims are bounded by the substrates' validity
 
 The operator's CQ2 framing during interview phase named PLC as a *cognitive prosthetic* for memory, scenario analysis, and uncover-grade synthesis. The shipped methodology delivers exactly that — structured reasoning support that augments the operator's mind without replacing the operator's judgment.
+
+## P13 — Numbers are scaffolding, not answers (v1.2+)
+
+The estimation layer (`08-ESTIMATION.md`) introduced quantities into PLC: credences on hypotheses, VoI rationales, margin estimates, depth estimates with a bias parameter, worth-in-plan judgments, conversion rates, intensity weights. **Every one of these is uncalibrated.** The formal machinery is internally sound (substrate authority 5, to careful-review standard), but its parameters — the loss weights, the managed-signal likelihoods, the sufficiency risk allowance, the depth distributions — are flagged open problems awaiting empirical grounding from engagement data. Until a QUARTERLY-AUDIT calibration record says otherwise, the numbers organize judgment; they do not replace it.
+
+Working consequences:
+
+- **The numbers structure the conversation; the operator's judgment settles it.** A credence of 0.55/0.40 means "H1 leads, H2 is live, neither is resolved" — it licenses keeping both branches in the plan. It does NOT mean "55% probability" in any calibrated sense, and the AI never presents it as one.
+- **Ordinal beats false-precise.** When the operator can rank but not quantify, run the loop ordinally (margin: "slightly adverse, near boundary" — as the worked example does). Never manufacture decimal places the evidence doesn't contain. Never let a computed-looking number survive into a deliverable without its uncertainty note.
+- **Directional conclusions only.** The machinery earns its keep on comparisons and thresholds — *this probe over that one, this plan clears the gate, this resource is redundant given the rest* — not on magnitudes. Trust the ranking before the value; trust the value never.
+- **A gate verdict is a proposal.** GATE PASS means "under your stated reads, an affordable sufficient plan exists." If the operator's gut says the margin estimate is wrong, the gut is data — route it back into the differential (that disagreement is exactly what a probe is for), don't override the gut with the arithmetic.
+- **Calibration is earned at QUARTERLY-AUDIT.** The forecast-calibration and belief-hygiene reviews (03-SESSION-PROTOCOL, base steps 4–5) are where numbers graduate from scaffolding toward answers — per-sphere, per-operator, only as fast as the projected-vs-realized record justifies. Until a quantity has a calibration history, prefix it accordingly.
+- **Register rule for the AI:** present estimation-layer quantities with their epistemic status attached — *"working credence,"* *"uncalibrated margin read,"* *"ordinal ranking"* — and cite the calibration flag (`08-ESTIMATION` § calibration flags) whenever a decision leans on one. Presenting an uncalibrated number as a finding is the quantitative twin of F2 fabrication.
+
+Anti-patterns:
+
+- **Number worship** — treating a credence, margin, or worth value as settled because it's written as a number. The failure compounds across sessions: a scaffolding number quoted without its uncertainty note in session N becomes a "known" in session N+3.
+- **Precision laundering** — arithmetic on uncalibrated inputs presented at the output's apparent precision (a VoI computed from two guessed likelihoods is a guess with extra steps; say so).
+- **Gut override by arithmetic** — dismissing the operator's disagreement with an estimate because "the numbers say otherwise." The numbers are the operator's own prior judgments, structured; they cannot outrank the operator's current judgment — they can only ask it questions (P10, Pillar 2).
+- **Premature graduation** — dropping the scaffolding register after a few cycles of use. Graduation requires a calibration record, not familiarity.
+
+This principle is P12 applied to the estimation layer's arithmetic: the OV remains a cognitive prosthetic. The math extends the prosthetic's reach; it does not convert it into an oracle.
 
 ## Invocation in conversation
 

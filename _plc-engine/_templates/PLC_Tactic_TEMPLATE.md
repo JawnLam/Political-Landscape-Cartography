@@ -9,7 +9,7 @@ plc_Tactic_ID: "<NNNN>"   # 4-digit Catalogue Reference ID; operator extensions 
 plc_Tactic_Name: "<Name>"
 plc_Tactic_Source: catalogue   # catalogue | operator_extended
 plc_Strategies_Belongs_To: []   # subset of 1-16
-plc_Clusters_Belongs_To: []   # subset of C01-C84
+plc_Clusters_Belongs_To: []   # subset of C01–C96 (83 codes, gapped) + `ORIGINAL`
 plc_Cites_Theorists: []   # symmetric reciprocal with PLC_Theorist.plc_Citing_Tactics
 plc_Composed_Of: []   # symmetric reciprocal with PLC_Move.plc_Appears_In_Tactics
 plc_Resource_Types_Required: []
@@ -53,6 +53,18 @@ AI_Instructions: ""
 - Harm Scope 1 (target actor): <check>
 - Harm Scope 2 (non-target actors): <check>
 - Harm Scope 3 (sphere-wide): <check>
+
+## LSPI Facets (v1.2+, optional)
+
+> **Sidecar-resident — do NOT fill these in a shipped Tactic body (Mode E).** Source of truth is `_frameworks/political-warfare-catalogue/INDEX-lspi.json`, keyed by tactic ID (alongside `lspi_levers` and `epsilon_template`). Operator-extended Tactics (Mode D) may carry the same facets in frontmatter, using these vocabularies verbatim. Interpretive facets are P10 proposals pending operator QA.
+
+- **`required_resources`:** `[{type, role, note}]` — type ∈ money | hard_asset | credibility | attribute | legitimacy | information | access | title | tribe; role ∈ enabling | consumed
+- **`detectability`:** `{level: low | med | high, signature: "<the tell>"}` — feeds MOVE-LOOKUP output and the estimation loop's observation model
+- **`certainty_class`:** certain | probable | extra_conditional | spurious
+- **`ethical_valence`:** `{axes: [...], severity: 1-3}` — axes ⊆ deception | coercion | fairness | transparency | dignity | loyalty_exploitation | harm_to_third_parties | institutional_damage; pre-populates the § 11 checks above
+- **`counter_tactic_ids`:** `["<NNNN>", …]` — tactics that counter this one (this one is *countered-by* them)
+- **`counters_tactic_ids`:** `["<NNNN>", …]` — tactics this one counters (derived reciprocal: counters ↔ countered-by)
+- **`provenance`:** `{lam_table3_refs: [<row numbers per Table-3-Manifest.md>], vignette_refs: [Charles | Jim | Nathan | Sarah | Rusty]}`
 
 ## Cited In Cycles
 <Auto-populated. Feeds D16 cross-cycle searchability.>

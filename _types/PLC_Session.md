@@ -4,17 +4,17 @@ timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-session-type
 title: "PLC_Session — Type Definition"
 Date_Added: 2026-06-13
-Date_Modified: 2026-06-13
+Date_Modified: 2026-07-24
 Needs_Processing: false
 type_namespace: plc
-type_version: "1.0"
+type_version: "1.2"
 ---
 
 # PLC_Session
 
 ## Purpose
 
-Append-only log of one AI-operator working session. Captures the activity performed, the files touched, the decisions made, and the next-activity recommendation. Per D22 + D24, a single Type carries all 15 session activities via the `plc_Activity` enum.
+Append-only log of one AI-operator working session. Captures the activity performed, the files touched, the decisions made, and the next-activity recommendation. Per D22 + D24, a single Type carries all 16 session activities via the `plc_Activity` enum.
 
 ## Cardinality and grain
 
@@ -40,7 +40,7 @@ A session-in-progress file is editable; once committed at session-end, never edi
 | `Needs_Processing` | boolean | Default `false` |
 | `plc_Sphere` | link | `[[<sphere-slug>-manifest]]` |
 | `plc_Session_Number` | integer | Sequential within sphere |
-| `plc_Activity` | enum | One of the 15 standalone activities (see below) |
+| `plc_Activity` | enum | One of the 16 standalone activities (see below) |
 | `plc_Session_Started_At` | ISO datetime | |
 | `plc_Session_Ended_At` | ISO datetime | |
 | `plc_Operator_Mode` | enum | Mirrors manifest (recorded for audit, since mode can in principle change) |
@@ -52,7 +52,7 @@ A session-in-progress file is editable; once committed at session-end, never edi
 
 ### `plc_Activity` enum (per D24)
 
-15 standalone activities:
+16 standalone activities:
 
 - `SPHERE_OPEN`
 - `SPHERE_CLOSE`
@@ -66,11 +66,14 @@ A session-in-progress file is editable; once committed at session-end, never edi
 - `QUARTERLY_AUDIT`
 - `SCAN`
 - `UNCOVER`
+- `ESTIMATE`
 - `MOVE_LOOKUP`
 - `THEORIST_LOOKUP`
 - `EXPORT_SHAREABLE`
 
 The two embedded gates (`ALTERNATIVES-AUDIT`, `ETHICAL-ACCOUNTING`) are NOT standalone session activities — they fire inside `RUN_CYCLE`. They do not appear in this enum.
+
+`RUN_CYCLE` walks the 14-constituent operator-facing order on the **LSPI formal spine** (lifecycle / failure / non-destructive rule families, with σ-fork and guard logging per Pillar 4 / Pillar 2) — see `03-SESSION-PROTOCOL.md` § "The LSPI formal spine", the full rule catalogue and state machine in `09-LSPI-RULES.md`, and the `PLC_Cycle` Type's LSPI sections. The AI administers the walk; it never computes it (F11).
 
 ## Required body sections
 
@@ -93,7 +96,7 @@ The two embedded gates (`ALTERNATIVES-AUDIT`, `ETHICAL-ACCOUNTING`) are NOT stan
 <For RUN_CYCLE sessions only. Both gates' completion status with timestamps OR override justifications. F8 prevention.>
 
 ## Activity-Specific Block
-<Section varies by activity. For OPC_DIAGNOSE: which sections diagnosed. For UNCOVER: what was uncovered. For QUARTERLY_AUDIT: 3-part protocol outcomes (+ 4 consultant additions if consultant mode). Etc.>
+<Section varies by activity. For OPC_DIAGNOSE: which sections diagnosed. For UNCOVER: what was uncovered. For QUARTERLY_AUDIT: 5-part protocol outcomes — perception-gap, Eight Benefits, actor-trajectory, forecast calibration (v1.2+), belief hygiene (v1.2+) — (+ 4 consultant additions if consultant mode). Etc.>
 
 ## Open Threads
 <Anything raised this session that wasn't resolved. Carried to next session.>

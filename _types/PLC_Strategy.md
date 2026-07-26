@@ -21,7 +21,7 @@ Per D14 + D20.
 ## Cardinality and grain
 
 - **Exactly 16 shipped + N operator-extended.** Shipped from `_frameworks/political-warfare-catalogue/by-strategy/` per D14.
-- **Lives at**: `_frameworks/strategies/Strategy-<N>.md` (1-16, no zero-padding) AND mirror facet in `_frameworks/political-warfare-catalogue/by-strategy/Strategy-<N>-<slug>.md`
+- **Lives at**: `_frameworks/political-warfare-catalogue/by-strategy/<NN>-<slug>.md` — **2-digit zero-padded** (`07-benefit-contrast.md`), no `Strategy-` prefix. `_frameworks/strategies/` holds operator notes only; the 16 atoms ship as facet files in the Catalogue mirror and nowhere else.
 - Operator extensions live in `_frameworks/strategies-extensions/` and use a separate ID space (e.g., `EXT-S-001`)
 
 ## Durability mode
@@ -106,69 +106,67 @@ Per D14 + D28. Same reasoning as PLC_Tactic: the 16-strategy frame is sourced sc
 type: PLC_Strategy
 timestamp: "2026-04-01T00:00:00Z"
 Item_ID: strategy-7
-title: "Strategy 7 — Coalition Preservation"
+title: "Strategy 7 — Benefit Contrast"
 Date_Added: 2026-04-01
 Date_Modified: 2026-04-01
 Needs_Processing: false
 plc_Strategy_Number: 7
-plc_Strategy_Name: "Coalition Preservation"
+plc_Strategy_Name: "Benefit Contrast"
 plc_Strategy_Source: catalogue
-plc_Force_Vector: "Apply structural-incentive force to maintain an existing coalition against fracturing pressure; avoid direct confrontation that would force positional choices."
+plc_Force_Vector: "B(X)↑ + B(Y)↓ — raise the perceived benefit of the preferred position while lowering the perceived benefit of the adverse alternative. Both benefit levers, neither cost lever: the target is moved by what the two options are worth, never by what they cost."
 plc_Tactics:
-  - "[[tactic-0029]]"
-  - "[[tactic-0301]]"
-  - "[[tactic-0118]]"
+  - "[[tactic-0313]]"
+  - "[[tactic-0507]]"
+  - "[[tactic-0689]]"
 plc_Theorists_Primary:
-  - "[[theorist-schelling]]"
-  - "[[theorist-axelrod]]"
-plc_Slash_Addressing_Family: "α/Σ.<coalition>/δ.<incentive-element>"
-plc_Cited_In_Cycles:
-  - "[[cycle-0007]]"
-plc_Catalogue_Source_File: "_frameworks/political-warfare-catalogue/by-strategy/Strategy-7-coalition-preservation.md"
+  - "[[theorist-kahneman]]"
+  - "[[theorist-goffman]]"
+plc_Slash_Addressing_Family: "[a.] ε_<NNNN>(<addr>/e.) → { [<addr>/t/D/P/b] +, [<addr>/t/D/Adv/b] − }"
+plc_Cited_In_Cycles: []
+plc_Catalogue_Source_File: "_frameworks/political-warfare-catalogue/by-strategy/07-benefit-contrast.md"
 AI_Instructions: ""
 ---
 
-# Strategy 7 — Coalition Preservation
+# Strategy 7 — Benefit Contrast
 
 ## Force Vector
-Apply structural-incentive force to maintain an existing coalition against fracturing pressure; avoid direct confrontation that would force positional choices. The Strategy's force is preventive, not propulsive — the goal is "no one defects" rather than "everyone advances."
+`B(X)↑ + B(Y)↓`. Raise the perceived benefit of the preferred position; lower the perceived benefit of the adverse alternative. Neither cost lever is touched — nothing is made harder for anyone, which is what distinguishes this from the triples. The target is left free to choose and simply finds one column worth more than it was.
 
 ## When This Strategy Fits
-- Existing coalition is genuinely on the principal's side and worth holding
-- Fracturing pressure is incentive-driven (not value-driven; value-driven fractures require a different Strategy)
-- Time horizon allows for indirect play (Coalition Preservation is slow)
+- The target's margin is a benefit judgment, not a friction judgment — they are weighing what the options are worth, not what they cost to take
+- The principal can genuinely raise the preferred option's value, or can show the alternative is worth less than the target believes
+- Cost levers are unavailable or would be read as coercion
 
 ## When This Strategy Misfits
-- Coalition is already fracturing past the point of incentive repair
-- The opposition's pressure is value-driven (members reconsidering allegiance on principle, not incentive)
-- Cycle horizon is acute (urgent threats need different Strategy frames)
+- The blocker is cost, not value (the target already prefers the position and cannot afford it) — that is Cost Contrast, Strategy 8
+- The benefit claim would have to be manufactured; two of this Strategy's three Tactics carry the deception axis for exactly this reason (0313 at severity 3, 0507 at severity 2)
+- The margin is wide enough that a benefit-only pair cannot close it
 
 ## Member Tactics
-- [[tactic-0029]] — Selective Disclosure Choreography
-- [[tactic-0301]] — Asymmetric Briefing Cascade
-- [[tactic-0118]] — Reciprocity Activation
-(... 4 more tactics in this Strategy in the Catalogue ...)
+Three, each carried in the facet file as both a specific and a generic entry (6 rows):
+- [[tactic-0313]] — The Cosmetic KPI Push (C66)
+- [[tactic-0507]] — The 'Voice of the Customer' Ventriloquism (C36)
+- [[tactic-0689]] — The Hierarchy Signal / The Pecking Order Display (C59)
 
 ## Theoretical Lineage
-- **Schelling** — strategic signaling; incentive-structure preservation through choreographed communication
-- **Axelrod** — cooperation-stability under iterated interaction; coalition durability theory
+- **Kahneman** (with Tversky) — prospect theory; the benefit judgment is reference-dependent, which is what makes B(X)↑ achievable without changing anything material
+- **Goffman** — impression management; the presented value of an option, not its audited value, is what the target weighs
 
 ## Common Slash-Addressing Family
-`α/Σ.<coalition>/δ.<incentive-element>` — principal-operator + coalition-set + incentive-asymmetry-element
+`[a.] ε_<NNNN>(<addr>/e.) → { [<addr>/t/D/P/b] +, [<addr>/t/D/Adv/b] − }` — both effect cells are `/b` (benefit); the absence of any `/c` cell is the Strategy's signature.
 
 ## ALTERNATIVES-AUDIT § 15 Bridge
-- § 15.7 — Coalition-strengthening constructive approach (the most common bridge)
-- § 15.3 — Constructive information-sharing (when the preservation play involves disclosure)
-- § 15.5 — Reciprocity-based exchange (when the preservation uses obligation activation)
+- § 15.10 — Mutual-gain reframing (the most common bridge; a genuine mutual-gain case is a truthful B(X)↑)
+- § 15.3 — Constructive information-sharing (when the alternative's benefit is overestimated and correcting the record is the whole move)
 
 ## ETHICAL-ACCOUNTING § 11 Profile
 Strategy-7 plays typically flag:
-- § 11 Harm Scope 2 (non-coalition actors): risk of unfair exclusion from coalition benefits
-- § 11 Harm Scope 3 (sphere-wide): risk of sphere-wide information ecosystem corruption if disclosure-based Tactics are used carelessly
-Strategy-level profile; per-Tactic flags refine these.
+- **Deception** — the dominant axis. 0313 (severity 3) and 0507 (severity 2) both manufacture the benefit signal rather than the benefit; 0689 (severity 1) does not carry the axis at all
+- § 11 Harm Scope 3 (sphere-wide): metric and consultation channels degrade when they are used to carry benefit claims they cannot support
+Strategy-level profile; per-Tactic flags in `INDEX-lspi.json` `ethical_valence` refine these.
 
 ## Cited In Cycles
-- [[cycle-0007]] — Q2 mandate signal preservation
+(None yet — auto-populated rollup.)
 ```
 
 ## Anti-patterns

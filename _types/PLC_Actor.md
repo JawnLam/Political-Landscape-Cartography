@@ -4,10 +4,10 @@ timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-actor-type
 title: "PLC_Actor — Type Definition"
 Date_Added: 2026-06-13
-Date_Modified: 2026-06-13
+Date_Modified: 2026-07-24
 Needs_Processing: false
 type_namespace: plc
-type_version: "1.0"
+type_version: "1.2"
 ---
 
 # PLC_Actor
@@ -19,7 +19,15 @@ A person (or institutional role) in the sphere's political landscape whose dispo
 ## Cardinality and grain
 
 - **N per sphere.** Typically 5-30 actively-tracked.
-- **Lives at**: `Spheres/<Sphere>/Actors/<Actor-Name>.md`
+- **Lives at**: `Spheres/<Sphere>/Actors/actor-<slug>.md` — **one flat file per Actor.** This is the default and the only layout the shipped example sphere uses.
+
+### Layout: flat by default; the per-principal overlay is optional
+
+The flat file above holds everything: `## Current`, `## Perception History`, `## Resource History`. Unless the sphere needs the overlay below, there is exactly one file per Actor and no directory.
+
+The alternative — a directory per Actor holding `<slug>/_baseline.md` plus one `_view-<principal>.md` per principal — is an **optional multi-principal overlay pattern**, not the default. Adopt it only when a single sphere carries several principals whose reads of the same Actor genuinely diverge and must be kept separately auditable (typically consultant mode). It is not exercised in the shipped example sphere; a single-principal sphere that splits an Actor into baseline + one view has added a directory and gained nothing.
+
+When the overlay is in use: the `_baseline.md` holds the principal-independent record (profile, resources, network position, and their histories) and each `_view-<principal>.md` holds only that principal's relationship status, debt ledger, and perception-gap history. Both halves are Mode D and both obey the section discipline in `_plc-engine/04-SCHEMA.md` § *Section discipline* — `## Current ...` overwrites, `## ... History` appends. Migrating flat → overlay is a split, never a copy: no fact should end up asserted in two files.
 
 ## Durability mode
 
@@ -45,12 +53,23 @@ A person (or institutional role) in the sphere's political landscape whose dispo
 | `plc_Hierarchical_Position` | enum | `executive \| director \| manager \| ic \| board \| external \| other` |
 | `plc_Current_Perception_Toward_Principal` | enum | `allied \| neutral \| ambivalent \| defensive \| opposed \| unknown` |
 | `plc_Network_Distance_From_Principal` | integer | Hop count; 1 = direct peer / report / boss; 2 = one degree of separation; etc. |
-| `plc_Resources_Held` | list[enum] | Subset of `money \| hard_assets \| credibility \| attributes \| legitimacy \| information \| access \| title \| tribe` (dissertation 9-type taxonomy) |
+| `plc_Resources_Held` | list[enum] | Subset of `money \| hard_assets \| credibility \| attributes \| legitimacy \| information \| access \| title \| tribe` (dissertation 9-type taxonomy) `\| other` (v1.2+) — `other` REQUIRES a note in `### Resources Held` naming the actual carrier |
 | `plc_Coalitions` | list[link] | `[[<Actor-Name>]]` per allied actor |
 | `plc_Opposed_By` | list[link] | `[[<Actor-Name>]]` per opposing actor (reciprocal of opposition) |
 | `plc_Actor_Completeness` | integer | 0-5 mastery scale (per D25) |
 | `plc_Last_Updated_Cycle` | link | Most recent Cycle that touched this actor |
 | `AI_Instructions` | string | Default `""` |
+
+### Optional LSPI fields (v1.2+; per substrate authority 5)
+
+| Field | Type | Notes |
+|-------|------|-------|
+| `plc_Estimated_By` | list[link] | `[[detection-<slug>]]` records targeting this actor (reciprocal: **estimates / estimated-by**) |
+| `plc_Depth_Estimate` | string | Current signaling-depth read (ℓ̂_T + credence + as-of date); full trail in the Detection Record |
+
+Note on `plc_Resources_Held`: the nine types are a **non-exhaustive basis of carriers for elicitation** — the primary definition of a resource is intensional (a costly, target-conditional capacity to shift a decision-matrix cell; see `08-ESTIMATION.md`). The body's `### Resources Held` records per-resource effect signatures and durability.
+
+**Why `other` exists (v1.2+).** A closed nine-value enum silently contradicts the intensional definition: a genuine resource that is not one of the nine — it costs something, it is target-conditional, it moves a matrix cell — would have nowhere to live, and the elicitation would quietly drop it. `other` is that home. It is **not** a shrug: every `other` entry MUST be accompanied by a `### Resources Held` line naming the actual carrier in the operator's own words, alongside its effect signature and durability like any other resource. Recurring `other` carriers are a QUARTERLY-AUDIT signal — either the sphere has a carrier the basis misses, or the entry belongs under one of the nine after all.
 
 ### `plc_Actor_Completeness` levels (per D25)
 
@@ -77,7 +96,13 @@ A person (or institutional role) in the sphere's political landscape whose dispo
 <Current perception with as-of date. Evidence summary (1-3 cold-reading indicators).>
 
 ### Resources Held
-<Subset of 9-type taxonomy with specifics. Material amounts where relevant.>
+<Subset of 9-type taxonomy with specifics — plus any `other` carrier, which MUST be named here (v1.2+). Material amounts where relevant. Per resource (v1.2+, optional): effect signature — which matrix cells it can move ({P/b, P/c, Adv/b, Adv/c}), sign, target-conditionality note, rough cost — and durability (durable vs fragile).>
+
+### Convertibility Edges (v1.2+, optional)
+<Conversion paths this actor's resources participate in: r₁ ⇝ r₂, edge type (transfer / transform / earn-sanction / non-transferable), rough sphere-indexed rate. Note any gain-cycle (rate-product > 1 loop) — that's a compounding position — and what protects it (durable low-yield spent defending fragile high-yield).>
+
+### Estimated Matrix Summary (v1.2+, optional)
+<Prose: current best read of how this actor loads keep-vs-relinquish on live questions; margin direction. Pointer to [[detection-<slug>]] for the full differential and probe trail. This is a summary, not the record.>
 
 ### Network Position
 <Coalitions / opposition / brokering relationships. Distance from principal.>

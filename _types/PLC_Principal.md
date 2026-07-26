@@ -4,10 +4,10 @@ timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-principal-type
 title: "PLC_Principal — Type Definition"
 Date_Added: 2026-06-13
-Date_Modified: 2026-06-13
+Date_Modified: 2026-07-24
 Needs_Processing: false
 type_namespace: plc
-type_version: "1.0"
+type_version: "1.2"
 ---
 
 # PLC_Principal
@@ -86,6 +86,10 @@ Per D27 + D28.
 ### Mastery Signals
 <Evidence of the current `plc_Principal_Funnel_Sharpness` level. What earned this score; what would justify moving up.>
 
+### Current Resource Holdings (v1.2+, optional)
+<This is LSPI's R — the principal's resource MULTISET (quantities matter: two banked favors ≠ one). One line per holding, quantity FIRST and explicit — never "has favors," always "×2 banked favors (Robert, Elena)." Per resource: quantity, type (carrier), effect signature, durability, and any convertibility edges / gain-cycle positions. Protection note: which durable low-yield resources defend which fragile high-yield ones. Full discipline in § Resource-holdings discipline below.>
+- ×<n> <carrier> — <specifics; whose, since when> · moves <cells> · <durable|fragile> · <as-of date, cycle ref>
+
 ## Engagement History
 <Append-only. Material role / scope / status shifts. Dated.>
 - <date>: <event>
@@ -101,6 +105,18 @@ Per D27 + D28.
 - Active campaigns: <links>
 - Most recent cycle: <link>
 ```
+
+## Resource-holdings discipline (R) (v1.2+, optional)
+
+`### Current Resource Holdings` is LSPI's **R** slot. Pre-1.2 Principal files carry no such section and stay valid; once it exists, it is auditable, and these are the rules an audit checks.
+
+1. **Quantities are explicit.** R is a multiset, not a set. Every line carries a count (`×1`, `×2`, …). "Holds credibility with the board" is not an entry; "×2 unredeemed commitments (Robert, Elena)" is. Holding two units and spending one leaves one — set notation cannot say that, which is precisely why the multiset framing is load-bearing.
+2. **Executions deduct exactly once.** When a cycle's ε fires, the resources in its θ are decremented once each, at execution, in the cycle that executed. Not at selection, not again at close. Decrement by writing the new count with the cycle reference — never by deleting the line unless the count reaches zero.
+3. **Flowbacks append exactly once.** When a sub-cycle closes and flows back, its obtained resources are added once, tagged with the flowing-back cycle. A resource is never credited twice because it appears in both the sub-cycle's `Φ` and the parent's resumed gate — those are one event recorded from two sides.
+4. **Mooted and abandoned cycles flow back nothing.** They produce no `Φ` and no `⟨flowback-recorded, E⟩`; R is unchanged. If a holdings line grew out of a mooted cycle, that is a bug.
+5. **The quarterly conservation eyeball counts multiplicities (Theorem 13.4).** At QUARTERLY-AUDIT's belief-hygiene review, walk the quarter's cycles: every deduction has a matching execution, every addition a matching flowback, and the arithmetic runs **over counts, not over kinds**. "Credibility in, credibility out" is not conservation if two units went in and one came back.
+
+**Pinning note — conservation of totals is not conservation of identity.** What flows back on a resume must be **the resource that failed the gate**. A sub-cycle spawned because the principal lacked `q` and returning some *other* resource of equal notional worth has not resolved the escalation: the parent's gate re-test reads the specific `q` it failed on, and `R-resume` will not fire without it. The audit checks the pin, not just the balance — match each flowback to the `⟨gate-fail, q⟩` that caused the spawn. (See `PLC_Cycle.md` § Capability gate and § LSPI Configuration.)
 
 ## Relation slots
 

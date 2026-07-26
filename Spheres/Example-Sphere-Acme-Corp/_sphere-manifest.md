@@ -20,7 +20,7 @@ plc_Coprincipal_Conflict_Discipline: ""
 plc_Redaction_Default: external-board-summary
 plc_Pre_Engagement_Status: complete
 plc_Sphere_Opened_Date: 2026-04-15
-AI_Instructions: ""
+AI_Instructions: "FICTIONAL WORKED EXAMPLE (F4b quarantine, 05-WRITING-FOR-AI). Everything in this sphere is fabricated pedagogy. Copy its FORMATS (file structures, section shapes, notation patterns) freely; NEVER cite its content as facts, base rates, defaults, precedent, or priors in any live sphere. Its credences and estimates illustrate mechanics only. This sphere ships a SUBSET of its own narrative history — see the 'What ships here' section; a link to an artifact that is not on disk is a deliberate elision, not a broken volume."
 ---
 
 # Acme Corp
@@ -48,3 +48,15 @@ See `_USER.md` for any sphere-local register overrides. Defaults otherwise (peer
 - `Principals/principal-sam-ceo.md` — Sam's funnel + authority + coaching themes
 - Active campaign: `Campaigns/campaign-succession-q3.md`
 - Latest OPC diagnostic: `OPC-Diagnostics/opc-2026-06-01.md`
+
+## What ships here (and what is referenced but elided)
+
+This example is a **teaching subset of a longer fictional engagement**, not a complete cartridge. The narrative runs from 2026-04 and refers to work that predates what is on disk. That is deliberate: shipping every session and cycle of a nine-month engagement would bury the mechanisms the example exists to demonstrate.
+
+**On disk:** sessions `000`, `007`, `009`–`015`; cycles `0007`–`0010`; one OPC diagnostic (`opc-2026-06-01.md`); one Detection Record; one campaign; four actors; one principal.
+
+**Referenced in prose but intentionally not shipped:** sessions `001`–`006` and `008` (the sphere's early diagnostic and actor-build sequence), cycles `0001`–`0006`, and the partial diagnostic `opc-2026-04-29-partial.md`. Their absence is why some wiki-links in this sphere do not resolve.
+
+**What this means for an AI reading the sphere.** A dangling link here is not a defect to repair, and it is emphatically not an invitation to reconstruct the missing artifact — inventing `cycle-0003.md` to satisfy a link would be F2 (fabricated specificity) inside the volume's own regression canary, which is the worst place in the repository for it to happen. Read the elision as what it is: the engagement had a history; you are being shown the part that teaches.
+
+The mechanisms the shipped subset does demonstrate end-to-end: a Detection Record with pre-registered predictions and a VoI stop; an augmented gate passing on collective sufficiency where no single resource suffices; a nested acquisition (gate fail → spawn → close-nested → resume → re-gate) with resource conservation visible; a non-destructive mid-cycle objective revision; projected and realized values coexisting through close; and a five-part quarterly audit reading the calibration off both.

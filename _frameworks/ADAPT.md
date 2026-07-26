@@ -18,9 +18,9 @@ AI_Instructions: ""
 | Beat | What it does | Maps to PLC protocol |
 |------|--------------|---------------------|
 | **A — Agenda** | Articulate the principal's intent at sufficient specificity for political reasoning to operate | RUN-CYCLE initiation (Interest formed within the Agenda context) |
-| **D — Decide** | Narrow the agenda into decision criteria; build the principal's funnel | RUN-CYCLE Detection through capability-gate clearance (Landscape Assessment + OPC Self-Diagnosis + Funnel + ALTERNATIVES-AUDIT + ETHICAL-ACCOUNTING + Considered + Selected) |
+| **D — Decide** | Narrow the agenda into decision criteria; build the principal's funnel | RUN-CYCLE Detection through capability-gate clearance (Landscape Assessment + OPC Self-Diagnosis + Funnel + ALTERNATIVES-AUDIT + ETHICAL-ACCOUNTING + Considered + Selected). v1.2+: Decide gains an internal procedure — probe-vs-execute is a priced choice (a probe's value-of-information vs a move's worth; `08-ESTIMATION.md`), and the augmented gate (sufficiency + inclusion + affordability) structures selection |
 | **A — Act** | Execute the selected move; engage; commit | RUN-CYCLE Engaged Moves (post-capability-gate Execution) |
-| **P — Perceive** | Read the actual response; surface perception gaps | RUN-CYCLE Execution through Outcome (Phase Log + Track-and-Detect) |
+| **P — Perceive** | Read the actual response; surface perception gaps | RUN-CYCLE Execution through Outcome (Phase Log + Track-and-Detect). v1.2+: Perceive gains an internal procedure — predicted-vs-observed against the Detection Record's pre-registered hypotheses; the perception gap (Actual − Perceived) is the backward-looking error term of that forward loop; a starved observation node is a prompt for ESTIMATE |
 | **T — Track** | Refine OPC + funnel based on what was perceived; close the loop | RUN-CYCLE Refinement + Lessons + cycle close |
 
 ## Recursion
@@ -57,5 +57,6 @@ In consultant mode, the operator runs ADAPT with the principal at the coaching l
 
 - Source PDF: `sources/ADAPT-Loop-Field-Manual.pdf`
 - Craft layer: `ADAPT-as-consulting-engine.md`
+- Estimation layer (v1.2+): `_plc-engine/08-ESTIMATION.md` — the forward procedure inside Decide and Perceive; the three-utilities distinction (expected / actual / perceived) maps onto projected (′) vs realized vs target-perceived values in the cycle's Operation Record
 - interaction-cycle protocol (14 constituents) (PLC): `_plc-engine/03-SESSION-PROTOCOL.md § RUN-CYCLE`
 - Substrate: `dissertation-substrate.md` (the interaction-cycle protocol (14 constituents) is the dissertation's; ADAPT is the commercial layer above it)

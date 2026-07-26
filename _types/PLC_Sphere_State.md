@@ -4,10 +4,10 @@ timestamp: "2026-06-13T00:00:00Z"
 Item_ID: plc-sphere-state-type
 title: "PLC_Sphere_State — Type Definition"
 Date_Added: 2026-06-13
-Date_Modified: 2026-06-13
+Date_Modified: 2026-07-24
 Needs_Processing: false
 type_namespace: plc
-type_version: "1.0"
+type_version: "1.2"
 ---
 
 # PLC_Sphere_State
@@ -66,8 +66,11 @@ Per D27 + D28.
 - 2026-06-10: Engagement status shifted `pre_engagement` → `routine`. (Session 2026-06-10_003_SPHERE-OPEN.md)
 - 2026-04-22: Sphere opened. (Session 2026-04-22_000_SPHERE-OPEN.md)
 
+## Open Estimation (v1.2+, optional)
+<Rollup of active Detection Records: target, probe budget remaining, margin-estimate direction, depth read, last probe date. One line each. Canonical state lives in the Detection Record files; this is quick-reference.>
+
 ## Cross-References
-<Pointers to manifest, decisions log, latest OPC diagnostic, active cycles, active campaigns.>
+<Pointers to manifest, decisions log, latest OPC diagnostic, active cycles, active campaigns, active detection records.>
 ```
 
 ## Relation slots

@@ -20,11 +20,17 @@ updated: 2026-06-13
 
 The AI must have completed Phase 0 of `_plc-engine/00-START-HERE.md`:
 
-- Read the Tier 1 engine chapters (00 through 07)
+- Read the Tier 1 engine chapters (00 through 09 — the range now includes `08-ESTIMATION.md` and `09-LSPI-RULES.md`)
 - Read `01-WHAT-IS-PLC.md`, `02-PRINCIPLES.md`, `04-SCHEMA.md` at minimum
 - Confirmed the operator wants to open a NEW sphere (not resume an existing one)
 
 If the operator wants to resume an existing sphere, route to `00-START-HERE.md` § "Active sphere identification" instead.
+
+### Substrate authority 5 — LSPI
+
+PLC stands on five substrate authorities; the fifth is the **LSPI Formal Foundation**, the formal grammar, type system, congruence, transition relation and meta-theory underneath the dissertation's slash-addressing notation, plus the Matrix-Estimation Layer. Read `_frameworks/lspi/_lspi-README.md` for orientation — **mandatory before any session that touches cycle notation, the gate, or detection work.** A sphere opened without it will produce slash expressions the AI cannot validate; malformed or ill-typed expressions must be surfaced to the operator with a rule citation, never silently coerced (failure mode F10).
+
+The operational chapters that sit on it are `_plc-engine/08-ESTIMATION.md` (the estimation layer — Detection Records, probes, the augmented gate) and `_plc-engine/09-LSPI-RULES.md` (the rule catalogue and state machine). Neither is required to answer CQ1-CQ10, but both are required before the sphere's first estimation-bearing cycle.
 
 ## The quality floor
 
@@ -247,8 +253,9 @@ Once CQ1-CQ8 are answered (and CQ9-CQ10 optionally addressed), the AI materializ
 6. **`Spheres/<Sphere>/Campaigns/`** — populated if CQ6 surfaced active campaigns
 7. **`Spheres/<Sphere>/Cycles/`** — populated if CQ6 surfaced in-flight cycles
 8. **`Spheres/<Sphere>/OPC-Diagnostics/`** — empty, awaiting first full OPC-DIAGNOSE
-9. **`Spheres/<Sphere>/Sessions/<date>_000_SPHERE-OPEN.md`** (Mode A) — session log of this bootstrap session
-10. **`Spheres/<Sphere>/Practitioner-Assessment.md`** (Mode D) — populated from § 1 if consultant mode
+9. **`Spheres/<Sphere>/Detection/`** (v1.2+) — empty, awaiting the sphere's first ESTIMATE session; Detection Records land here, one per target under active estimation
+10. **`Spheres/<Sphere>/Sessions/<date>_000_SPHERE-OPEN.md`** (Mode A) — session log of this bootstrap session
+11. **`Spheres/<Sphere>/Practitioner-Assessment.md`** (Mode D) — populated from § 1 if consultant mode
 
 ### Frontmatter conformance
 
@@ -279,6 +286,7 @@ The recommended next activity depends on the sphere's opening state:
 - **If actors are < 5** → recommend ACTOR-UPDATE session to populate the cast
 - **If no full OPC diagnostic scheduled** → recommend OPC-DIAGNOSE
 - **If an active cycle was named in CQ6** → recommend ANALYZE-CYCLE to reconstruct the audit trail
+- **If a load-bearing read of a key actor is soft** → recommend ESTIMATE (v1.2+) — open a Detection Record in `Detection/` for that target, competing hypotheses with working credences, then a budget-capped probe. Per `_plc-engine/08-ESTIMATION.md`
 - **If everything is clean and stubbed** → recommend the first RUN-CYCLE on the principal's top agenda item
 
 The operator chooses. Don't auto-start the next activity.

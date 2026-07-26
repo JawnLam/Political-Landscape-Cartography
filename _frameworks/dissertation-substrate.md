@@ -166,6 +166,12 @@ This is the dissertation's account of multi-hop resource accumulation. The 4R fr
 
 These nuances matter for `plc_Resources_Held` (Actors) and `plc_Resource_Types_Required` (Moves) — when the AI proposes which resource type a move requires or an actor holds, it should reason from these definitions, not from colloquial usage.
 
+**v1.2+ (per substrate authority 5): the functional definition is now PRIMARY.** Category 14's own opening sentence — resources are *"the means... necessary to... increasing or decreasing a benefit or a cost in the target's decision matrix"* — is the intensional definition, promoted to the definition. The nine types above are a **non-exhaustive, overlapping basis of carriers**, kept for elicitation. What follows from the promotion: each held resource gets an *effect signature* (which matrix cells it can move, at what cost, for which targets), a *worth-in-context* (its marginal contribution within a plan — not a scalar), and *convertibility edges* (credibility ⇝ access, banked favor ⇝ job offer, with the legitimacy↔title↔tribe triangle and credibility↔blame pair above as the seed conversion grammar). See `_plc-engine/08-ESTIMATION.md` § "The actuator."
+
+**Category 3 (Detection) is proceduralized (v1.2+).** The dissertation draws Detection as a dotted line — imprecise, reaching past the actor's control; PLC previously *named* it everywhere (constituent 2, OPC § 4, ADAPT Perceive) and proceduralized it nowhere. The forward hypothesis-design loop now lives in `08-ESTIMATION.md` / the ESTIMATE activity, and it is the dissertation's own abductive grounded-theory epistemology turned outward — the method run on transcripts, run on a live sphere.
+
+**The prime (′) notation now has forward dynamics (v1.2+).** Projected vs realized was backward-looking error accounting; the Persistence Invariant keeps both values, and QUARTERLY-AUDIT's forecast-calibration review plus the detection loop's pre-registered predictions give the projection-vs-realization gap a procedure, not just a symbol.
+
 ## Tables 5-22 — case studies
 
 The dissertation's five test-for-saturation case studies (page 168 onward):

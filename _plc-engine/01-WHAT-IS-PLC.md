@@ -20,18 +20,25 @@ updated: 2026-06-13
 
 **Political Landscape Cartography (PLC)** is a markdown-based operating volume that, when loaded into an AI assistant, supports the disciplined navigation of an organization's political landscape — accumulating, wielding, and protecting political capital across multiple cycles of interaction, with structural accountability for the tactical choices made along the way.
 
-## The four substrate authorities
+## The five substrate authorities
 
-PLC operationalizes four authored substrates into a single working container:
+PLC operationalizes five authored substrates into a single working container:
 
 | # | Substrate | Author | What it contributes |
 |---|---|---|---|
-| 1 | **Lam 2018 Pepperdine dissertation** — *The Accumulation, Utilization, And Protection Of Political Capital By Senior Executives Of For Profit Organizations* | Cong (Jawn) Lam | The grounded-theory foundation: 19 theoretical categories, 14-constituent interaction cycle, slash addressing notation, 9-type resource taxonomy, Table 3 catalog of ~100 granular moves, conditional matrix, 4R abbreviated model, recursive resource-control thesis |
+| 1 | **Lam 2018 Pepperdine dissertation** — *The Accumulation, Utilization, And Protection Of Political Capital By Senior Executives Of For Profit Organizations* | Cong (Jawn) Lam | The grounded-theory foundation: 19 theoretical categories, 14-constituent interaction cycle, slash addressing notation, 9-type resource taxonomy, Table 3 catalog of 148 granular moves, conditional matrix, 4R abbreviated model, recursive resource-control thesis |
 | 2 | **The ADAPT Loop** (42-page field manual) | Cong (Jawn) Lam | The commercial teaching surface: 5-beat cycle (Agenda → Decide → Act → Perceive → Track), planning vs consequence zones, three-utilities distinction (expected / actual / perceived), perception-gap diagnostic |
 | 3 | **Organizational Political Context Assessment v3.0** | Cong (Jawn) Lam | The structured sphere-diagnostic: 17 sections with 6-level hierarchical IDs covering situational context, ethical and human impact assessment, engagement patterns, practitioner self-assessment, advisor engagement politics |
 | 4 | **Political Warfare Catalogue** | Cong (Jawn) Lam | The tactical corpus: 782 tactics organized by 16 lever-combination strategies, 84 thematic clusters, 50 cited theorists (Schelling, Bourdieu, Kahneman-Tversky, Foucault, Pfeffer, Machiavelli, etc.) |
+| 5 | **LSPI Formal Foundation** (`_frameworks/lspi/`) | Cong (Jawn) Lam | The formal foundation: LSPI — a typed DSL with small-step operational semantics and six proven meta-theorems (uniqueness, subject reduction, congruence decidability, resource conservation, strong normalization, per-σ confluence) — making Reference System 1 *proven*, not conventional; the Matrix-Estimation Layer (belief-and-probe estimator, depth decoder, resource actuator with contextual worth and convertibility, the augmented sufficiency + inclusion + affordability gate); the tactic-corpus ε-template binding; the reflexivity frontier (flagged `frontier: true`, non-operational) |
 
 PLC does not invent the substrate. It *operationalizes* the substrate into a stateful, multi-session, AI-supported working volume.
+
+**Pillar 2 — the boundary of computation.** LSPI's addition changes nothing about who drives. The system's guards — does the actor possess the resource? does the realized comparison validate the projection? — are resolved by human interpretive judgment, not mechanical evaluation. The AI *administers and records* the state-transition system; the operator supplies the judgment that fires the guards. LSPI is descriptive, not executable. Never claim "political computation," never present a cycle as something the machine can run. The meta-theorems hold *oracle-relative*: once the operator's choices are fixed, the trace is deterministic and reconstructable — which is why PLC logs those choices.
+
+**What the OV formally is — frontier-derived positioning, not shipped mechanism:** a **cognitive-hierarchy depth amplifier**. The skilled operator's real edge is not intuition speed — it is infrastructure that holds the network view. The OV lets a human operate at higher effective reasoning depth by offloading the belief-tower bookkeeping.
+
+**Provenance discipline on that claim.** It is derived from the reflexivity layer (`_frameworks/reflexivity-frontier.md`, `Reflexivity-Layer-v0.1.md` — both `frontier: true`), which is orientation-only and carries its own open problems. Keep it as what it is: the product thesis, the sentence that says what the volume sells. It is not a mechanism any gate, rule, or session activity may lean on. If a decision, protocol step, or verdict ever cites it as warrant, that is a frontier-hygiene violation (see `07-SHIPPING-CHECKLIST.md` § Section 10, frontier hygiene) — cite the shipped machinery instead.
 
 ## The slot PLC fills
 
@@ -69,16 +76,16 @@ In principal-self mode:
 - ENGAGEMENT-AUDIT does not apply (consultant-specific)
 - The AI register adds *no-false-confidence priming* — when the AI does not have evidence to confirm the operator's read, it says so once, proposes a Detection step, then stops. This applies the dissertation's perception-gap discipline recursively to the AI-operator interaction itself, preventing the AI from becoming a source of confirmation bias for a principal already vulnerable to compounding perception gaps under client pressure
 
-The same schema, the same 16 Types, and the same 12 relation families serve both modes. The fork lives only at the OPERATOR-GUIDE and protocol layer.
+The same schema, the same 17 Types, and the same 13 relation families serve both modes. The fork lives only at the OPERATOR-GUIDE and protocol layer.
 
 ## What PLC is NOT
 
 - **Not a deterministic predictor.** PLC is a structured reasoning tool. The dissertation explicitly names the model as *"a suggested plausible explanation"* — the OV inherits that humility. Forecast-skill calibration over time per `forecasts` / `forecasted-by` relations (D21 family 12) is built in, but the OV is not in the business of telling operators what will happen
 - **Not a Custom GPT.** Custom GPTs lock to one platform (OpenAI). PLC is substrate-agnostic markdown that runs on any capable AI (Claude, GPT, Gemini, Cursor's AI, Obsidian + Copilot, etc.)
-- **Not a single-tactic dictionary.** PLC integrates four substrates into a working container with state, gates, relations, and lifecycle. Looking up a specific tactic in the Catalogue without the surrounding diagnostic + gate + audit-trail discipline is using the Catalogue, not using PLC
+- **Not a single-tactic dictionary.** PLC integrates five substrates into a working container with state, gates, relations, and lifecycle. Looking up a specific tactic in the Catalogue without the surrounding diagnostic + gate + audit-trail discipline is using the Catalogue, not using PLC
 - **Not value-neutral but value-explicit.** PLC catalogs every observed tactic (including the ethically gray ones — Email shaming, Emotional manipulation, Making it personal, Reputation Assassination, Crisis Manufacturing, etc.) for *identification* purposes. Tactical *suggestion* is gated behind OPC § 15 alternatives audit and OPC § 11 harm + ethical evaluation. Operator can override any gate; overrides are logged. The discipline is structural accountability, not censorship
 - **Not for arbitrary organizational contexts.** PLC's substrate was derived from for-profit organizations of 200+ employees that are non-family-operated, non-public-sector, non-NGO, and non-educational. The `plc_Domain_Validity` flag (`in_scope | adjacent | out_of_scope`) names this honestly. Operators outside the substrate's sample frame must explicitly acknowledge they are applying constructs derived elsewhere
-- **Not for single-conversation political dilemmas.** PLC is built for work that unfolds over weeks, months, and years. A one-off "should I take this meeting?" question is better served by a well-crafted prompt or a thinking-tools framework, not a sphere cartridge with 16 Types and 15 session activities
+- **Not for single-conversation political dilemmas.** PLC is built for work that unfolds over weeks, months, and years. A one-off "should I take this meeting?" question is better served by a well-crafted prompt or a thinking-tools framework, not a sphere cartridge with 17 Types and 16 session activities
 
 ## Distinguishing properties
 
@@ -86,10 +93,10 @@ What makes PLC distinct as an OV:
 
 1. **Sphere-scoped, 1..N principals.** Each sphere is one organizational political landscape; the schema accommodates single-principal mode (one principal in the OV) and multi-principal mode (consultant with 2+ principals at the same org) as a parameter, not a structural change
 2. **Three reference systems coexist by domain.** Slash addressing for *cycle constituents*; OPC hierarchical IDs for *sphere structural state*; Catalogue Reference IDs for the *tactical corpus*. Each is preserved in its native form; each enables a distinct cross-cartridge searchability axis
-3. **12 relation families enabling graph traversal.** Resource graph (`holds-resource` / `owes`) + Network alignment (`allied-with` / `coalitioned-with` / `brokers-between`) + Information flow (`informs` / `bypasses`) + Temporal predictive (`forecasts`) — these are exactly the network structures human memory cannot hold under client pressure but the OV can
+3. **13 relation families enabling graph traversal.** Resource graph (`holds-resource` / `owes`) + Network alignment (`allied-with` / `coalitioned-with` / `brokers-between`) + Information flow (`informs` / `bypasses`) + Temporal predictive (`forecasts`) — these are exactly the network structures human memory cannot hold under client pressure but the OV can
 4. **Mandatory ethical gates.** ALTERNATIVES-AUDIT (OPC § 15) + ETHICAL-ACCOUNTING (OPC § 11) embedded inside RUN-CYCLE. Cycle log frontmatter carries gate-completion timestamps and override records. Searchable across cycles. Accountability through structure, not through censorship
 5. **782-tactic corpus with theorist lineage.** Each tactic carries `theorists_cited` per the dissertation's grounding canon. Theorist-pattern recognition becomes an UNCOVER finding type: *"Carol has deployed Schelling-derived tactics in 7 of the last 9 cycles — she's operating from a strategic-game-theory frame"* — a connection the operator cannot make from memory
-6. **Multi-grain Items.** PLC has 16 first-class Types spanning grains from Move (single political verb) → Tactic (composed pattern) → Strategy (16 meta-strategies) → Cluster (84 thematic families) → Cycle (one 14-constituent interaction) → Campaign (an Interest tree) → Actor (long-lived dossier) → Principal (the flagged protagonist) → Sphere (the political landscape itself). Each grain is queryable
+6. **Multi-grain Items.** PLC has 17 first-class Types spanning grains from Move (single political verb) → Tactic (composed pattern) → Strategy (16 meta-strategies) → Cluster (84 thematic families) → Cycle (one 14-constituent interaction) → Campaign (an Interest tree) → Actor (long-lived dossier) → Principal (the flagged protagonist) → Sphere (the political landscape itself). Each grain is queryable
 
 ## When PLC is the right form
 
@@ -126,7 +133,7 @@ If an operator asks *"why use PLC?"*, the answer is the integration:
 - The dissertation gives the *substrate vocabulary* (Actor / Target / Interest / Objective / Goal / Cycle / Resources)
 - The ADAPT Loop gives the *commercial teaching surface* (5 beats, three utilities, perception gap)
 - The OPC Assessment gives the *cartography spine* (17 sections of structured diagnosis)
-- The Political Warfare Catalogue gives the *tactical corpus* (782 tactics, 16 strategies, 84 clusters, 50 theorists)
+- The Political Warfare Catalogue gives the *tactical corpus* (782 tactics, 16 strategies, 83 clusters + the `ORIGINAL` sentinel, 50 theorists)
 
 Used individually, each is a reference. Integrated into a sphere cartridge with state, gates, relations, lifecycle, and audit trails, they become a *cognitive prosthetic for sustained operation* — exactly the framing the dissertation thesis names as the only kind of strategic skill that compounds.
 

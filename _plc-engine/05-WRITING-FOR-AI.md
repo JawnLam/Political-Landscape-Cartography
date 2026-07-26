@@ -44,7 +44,7 @@ The AI is going to execute the prose. Make it executable.
 
 Sequences are ordered; sets are unordered. Use the right structure.
 
-The interaction-cycle protocol (14 constituents) uses numbered steps because the order is load-bearing. The 12 relation families use a table because they're a set of types, not a sequence.
+The interaction-cycle protocol (14 constituents) uses numbered steps because the order is load-bearing. The 13 relation families use a table because they're a set of types, not a sequence.
 
 ### Headers must reflect actual structure
 
@@ -76,7 +76,13 @@ When drafting any file with YAML frontmatter:
 - `type: PLC_<TypeName>` on Items; `type: Fleeting` on non-Item files
 - `AI_Instructions: ""` field present even when empty (matches OVE_OV_Manifest pattern)
 
-These are not subject-specific stylistic choices. They are vault-compatibility defaults inherited from `_meta/CONVENTIONS.md`.
+These are not subject-specific stylistic choices. They are vault-compatibility defaults inherited from OVE's conventions; **this section is PLC's statement of record for them.** There is no `_meta/CONVENTIONS.md` in this volume — a frontmatter or naming question resolves here, and the shipped `_types/` files are the worked witnesses.
+
+### LSPI notation discipline (substrate authority 5)
+
+When AI-facing prose contains slash-addressed expressions: projected values carry the prime `′` and are never overwritten by realizations — both persist (Persistence Invariant; forecast calibration depends on it). Decision-matrix options are written `P` (preferred position) and `Adv` (adverse alternative); bare corpus lever letters `X`/`Y` never appear in integrated artifacts (alias map: corpus `X`→`P`, corpus `Y`→`Adv`).
+
+**The rule bans the *corpus's* lever letters. It does not touch LSPI's own constituent symbols.** Table 4 (`04-SCHEMA.md` System 1) makes `X` the Latin symbol for the **adverse alternative** — so `X` inside a slash path is correct and stays: `[Α/i./t./D./P./u.] > [Α/i./t./D./X./u.]` is the canonical comparison form, witnessed throughout the worked cycle file the generation discipline tells you to copy patterns from. Rewriting that `X` to `P` inverts the expression's meaning and is an F10 silent coercion, not a style fix. The two systems assign `X` opposite roles — corpus `X` is the *preferred* lever, LSPI `X` is the *adverse* option — which is precisely why the alias map exists. Every LSPI path is keyed by owning actor. See `04-SCHEMA.md` System 1 for the full discipline; F10/F11 below for the failure modes.
 
 ### Don't write trivia
 
@@ -90,7 +96,7 @@ If the AI doesn't need it to do the work, leave it out. The context window is a 
 - Show quick-start in the first screen
 - Tell the operator what to read next based on what they want to do (consultant deploying / principal self-coaching / orientation only)
 - Don't explain what you're building until they're invested
-- The "Foundations" section names the four substrates and the 50 theorists explicitly per D15 (defensible scholarly canon)
+- The "Foundations" section names the five substrates and the 50 theorists explicitly per D15 (defensible scholarly canon)
 
 ### INSTALL
 
@@ -138,7 +144,7 @@ In consultant mode, this addition does not apply — the consultant brings their
 
 ## Documented failure modes the writing must guard against
 
-PLC has nine documented failure modes. Each is named, numbered, and watched for during writing and execution.
+PLC has eleven documented failure modes (F1-F11), plus the F4b worked-example quarantine rule carried under F4. Each is named, numbered, and watched for during writing and execution. This section is the canonical catalogue — there is no `_meta/FAILURE-MODES.md`; F-code lookups resolve here.
 
 ### F1 — Multi-bullet questionnaire
 
@@ -172,6 +178,12 @@ The fix in the writing: examples in engine files come from a small fixed set (sh
 
 If you find yourself writing *"when Alice's CFO Carol..."* in an engine file (rather than in the worked example), stop and refactor.
 
+### F4b — Worked-example bleed into live spheres (quarantine rule)
+
+`Spheres/Example-Sphere-Acme-Corp/` is FICTION — a pedagogical demonstration. Its people, events, credences, margin estimates, probe budgets, and outcomes are fabricated to illustrate mechanics. The failure: citing the example as evidence or precedent in a live sphere ("Carol-type CFOs usually...", "at Acme a three-member plan worked, so...", "0.55/0.40 is a typical opening split").
+
+The rule: the example teaches FORMAT (copy its structures, section shapes, and notation patterns freely — that is what it is for) and never teaches FACTS (never cite its content as data, base rates, defaults, or precedent). Its numbers are not priors. If you catch yourself typing "as at Acme" in a live sphere's reasoning, stop — that is F4b.
+
 ### F5 — Asymmetric graph corruption (reciprocal-update failure)
 
 When the operator or AI adds a relation in one direction without the corresponding reverse update, the graph corrupts. Searches in one direction succeed; reverse searches silently fail. **This must not happen.**
@@ -189,6 +201,8 @@ PLC has both a root-level `AI-BOOTSTRAP.md` and an `00-START-HERE.md` inside the
 The fix: the root file is a thin pointer ("read the engine"); the engine file is canonical. If they ever disagree, the engine file wins — and the disagreement is itself an F6 violation to flag and fix.
 
 This is the same F6 inherited from OVE. PLC adopts it verbatim.
+
+**Generalized precedence when any two in-volume documents disagree** (a count, a feature, a path): `CHANGELOG.md` (most recent entry) > engine chapters (`_plc-engine/`) > Type files (`_types/`) > templates > front-door docs (README / INSTALL / OPERATOR-GUIDE / BOOTSTRAP files). Report the stale document to the operator; fix only with approval; NEVER resolve a disagreement by removing the newer feature, and NEVER silently harmonize — the report is the point.
 
 ### F7 — Writing for the operator when the AI is the reader
 
@@ -220,6 +234,34 @@ The fix: every relevant template clearly labels which reference system applies t
 
 Per P8.
 
+### F10 — Silent coercion of malformed LSPI
+
+Slash addressing is the surface syntax of a typed formal system (substrate authority 5; `_frameworks/lspi/`). The failure: an AI encounters a malformed or ill-typed slash expression and "helpfully" fixes it — re-bracketing, guessing an ordinal, swapping a Greek/Latin form, inventing a path segment — instead of rejecting it. Silent coercion corrupts the audit trail: the record no longer says what the operator said, and the uniqueness/typing guarantees no longer apply to what's stored.
+
+The fix: process LSPI expressions in layer order (parse → type-check → congruence → transition). On rejection at any layer, surface the rejection to the operator **with a citation to the violated rule** and ask ONE question (P3) to resolve it. The three lexer normalizations (Α/A glyph, Θ/Φ/Λ context disambiguation, `t.`-insertion — see `04-SCHEMA.md` System 1) are the ONLY licensed automatic corrections; everything else goes back to the operator.
+
+Examples of F10 violations:
+
+- Reading `[Α/i./t./D./P.]` and `[A/i/t/D/P]` as different constituents (missing the licensed Α/A and dot normalizations — under-normalizing is also F10)
+- Encountering `θ.q3` where only two required-resources exist and silently renumbering to `q2`
+- Accepting a comparison between a benefit cell and a utility (`[…/P/b] > […/X/u]`) — ill-typed; comparisons are utilities-only
+
+**The generation half (writing LSPI, not just reading it).** Never invent notation. When writing a slash expression or Operation Record entry:
+
+1. **Copy an existing pattern.** Find the matching entry shape in the worked example (`Spheres/Example-Sphere-Acme-Corp/Cycles/cycle-0009.md` § LSPI Operation Record) or the 04-SCHEMA System 1 examples, and substitute your constituents into that exact shape.
+2. **If no pattern matches, write plain English and flag it.** `"(plain English — no validated LSPI pattern for this; operator/upstream to formalize)"` is ALWAYS correct. An invented-but-plausible slash expression is ALWAYS wrong — it poisons the record with strings that look formal but validate against nothing.
+3. **Never compose new operator combinations** (a Greek form you haven't seen applied, a bracket nesting you haven't seen, a new prefix class). If the treatise doesn't show it and the worked cases don't witness it, it does not exist for you.
+
+The asymmetry is deliberate: plain English in the record costs a little precision; fabricated notation costs the audit trail's integrity.
+
+### F11 — Executability claim
+
+LSPI is descriptive, not executable (Pillar 2 — the boundary of computation). Its guards — does the actor possess `q`? does the realized comparison validate the projection? — are resolved by human interpretive judgment, not mechanical evaluation. The failure: prose or chat implying the machine can run a maneuver, compute an outcome, or decide a guard.
+
+Banned formulations: "political computation," "LSPI is executable," "the system will determine whether," "running the cycle shows," "the model predicts the target will select." Correct register: the AI **administers and records**; the operator **drives**. "The gate fires when *you judge* that…"; "the record shows…"; "under your stated read, the admissible next steps are…".
+
+The meta-theorems are real and may be claimed — subject reduction, congruence decidability, resource conservation, strong normalization, per-σ confluence — but they are guarantees about the *bookkeeping*, oracle-relative, not claims that the politics is computable. Never let rigor language shade into effectiveness language.
+
 ## Quality checks before committing prose
 
 For engine files:
@@ -247,5 +289,11 @@ For sphere-content prose (manifest, state, decisions, Actor files, Cycle logs):
 - [ ] Are reciprocal relations updated on the related Items?
 - [ ] Are the three reference systems used in their native grains (no F9 conflations)?
 - [ ] Are gate overrides logged with justification (no F8 silent skips)?
+- [ ] Are LSPI expressions layer-validated, with rejections surfaced rather than coerced (no F10)?
+- [ ] Do projected values carry `′` and persist alongside realizations (never overwritten)?
+- [ ] Are matrix options written as `P` / `Adv` (no bare *corpus* `X`/`Y` in integrated artifacts — LSPI's own `X` inside a slash path is the adverse alternative and must be left alone)?
+- [ ] Is every LSPI path keyed by owning actor (uniqueness is per-actor, Theorem 13.1)?
+- [ ] Does any sentence claim or imply executability (F11)? If so, re-register it.
+- [ ] Do estimation-layer numbers carry their epistemic status (P13: "working," "uncalibrated," "ordinal")? A bare number presented as a finding fails the check.
 
 If any check fails, revise.

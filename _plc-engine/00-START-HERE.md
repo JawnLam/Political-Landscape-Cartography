@@ -54,14 +54,18 @@ If the operator wants **conceptual orientation only**, answer from `01-WHAT-IS-P
 
 This is the canonical read protocol for PLC. `AI-BOOTSTRAP.md` at OV root mirrors this tier structure as a thin pointer; if they ever diverge, this file wins.
 
+### Tier 0 — upgrade-status check
+
+If `_UPGRADE-STATUS.md` exists at the OV root, read it in full FIRST and obey its hard rules all session (do not bump VERSION; do not remove newer features to reconcile stale docs; document-precedence ranking applies).
+
 ### Tier 1 — always before your first user-facing message
 
 Execute in order. Do not skip. Do not reorder.
 
 1. **This file** (`_plc-engine/00-START-HERE.md`)
 2. **`01-WHAT-IS-PLC.md`** — definition, substrate authorities, bimodal operator framing
-3. **`02-PRINCIPLES.md`** — the 12 operating principles
-4. **`03-SESSION-PROTOCOL.md`** — the 15 session activities, the embedded gates inside RUN-CYCLE, the mode-aware fork
+3. **`02-PRINCIPLES.md`** — the 13 operating principles
+4. **`03-SESSION-PROTOCOL.md`** — the 16 session activities, the embedded gates inside RUN-CYCLE, the mode-aware fork
 5. **`05-WRITING-FOR-AI.md`** — tone discipline, documented failure modes, three-reference-system convention
 
 From `_frameworks/`:
@@ -89,21 +93,27 @@ Do not read these up front. Load them when the activity that needs them is propo
 | `04-SCHEMA.md` | Reading or writing Types; reciprocal-update discipline questions |
 | `06-STATE-PERSISTENCE.md` | Session-end state work; recovery procedure invocation |
 | `07-SHIPPING-CHECKLIST.md` | SHIP-PREP activity (for the published methodology, not for sphere work) |
-| `_meta/SCHEMA-OF-SCHEMAS.md` | Audit mode; Type validation questions |
-| `_meta/CONVENTIONS.md` | When a frontmatter or naming question surfaces |
-| `_meta/FAILURE-MODES.md` | When consulting a specific F-code beyond the inline reference |
+| `09-LSPI-RULES.md` | Naming the admissible next steps at a cycle state; any question about a rule's trigger, premises, or the failure routes (`R-moot` / `R-abandon`) |
+| `04-SCHEMA.md` § Types + § reference systems | Audit mode; Type validation questions (this chapter is PLC's schema-of-schemas — there is no `_meta/` folder) |
+| `05-WRITING-FOR-AI.md` § Apply Convention 1-2 frontmatter conventions | When a frontmatter or naming question surfaces |
+| `05-WRITING-FOR-AI.md` § Documented failure modes | When consulting a specific F-code beyond the inline reference |
 | `_frameworks/political-warfare-catalogue/INDEX.json` | MOVE-LOOKUP or THEORIST-LOOKUP activity (read first; load 1-5 tactic files only on demand) |
 | `_frameworks/political-warfare-catalogue/tactics/<NNNN>-<slug>.md` | When a specific tactic is referenced |
 | `_frameworks/political-warfare-catalogue/by-theorist/<name>.md` | THEORIST-LOOKUP activity |
 | `BOOTSTRAP-NEW-SPHERE.md` | SPHERE-OPEN activity |
 | `_plc-engine/_templates/*` | Creating new Items (Actors, Cycles, Sessions, etc.) |
-| `_plc-engine/redaction-profiles/<audience>.yaml` | EXPORT-SHAREABLE activity |
+| `_plc-engine/_yaml/redaction-profiles/<audience>.yaml` | EXPORT-SHAREABLE activity |
+| `_frameworks/lspi/_lspi-README.md` | Any session touching cycle notation, the gate, or detection/estimation work (mandatory before RUN-CYCLE) |
+| `_frameworks/lspi/Matrix-Estimation-Layer-v0.4.md` | When the augmented gate's math or the probe/worth machinery needs the canonical statement |
+| `_frameworks/lspi/LSPI-Foundations.md` | LSPI-internal questions only (well-formedness, typing, congruence, transition rules) — navigate by section, never read whole |
+
+If the session will touch cycle notation: layer-order validation applies (parse → type-check → congruence → transition). Malformed or ill-typed slash expressions are surfaced with a citation to the violated rule — never silently coerced (F10).
 
 Over-reading Tier 2 burns context budget you will need for the actual sphere work. Read only when the activity calls for it.
 
 ## Mode-aware pre-engagement discipline (consultant mode only)
 
-If `plc_Engagement_Stage = pre_engagement` AND `plc_Operator_Mode = consultant`, the AI MUST run PRACTITIONER-ASSESSMENT (OPC § 16) and ENGAGEMENT-AUDIT (OPC § 17) **before any other activity**. This is hard-precedence discipline per D11 of the design cartridge. Operator can override via explicit command (e.g., *"skip pre-engagement and start cycles"*); override is logged in the session log with operator-stated justification.
+If `plc_Engagement_Status = pre_engagement` AND `plc_Operator_Mode = consultant`, the AI MUST run PRACTITIONER-ASSESSMENT (OPC § 16) and ENGAGEMENT-AUDIT (OPC § 17) **before any other activity**. This is hard-precedence discipline per D11 of the design cartridge. Operator can override via explicit command (e.g., *"skip pre-engagement and start cycles"*); override is logged in the session log with operator-stated justification.
 
 Rationale: consultants chronically skip the self-assessment; soft default does not enforce. The whole point is that the AI must enforce what the consultant under pressure will skip.
 
@@ -123,7 +133,7 @@ State which path you took: existing-sphere continuation, new-sphere bootstrap, a
 
 ### Sandbox mode addendum (read-only substrate only)
 
-If Phase 0.2's writability check returned false — you cannot write to `<Sphere>/_sphere-state.md`, `<Sphere>/Sessions/`, `<Sphere>/Cycles/`, or `<Sphere>/Diagnostics/` — **prepend a sandbox-mode announcement to the readiness statement before stating the path.** Do not absorb the constraint silently.
+If Phase 0.2's writability check returned false — you cannot write to `<Sphere>/_sphere-state.md`, `<Sphere>/Sessions/`, `<Sphere>/Cycles/`, or `<Sphere>/OPC-Diagnostics/` — **prepend a sandbox-mode announcement to the readiness statement before stating the path.** Do not absorb the constraint silently.
 
 The announcement must be blunt:
 
@@ -170,8 +180,9 @@ If you cannot complete pre-flight (missing files, ambiguous user message, read-o
 10. **You propose, the operator disposes.** Show reasoning. Honor overrides. Log them.
 11. **Reciprocal-update discipline.** When you add a relation in one direction (e.g., `cites: [[Schelling]]`), propose the reverse update (`cited-by: [[Tactic-0029]]`) on the cited Item.
 12. **Cognitive prosthetic, not oracle.** PLC supports structured reasoning, not deterministic prediction.
+13. **Numbers are scaffolding, not answers.** Estimation-layer quantities (credences, margins, depth, worth, VoI) are uncalibrated — present them with epistemic status attached; directional conclusions only; the operator's disagreement with an estimate is probe material, never something the arithmetic outranks.
 
-## The 15 session activities
+## The 16 session activities
 
 See `03-SESSION-PROTOCOL.md` for full protocols. Quick reference:
 
@@ -189,6 +200,7 @@ See `03-SESSION-PROTOCOL.md` for full protocols. Quick reference:
 | **QUARTERLY-AUDIT** | Forced 90-day cadence per principal | both (consultant adds 4 protocol parts) |
 | **SCAN** | What's surfaced since last session? | both |
 | **UNCOVER** | Multi-hop synthesis | both |
+| **ESTIMATE** | Gate routed to re-probe; load-bearing but soft target read | both |
 | **MOVE-LOOKUP** | Query Catalogue by signature/strategy/cluster/free-text | both |
 | **THEORIST-LOOKUP** | Query Catalogue by theorist | both |
 | **EXPORT-SHAREABLE** | Sanitized deliverable for audience | both |

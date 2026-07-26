@@ -4,18 +4,20 @@ type: Fleeting
 timestamp: "2026-06-13T00:00:00Z"
 title: "Dissertation Table 3 — Granular Moves"
 Date_Added: 2026-06-13
-Date_Modified: 2026-06-13
+Date_Modified: 2026-07-24
 Needs_Processing: false
 AI_Instructions: ""
 ---
 
 # Dissertation Table 3 — Granular Moves
 
-> **Scaffolded folder for the ~100 granular Moves from the Lam 2018 dissertation Table 3.** Each Move is a `PLC_Move` Item with the PP/AA/B/C/Inc/Dec 6-field signature. Operator populates at ship time from the dissertation source.
+> **Scaffolded folder for the 148 granular Moves from the Lam 2018 dissertation Table 3.** Each Move is a `PLC_Move` Item with the PP/AA/B/C/Inc/Dec 6-field signature. Operator populates at ship time from the dissertation source.
+
+> **v1.2 update:** the complete row inventory now exists as **`Table-3-Manifest.md`** — all **148** Table 3 rows transcribed with Option / Consideration / Effect and LSPI component mapping (P/b±, P/c±, Adv/b±, Adv/c±, varied). The manifest is the base for the provenance cross-walk (upgrade-plan WS4 **pass 6**, complete 2026-07-24 — results in `Table-3-Manifest.md` § Cross-walk results); authoring the remaining full Move files stays on the ROADMAP backlog (3 of 148 authored). Note the dissertation yields 148 rows, not the "~100" estimate used at v1.0 — treat any surviving "~100" as stale.
 
 ## What lives here
 
-Per D14 + D20, the dissertation Table 3 catalog of ~100 granular Moves ships as first-class `PLC_Move` Items. These are the elemental atoms; the higher-order Tactics in `_frameworks/political-warfare-catalogue/tactics/` are composed of these Moves via the reciprocal `plc_Composed_Of` ↔ `plc_Appears_In_Tactics` relation.
+Per D14 + D20, the dissertation Table 3 catalog of 148 granular Moves ships as first-class `PLC_Move` Items. These are the elemental atoms; the higher-order Tactics in `_frameworks/political-warfare-catalogue/tactics/` are composed of these Moves via the reciprocal `plc_Composed_Of` ↔ `plc_Appears_In_Tactics` relation.
 
 ## File naming
 
@@ -27,7 +29,7 @@ Use `_plc-engine/_templates/PLC_Move_TEMPLATE.md` as the starter scaffold for ea
 
 ## How to populate
 
-For each of the ~100 Moves in dissertation Table 3:
+For each of the 148 Moves in dissertation Table 3 (row numbers and signatures are in `Table-3-Manifest.md`):
 
 1. Copy the template to `Move-<NNN>.md`
 2. Set `plc_Move_Number` to the dissertation's Move number
@@ -39,7 +41,7 @@ For each of the ~100 Moves in dissertation Table 3:
 
 ## Ship-time population status
 
-**Substrate-pending.** The ~100 Move files have not been drafted at ARTIFACT-DRAFT. Each Move requires content from the dissertation's Table 3 source. Operator populates at SHIP-PREP from the dissertation PDF.
+**Substrate-pending.** 3 of 148 Move files are authored (`Move-001`–`Move-003`); the remaining 145 have not been drafted. Each Move requires content from the dissertation's Table 3 source. Operator populates at SHIP-PREP from the dissertation PDF. All 148 rows are transcribed in `Table-3-Manifest.md`, and per-tactic corpus provenance is in `../political-warfare-catalogue/INDEX-lspi.json` (`provenance.lam_table3_refs`) — 127 of 148 rows have a corpus descendant; the 21 that do not are listed in the manifest.
 
 ## Cross-references
 

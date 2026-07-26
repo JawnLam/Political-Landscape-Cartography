@@ -114,10 +114,10 @@ Re-read `VERSION.md`. Confirm it matches the target. If it doesn't:
 
 Re-verify the structural sanity:
 
-- All 8 engine chapters present in `_plc-engine/`
-- All 16 Type files present in `_types/`
-- All 22 template files present in `_plc-engine/_templates/`
-- All 6 YAML scaffolding files present in `_plc-engine/_yaml/`
+- All 10 engine chapters present in `_plc-engine/` (`00-START-HERE.md` through `08-ESTIMATION.md`, plus `09-LSPI-RULES.md`)
+- All 17 Type files present in `_types/`
+- All 25 template files present in `_plc-engine/_templates/` (22 per D29 + 3 added at v1.2, including `PLC_Detection_Record_TEMPLATE.md`)
+- All 6 YAML scaffolding files present in `_plc-engine/_yaml/` (export schema + the 5 profiles in `_plc-engine/_yaml/redaction-profiles/`)
 - `Spheres/` directory unchanged (same sphere count as Step 2)
 
 If any structural check fails: STOP. Report to operator.
@@ -144,17 +144,20 @@ Report findings per sphere. Do NOT auto-edit sphere files. Surfacing TODOs is th
 
 ## Step 9 — F-code regression spot-check
 
-Run synthetic checks against F1-F9 (per `_plc-engine/05-WRITING-FOR-AI.md`). Each check is brief (1-2 min):
+Run synthetic checks against F1-F11 (per `_plc-engine/05-WRITING-FOR-AI.md`). Each check is brief (1-2 min):
 
 - **F1:** Confirm `BOOTSTRAP-NEW-SPHERE.md` § 1 still says "Ask one question, conversationally"
 - **F2:** Confirm `02-PRINCIPLES.md` § P4 still explicitly forbids fabrication
 - **F3:** Confirm `00-START-HERE.md` Phase 0 still says to use `[OPERATOR]` placeholder
 - **F4:** Spot-read `04-SCHEMA.md` for sphere-specific names (should be none outside worked examples)
+- **F4b:** Spot-check any live sphere's recent reasoning for worked-example bleed — the Acme sphere teaches format, never facts; a live sphere citing "what happened at Acme" as evidence is the violation
 - **F5:** Spot-check three random reciprocal pairs in a sphere (e.g., Actor `plc_Coalitions` symmetric)
 - **F6:** Diff `AI-BOOTSTRAP.md` vs `_plc-engine/00-START-HERE.md` — root must remain thin pointer; engine canonical
 - **F7:** Spot-read three random engine chapter sections for "we will discuss" or "this section covers" — should be zero
 - **F8:** Spot-check three closed cycles in any sphere for gate completion timestamps OR logged overrides
 - **F9:** Spot-check one cycle log frontmatter — slash/OPC/Catalogue fields must stay in their own families
+- **F10:** Confirm `09-LSPI-RULES.md` still requires layer-order validation (parse → type-check → congruence → transition) with rejections surfaced by rule citation; malformed or ill-typed slash expressions must never be silently coerced
+- **F11:** Spot-read `_frameworks/lspi/_lspi-README.md` and `08-ESTIMATION.md` for executability claims — LSPI is descriptive; "political computation" or "the system decides" phrasing is the violation
 
 If any F-code regression surfaces, surface as a TODO. Don't auto-fix engine zone (that's the engine's responsibility for the next version). Do offer to repair sphere-zone F5 / F8 violations.
 
@@ -187,7 +190,7 @@ Emit a structured report:
 - **Update sealed:** yes | partial — see TODOs
 ```
 
-Append this report to a new session log: `Sessions/<sphere-slug>/<YYYY-MM-DD>_UPDATE-PROMPT.md` per sphere affected, OR if no sphere zone was modified, to an OV-level `_meta/update-log.md` (append-only).
+Append this report to a new session log: `Sessions/<sphere-slug>/<YYYY-MM-DD>_UPDATE-PROMPT.md` per sphere affected, OR if no sphere zone was modified, to `CHANGELOG.md` at the OV root, under the entry for the version just installed (append-only — never rewrite a shipped entry).
 
 ## Step 12 — Next-activity recommendation
 
@@ -204,7 +207,7 @@ Operator disposes (per P10). Even "later" is a captured choice.
 - **Pulling without enumerating spheres** — risk of overwriting sphere state from a misconfigured repo
 - **Pulling without checking local edits** — silent loss of operator's engine-zone work
 - **Auto-applying migrations without operator review** — risk of breaking sphere cartridges the operator hadn't migrated mentally yet
-- **Skipping F-code regressions** — version drift across releases corrupts the F1-F9 prevention design over time
+- **Skipping F-code regressions** — version drift across releases corrupts the F1-F11 prevention design over time
 - **Treating a major bump as "just another update"** — major bumps require migration guides for a reason
 
 ## When to NOT run this protocol

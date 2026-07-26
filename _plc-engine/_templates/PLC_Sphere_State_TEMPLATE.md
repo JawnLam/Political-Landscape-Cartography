@@ -46,5 +46,6 @@ AI_Instructions: ""
 - Manifest: [[<sphere-slug>-manifest]]
 - Decisions log: [[<sphere-slug>-decisions]]
 - Latest OPC: <link or empty>
-- Active cycles: <links>
+- Active cycles: <links> <(per cycle: stance; probe budget remaining if estimation in use)>
+- Open detection records: <links to detection-<actor-slug> files under active estimation, with current margin-estimate direction>
 - Active campaigns: <links>

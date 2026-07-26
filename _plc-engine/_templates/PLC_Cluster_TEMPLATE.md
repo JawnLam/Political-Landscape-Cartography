@@ -1,11 +1,11 @@
 ---
 type: PLC_Cluster
-Item_ID: cluster-<CNN>   # C01-C84 for shipped; cluster-ext-<NNN> for operator extensions
+Item_ID: cluster-<CNN>   # C01–C96 (83 codes, gapped) + `ORIGINAL` for shipped; cluster-ext-<NNN> for operator extensions
 title: "Cluster <CNN> — <Name>"
 Date_Added: <YYYY-MM-DD>
 Date_Modified: <YYYY-MM-DD>
 Needs_Processing: false
-plc_Cluster_Code: "<CNN>"   # C01-C84 or EXT-C-NNN
+plc_Cluster_Code: "<CNN>"   # C01–C96 (83 codes, gapped) + `ORIGINAL` or EXT-C-NNN
 plc_Cluster_Name: "<Name>"
 plc_Cluster_Source: catalogue   # catalogue | operator_extended
 plc_Cluster_Theme: "<one-line thematic characterization>"

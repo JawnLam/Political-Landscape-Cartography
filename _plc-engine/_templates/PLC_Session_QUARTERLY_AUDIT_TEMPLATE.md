@@ -43,6 +43,24 @@ AI_Instructions: ""
 ### Part 3 — Actor-Trajectory Review
 <Per actor: is the trajectory predicted at prior audit/sphere-open holding?>
 
+### Part 4 — Forecast Calibration (v1.2+, optional)
+<Walk each closed cycle's projected (′) values against their realizations in the Operation Record. The Persistence Invariant keeps both precisely so this walk is possible — run it.>
+
+| Cycle | Quantity (′) | Projected | Realized | Miss direction |
+|-------|--------------|-----------|----------|----------------|
+| [[cycle-<NNNN>]] | <margin / worth / obtained utility> | <′ value> | <realized> | over \| under \| on |
+
+- **Systematic bias flagged:** <chronic directional bias — per target, per tactic family, or per operator read — or "none this quarter">
+- **Calibration record updated:** <which quantities graduate from "uncalibrated" per P13, or "none">
+
+### Part 5 — Belief Hygiene (v1.2+, optional)
+<Findings only; each finding becomes an Open Thread or an ESTIMATE proposal.>
+
+- **Stale differentials:** <Detection Records load-bearing but unprobed / unupdated 90+ days, or "none">
+- **Depth estimates never revisited:** <records where ℓ̂_T has not moved since first set, or "none">
+- **Worth never re-priced:** <held resources whose worth estimate was never revisited after probes that sharpened the margin, or "none">
+- **Resource conservation eyeball (Theorem 13.4):** <walk this quarter's spawn/flowback chains — obtained resources appear exactly once, spent resources deducted exactly once. Leaks / duplications found: <N>; repaired: <N>>
+
 ### Consultant Additions (consultant mode only)
 - **§16 refresh:** Practitioner self-assessment refreshed. Status: <green | flagged>
 - **§17 refresh:** Advisor engagement politics refreshed. Status: <green | flagged>

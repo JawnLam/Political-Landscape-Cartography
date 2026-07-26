@@ -20,7 +20,7 @@ PLC's authorship draws on, organizes, and operationalizes:
 - The **Lam 2018 Pepperdine dissertation on political capital**, which is the Methodology Author's separately copyrighted academic work and is incorporated into PLC by reference and permission of its author
 - The **ADAPT Loop**, which is the Methodology Author's separately developed commercial framework, in active use in the Methodology Author's consulting practice, and which is incorporated into PLC by reference and permission of its author
 - The **OPC Assessment v3.0**, which is the Methodology Author's separately developed diagnostic instrument
-- The **Political Warfare Catalogue** (782 tactics, 16 strategies, 84 clusters, 50 theorists), which is the Methodology Author's curated scholarly substrate; the *cited theorists' published works* remain subject to their own copyrights, used under academic fair-use for scholarly citation and not redistributed in primary form
+- The **Political Warfare Catalogue** (782 tactics, 16 strategies, 83 clusters + the `ORIGINAL` sentinel, 50 theorists), which is the Methodology Author's curated scholarly substrate; the *cited theorists' published works* remain subject to their own copyrights, used under academic fair-use for scholarly citation and not redistributed in primary form
 
 PLC represents years of field experience, dissertation research, framework refinement, and methodological codification by the Methodology Author. It is not open source. It is not freely deployable. It is not a community resource. Possession of this folder confers no rights of use beyond what is explicitly granted below.
 

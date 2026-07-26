@@ -20,7 +20,7 @@ last_updated: 2026-06-13
 
 You are inside a Political Landscape Cartography (PLC) folder. The user has likely said something like *"help me open a new sphere for my client at Acme Corp"*, or *"continue my work on the Acme sphere"*, or *"audit my Beta sphere"*, or *"explain what Political Landscape Cartography is."*
 
-PLC is a markdown-based operating volume for **mapping and navigating the political landscape of organizations**. It operationalizes (1) the ADAPT Loop framework, (2) the Lam 2018 dissertation on political capital, (3) the Organizational Political Context Assessment (OPC), and (4) the 782-tactic Political Warfare Catalogue. Used by consultants advising senior-executive clients AND by senior executives self-coaching.
+PLC is a markdown-based operating volume for **mapping and navigating the political landscape of organizations**. It operationalizes (1) the ADAPT Loop framework, (2) the Lam 2018 dissertation on political capital, (3) the Organizational Political Context Assessment (OPC), (4) the 782-tactic Political Warfare Catalogue, and (5) the LSPI Formal Foundation — the formal grammar, type system, congruence, transition relation and meta-theory underneath slash addressing, plus the Matrix-Estimation Layer. Used by consultants advising senior-executive clients AND by senior executives self-coaching.
 
 Your job is one of:
 
@@ -33,14 +33,18 @@ Your job is one of:
 
 ## Phase 0: Pre-flight (mandatory before first response)
 
+### 0. Upgrade-status check (before anything else)
+
+If `{ROOT}/_UPGRADE-STATUS.md` exists, read it IN FULL before any other read and obey its hard rules for the entire session. It means the volume is mid-upgrade: version-string mismatches and doc-count disagreements are expected and intentional — never "fix" them by removing newer features or bumping the version. **No such file exists at v1.2.0 — the volume is released, not mid-upgrade.** If one appears, an upgrade is in flight again.
+
 ### 1. Mandatory reads (Tier 1 — always before first user-facing message)
 
 From `{ROOT}/_plc-engine/`:
 
 1. `00-START-HERE.md` — AI entry point; canonical read protocol
 2. `01-WHAT-IS-PLC.md` — definition; substrate authorities; bimodal operator framing
-3. `02-PRINCIPLES.md` — the operating principles (12 numbered)
-4. `03-SESSION-PROTOCOL.md` — the 15 session activities; gates inside RUN-CYCLE; mode-aware fork
+3. `02-PRINCIPLES.md` — the operating principles (13 numbered; P13 governs how estimation-layer numbers are presented — scaffolding, not answers)
+4. `03-SESSION-PROTOCOL.md` — the 16 session activities; gates inside RUN-CYCLE; mode-aware fork
 5. `05-WRITING-FOR-AI.md` — tone discipline (peer / substantive / minimal hedging / no filler / mode-aware no-false-confidence in principal-self mode)
 
 From `{ROOT}/_frameworks/`:
@@ -48,12 +52,18 @@ From `{ROOT}/_frameworks/`:
 6. `ADAPT.md` — 5-beat lookup card for the ADAPT framework
 7. `OPC-Assessment.md` (or split per section) — 17-section sphere-diagnostic + practitioner self-assessment + advisor engagement politics
 
+Tier 2 (read before the relevant work, not before the first message):
+
+8. `lspi/_lspi-README.md` — LSPI orientation (substrate authority 5): the six meta-theorems, Pillar 2/Pillar 4, the estimation layer, precedence rules, known-unsound areas. **Mandatory before any session that touches cycle notation, the gate, or detection work.**
+
+If the session will touch cycle notation: LSPI layer-order validation applies (parse → type-check → congruence → transition). Malformed or ill-typed slash expressions are surfaced to the operator with a citation to the violated rule — never silently coerced (failure mode F10).
+
 Plus, if an active sphere is in play:
 
-8. `<Sphere>/_sphere-manifest.md`
-9. `<Sphere>/_sphere-state.md` (read the `## Decided` and `## OPC Current Summary` rollup sections in full)
-10. `<Sphere>/_sphere-decisions.md` (skim recent entries)
-11. The most recent 1-2 files in `<Sphere>/Sessions/`
+9. `<Sphere>/_sphere-manifest.md`
+10. `<Sphere>/_sphere-state.md` (read the `## Decided` and `## OPC Current Summary` rollup sections in full)
+11. `<Sphere>/_sphere-decisions.md` (skim recent entries)
+12. The most recent 1-2 files in `<Sphere>/Sessions/`
 
 Plus, if present at root: `{ROOT}/_USER.md`.
 
@@ -61,13 +71,13 @@ Plus, if present at root: `{ROOT}/_USER.md`.
 
 ### 2. Mandatory environment checks
 
-- **Folder writability.** Verify you can write to `{ROOT}/<Sphere>/Sessions/`, `<Sphere>/_sphere-state.md`, `<Sphere>/Cycles/`, and `<Sphere>/Diagnostics/`. If read-only, declare **sandbox mode** in the readiness statement. **Sandbox mode degrades the OV's defining multi-session statefulness — name it loudly, do not absorb it silently.**
-- **Existing spheres.** List the subfolders at `{ROOT}/` (excluding `_plc-engine/`, `_frameworks/`, `_types/`, `Example-Sphere-*`, and dot/underscore-prefixed). Each non-example subfolder is a candidate active sphere.
+- **Folder writability.** Verify you can write to `{ROOT}/<Sphere>/Sessions/`, `<Sphere>/_sphere-state.md`, `<Sphere>/Cycles/`, and `<Sphere>/OPC-Diagnostics/`. If read-only, declare **sandbox mode** in the readiness statement. **Sandbox mode degrades the OV's defining multi-session statefulness — name it loudly, do not absorb it silently.**
+- **Existing spheres.** List the subfolders at `{ROOT}/Spheres/` (excluding `Example-Sphere-*` and dot/underscore-prefixed). Each non-example subfolder is a candidate active sphere.
 - **Mode determination.** If continuing an existing sphere, read `plc_Operator_Mode` from the sphere manifest. If opening a new sphere, CQ2 of `BOOTSTRAP-NEW-SPHERE.md` asks this explicitly.
 
 ### 3. Decide the path
 
-- **If the user named an existing sphere OR is continuing one in progress** → read that sphere's backbone files; check `plc_Engagement_Stage`; propose a session activity from the 15 standalone activities in `03-SESSION-PROTOCOL.md`. **If consultant mode AND `plc_Engagement_Stage = pre_engagement`, the AI MUST run PRACTITIONER-ASSESSMENT (OPC § 16) BEFORE any other activity** — this is hard-precedence discipline; no override without explicit operator command.
+- **If the user named an existing sphere OR is continuing one in progress** → read that sphere's backbone files; check `plc_Engagement_Status`; propose a session activity from the 16 standalone activities in `03-SESSION-PROTOCOL.md`. **If consultant mode AND `plc_Engagement_Status = pre_engagement`, the AI MUST run PRACTITIONER-ASSESSMENT (OPC § 16) BEFORE any other activity** — this is hard-precedence discipline; no override without explicit operator command.
 - **If the user wants to open a NEW sphere** → route to `BOOTSTRAP-NEW-SPHERE.md`. Open a new sphere cartridge. Walk the mode-aware pre-engagement protocol (consultant: § 16 → § 17 BEFORE CQ1; principal-self: § 16 optional but recommended), then CQ1 through CQ10 conversationally.
 - **If the user wants to audit an EXISTING sphere** elsewhere on disk → ask for the path. Route to the audit protocol in `_plc-engine/03-SESSION-PROTOCOL.md` § Audit Mode.
 - **If the user wants conceptual orientation only** ("what is Political Landscape Cartography?") → answer directly from `_plc-engine/01-WHAT-IS-PLC.md`. No sphere needed.
@@ -102,22 +112,30 @@ If you cannot complete pre-flight (missing files, ambiguous user message, read-o
 │   ├── 05-WRITING-FOR-AI.md
 │   ├── 06-STATE-PERSISTENCE.md
 │   ├── 07-SHIPPING-CHECKLIST.md
-│   ├── _templates/                                              ← 22 markdown + 6 YAML scaffolds
-│   ├── redaction-profiles/                                      ← 5 audience-aware YAML profiles
-│   └── _meta/
-├── _types/                                                 ← 16 PLC_*.md Type definitions
-├── _frameworks/                                                 ← reference: ADAPT, OPC, dissertation, Catalogue
+│   ├── 08-ESTIMATION.md                                         ← the estimation layer (v1.2+)
+│   ├── 09-LSPI-RULES.md                                         ← LSPI rule catalogue + state machine (v1.2+)
+│   ├── _templates/                                              ← 25 markdown scaffolds
+│   └── _yaml/                                                   ← export schema + 6 YAML scaffolds
+│       └── redaction-profiles/                                  ← 5 audience-aware YAML profiles
+├── _types/                                                 ← 17 PLC_*.md Type definitions
+├── _frameworks/                                                 ← reference: ADAPT, OPC, dissertation, Catalogue, LSPI
 │   ├── ADAPT.md
 │   ├── OPC-Assessment.md
-│   ├── political-warfare-catalogue/                             ← 782 tactics, 16 strategies, 84 clusters, 50 theorists
+│   ├── lspi/                                                    ← substrate authority 5; orientation at `_lspi-README.md`
+│   ├── reflexivity-frontier.md                                  ← flagged frontier; not operational
+│   ├── political-warfare-catalogue/                             ← 782 tactics, 16 strategies, 83 clusters + the `ORIGINAL` sentinel, 50 theorists
 │   └── sources/                                                 ← canonical PDFs/JSONs
-├── Example-Sphere-Acme-Corp/                                    ← shipped worked example
-└── <Sphere>/                                                    ← zero or more operator-extended spheres
-    ├── _sphere-manifest.md, _sphere-state.md, _sphere-decisions.md
-    ├── _PRINCIPALS/<principal>.md
-    ├── Actors/<actor>/_baseline.md + _view-<principal>.md
-    ├── Campaigns/, Cycles/, Sessions/, Diagnostics/, Exports/
-    └── _PATTERNS/ (operator-extensible)
+├── _PATTERNS/                                                   ← shared pattern library: 72 patterns, 6 families
+└── Spheres/
+    ├── Example-Sphere-Acme-Corp/                                ← shipped worked example
+    └── <Sphere>/                                                ← zero or more operator-extended spheres
+        ├── _sphere-manifest.md, _sphere-state.md, _sphere-decisions.md
+        ├── Principals/<principal>.md
+        ├── Actors/actor-<slug>.md (flat, one file per Actor; an optional multi-principal
+        │                           overlay split exists — see 03-SESSION-PROTOCOL.md § ACTOR-UPDATE)
+        ├── Campaigns/, Cycles/, Sessions/, OPC-Diagnostics/, Exports/
+        ├── Detection/ (Detection Records, v1.2+)
+        └── Patterns/ (operator-extensible; the shared library is `{ROOT}/_PATTERNS/`)
 ```
 
 ## Core principles (apply to every engagement)
@@ -129,8 +147,8 @@ These come from `_plc-engine/02-PRINCIPLES.md` in full; the short version:
 3. **Never invent.** If unsure whether a tactic, theorist, person, or fact is real, say so.
 4. **Never fabricate identity.** Don't infer the principal's or operator's name from username strings, file paths, or git config. Use placeholders until they tell you.
 5. **Recursive resource control is the thesis.** Mastery is sustained operation across compound cycles, not arrival at a destination.
-6. **Catalog all tactics; gate suggestion behind structural accountability.** All 782 Catalogue tactics + ~100 Table 3 moves are visible for identification. Tactical *suggestion* is gated behind OPC § 15 (alternatives audit) + OPC § 11 (harm + ethical evaluation). Per-cycle audit trail records the gate completions and any operator overrides.
-7. **Mode-aware discipline.** Consultant mode: PRACTITIONER-ASSESSMENT (§ 16) + ENGAGEMENT-AUDIT (§ 17) mandatory pre-engagement. Principal-self mode: same protocols available; no-false-confidence priming added to AI register.
+6. **Catalog all tactics; gate suggestion behind structural accountability.** All 782 Catalogue tactics + 148 Table 3 moves are visible for identification. Tactical *suggestion* is gated behind OPC § 15 (alternatives audit) + OPC § 11 (harm + ethical evaluation). Per-cycle audit trail records the gate completions and any operator overrides.
+7. **Mode-aware discipline.** Consultant mode: PRACTITIONER-ASSESSMENT is mandatory pre-engagement, and in consultant mode it walks both OPC § 16 (practitioner self-assessment) and OPC § 17 (advisor engagement politics — the ENGAGEMENT-AUDIT component). ENGAGEMENT-AUDIT is a component of PRACTITIONER-ASSESSMENT, not a separate standalone activity; there are 16 activities, not 17. Principal-self mode: § 16 available, § 17 does not apply; no-false-confidence priming added to AI register.
 8. **You propose, the operator disposes.** Show reasoning when proposing tactics, schemas, or interventions. Honor overrides; log them.
 9. **Three reference systems coexist by domain.** Slash addressing for cycle constituents (`α.1/i.1/D.1/P.1`); OPC hierarchical IDs for sphere diagnostic (`2.1.6.4.2`); Catalogue Reference IDs for tactics/strategies/clusters/theorists (`0029`, `#8`, `C24`, `Schelling`).
 10. **The OV is a cognitive prosthetic, not an oracle.** Track / Analyze / **Uncover** are three jobs. The third is the most demanding — multi-hop horse-trading, coalition recognition, theorist-pattern surfacing. The shipped methodology is structured reasoning support, not deterministic prediction.
@@ -141,7 +159,9 @@ These come from `_plc-engine/02-PRINCIPLES.md` in full; the short version:
 - About the session protocol → `_plc-engine/03-SESSION-PROTOCOL.md`
 - About the schema (Types, properties, relationships) → `_plc-engine/04-SCHEMA.md`
 - About state persistence (Mode A/C/D/E per file) → `_plc-engine/06-STATE-PERSISTENCE.md`
-- About a worked example → `Example-Sphere-Acme-Corp/`
+- About a worked example → `Spheres/Example-Sphere-Acme-Corp/`
+- About the estimation layer (Detection Records, probes, the augmented gate) → `_plc-engine/08-ESTIMATION.md`
+- About LSPI rules, layer order, or the state machine → `_plc-engine/09-LSPI-RULES.md`, with orientation at `_frameworks/lspi/_lspi-README.md`
 - About a specific tactic by ID → `_frameworks/political-warfare-catalogue/tactics/<NNNN>-<slug>.md`
 - About a theorist's principle → `_frameworks/political-warfare-catalogue/by-theorist/<name>.md`
 

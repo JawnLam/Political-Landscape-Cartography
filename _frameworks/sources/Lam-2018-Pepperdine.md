@@ -4,7 +4,7 @@ type: Fleeting
 timestamp: "2026-06-13T00:00:00Z"
 title: "Lam 2018 Pepperdine Dissertation — Request for Source"
 Date_Added: 2026-06-13
-Date_Modified: 2026-06-13
+Date_Modified: 2026-07-24
 Needs_Processing: false
 AI_Instructions: ""
 ---
@@ -26,7 +26,7 @@ Operators who have been granted access place their copy at the path `_frameworks
 For those evaluating whether the source is relevant to their work, the dissertation provides:
 
 - The grounded-theory methodology that produced the 19 theoretical categories underlying PLC's interaction-cycle model
-- Table 3 (pages 129-145) cataloging ~100 granular political-action Moves with their PP/AA/B/C/Inc/Dec coding
+- Table 3 (pages 129-145) cataloging **148** granular political-action Moves with their PP/AA/B/C/Inc/Dec coding (transcribed in full at `_frameworks/dissertation-table-3/Table-3-Manifest.md`; the "~100" figure used before v1.2 was an estimate)
 - The slash addressing notation and nomenclature (pages 162-167)
 - Five worked case studies (Charles / Jim / Nathan / Sarah / Rusty) walking through Interaction Cycle tables 5-22
 - The theoretical model with both theoretical-category and slash-addressing labels (Figures 3 and 4, pages 220-221)

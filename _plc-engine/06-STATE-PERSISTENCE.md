@@ -49,9 +49,10 @@ Every Type has a documented mode. Violating it corrupts the audit trail.
 | PLC_Move | C | Move catalog entries are reference data; revisable as the operator learns |
 | PLC_Tactic | E | Catalogue tactics are sourced from the dissertation/sources and shipped immutable |
 | PLC_Strategy | E | 16 strategies shipped immutable |
-| PLC_Cluster | E | 84 clusters shipped immutable |
+| PLC_Cluster | E | 83 clusters + the `ORIGINAL` sentinel shipped immutable |
 | PLC_Theorist | E | 50 theorists shipped immutable; operator may add adjacent theorists in a separate file |
 | PLC_Pattern | D | Patterns are operator-discovered; revisable as evidence accumulates |
+| PLC_Detection_Record | D | `## Current` (differential/margin/depth) overwrite; `## Probe Log` append-only — pre-registered predictions never edited post-observation (v1.2+) |
 
 The shipped Catalogue (Tactic / Strategy / Cluster / Theorist) is Mode E because it's reference substrate, not sphere state. If the operator wants to extend the canon, they create new files in `Catalogue-Extensions/` rather than editing the shipped immutables. This preserves the scholarly canon per D15.
 
@@ -143,6 +144,8 @@ planning → active → engaged → closed → e_immutable
 | `closed` | D | Final outcome and lessons editable for ~7 days post-close (grace window) |
 | `e_immutable` | E | Sealed; no further edits permitted |
 
+**Two terminal statuses sit outside that line (v1.2+):** `mooted` (the cycle's premise stopped holding — `R-moot`) and `abandoned` (the operator elected to stop — `R-abandon`, admissible from *any* state, including a suspended parent or a sub-cycle). Both behave like `closed` for persistence purposes: Mode D through the grace window, then sealed to Mode E. Neither is a deletion and neither is a failure code — a mooted or abandoned cycle keeps its full Operation Record, because a cycle that stopped is calibration data. See `03-SESSION-PROTOCOL.md` § On moot / § On abandon for the routes and `09-LSPI-RULES.md` for the rules.
+
 The grace window (closed → e_immutable) gives the operator time to refine the post-cycle lessons block without losing the audit guarantee. The flip is operator-explicit: on the next session opening, the AI asks "*Cycle-NNNN closed 7+ days ago. Seal as immutable?*" Once flipped, the file is Mode E forever.
 
 Cycles still in `active` or `engaged` past their planned timeframe should surface in QUARTERLY-AUDIT as anomalies — open cycles aging is a workflow drift signal.
@@ -159,9 +162,30 @@ Cycles still in `active` or `engaged` past their planned timeframe should surfac
 | Refinement body section (OPC + Funnel updates) | reciprocal updates to `_sphere-state.md` and Principal file |
 | Cycle close (lessons + status flip) | `## Lessons` + status flips to `closed` |
 
-## Reciprocal-update enforcement
+### The Persistence Invariant (LSPI §7.5; v1.2+)
 
-The 24-relation reciprocal contract (per `04-SCHEMA.md` § Relation families) is the most-violated discipline in PLC. State persistence depends on enforcement.
+The cycle's `## LSPI Operation Record (M)` section carries LSPI's global discipline: **nothing in the operation record is destructively overwritten; supersession is additive.** Inside the Mode D→E Cycle file, the Operation Record (like the Phase Log) is Mode A — append-only from the moment of writing, in every cycle state.
+
+Three specific commitments:
+
+1. **Prime-preserve.** Both the projected constituent (`σ.k′`) and the realized constituent (`σ.k`) persist at cycle close. The projection is never destroyed by the realization — forecast calibration (comparing `P.n′` to `P.n` at QUARTERLY-AUDIT) depends on both existing.
+2. **Unfold is non-destructive.** When a named definition (`ω.k ≡ { body }`) is unfolded for evaluation, the name stays addressable and the body binds additively. `R-unfold` is a discipline, not a firing rule — it changes what is written, never what state the cycle is in. The operational surface is below.
+3. **Revision is non-destructive.** When an objective is revised mid-cycle (the Sarah pattern: the read of the target changes, the objective is rewritten), the old body is retained as superseded alongside the new one, with a revision marker. The record contains both bodies and the event.
+
+**The R-unfold discipline — what it looks like on disk.** Definitional bodies get written twice in a cycle's life: once when the name is bound, once when the name is opened. Both writes persist, in that order.
+
+1. **Bind, then unfold — never the reverse.** The Operation Record's naming entry is written first (`ω.2 ≡ { Todd approves the filing without escalating }`, `γ_1 ≡ { new procedures }`). When the body is later needed in full — at a gate, at an execution, at a revision — append the unfolded form as a new entry. **Unfolding is one-way.** The original naming entry stays exactly where it was written, unedited.
+2. **Never re-fold.** Replacing an unfolded body with its short name, or deleting the unfolding entry because "the name says it," erases the step that shows *when* the operator opened the definition and *what it contained at that moment*. That is destructive overwriting under another name — the same defect the Δ rule below forbids. If prose needs the short form for readability, use the name **and** leave the unfolding entry standing.
+3. **Later references cite the binding entry, not the name alone.** Any subsequent mention of `ω.2` or `γ_1` — in the cycle body, in a session log, in an Actor file — carries a pointer to the Operation Record entry that established the binding (date + entry). A bare name is unresolvable once a revision has introduced a second body for the same name: the pointer is what says *which* body was in force.
+4. **A revised name does not retire its old binding.** `R-objective-revise` (commitment 3) appends; it does not repoint. After a revision, the record holds the original binding, its unfoldings, the revision marker, and the new binding — and every reference from before the revision still resolves to the body that was actually in force when it was written.
+
+Test on close: read the Operation Record top to bottom and every `≡` in it should still be present, in order, with nothing collapsed back into a name.
+
+**The decision matrix Δ is a derived view, not stored state.** Δ (the current options × considerations grid for a target) is a fold over the Operation Record: reconstruct any past or present state of Δ by replaying M up to that point. Never maintain a separately-edited "current matrix" block — that is destructive overwriting by another name. The same applies to the suspended-parent stack and the resource holdings: they are runtime views whose triggering events (gate-fail markers, flowback records) persist in M as the source of truth.
+
+**Why:** the audit trail is the consultant's durable practice capital, and calibration requires history. When the operator asks "what was my read of Robert before cycle 7?" — replay the record; the projection is in there.
+
+The 27-relation reciprocal contract (13 families; per `04-SCHEMA.md` § Relation families) is the most-violated discipline in PLC. State persistence depends on enforcement.
 
 ### The protocol
 
@@ -206,7 +230,7 @@ The D → E transition is operator-explicit and frontmatter-mediated. The patter
 ---
 type: PLC_Cycle
 plc_Cycle_ID: C-0012
-plc_Cycle_Status: closed         # planning | active | engaged | closed | e_immutable
+plc_Cycle_Status: closed         # planning | active | engaged | closed | mooted | abandoned | e_immutable
 plc_Update_Mode: D               # flips to E when plc_Cycle_Status: e_immutable
 plc_Closed_Date: 2026-06-10
 plc_Sealed_Date: ""              # populated at D → E flip
@@ -214,6 +238,10 @@ plc_Sealed_Date: ""              # populated at D → E flip
 ```
 
 When `plc_Cycle_Status: e_immutable` and `plc_Sealed_Date` is populated, the AI treats the file as Mode E for the remainder of the engagement. Any edit attempt surfaces a refusal: *"Cycle C-0012 is sealed (2026-06-17). Edits not permitted. Create a follow-up note in `_sphere-state.md` if context changed."*
+
+## Sphere folder structure — the existing sphere wins
+
+Engine docs name canonical sphere sub-folders (`Actors/`, `Cycles/`, `Sessions/`, `OPC-Diagnostics/`, `Principals/`, `Campaigns/`, `Patterns/`, `Detection/`, `Exports/`). If an existing sphere's actual folder names differ from any doc's phrasing (older cartridges, operator variations): **follow the sphere's existing structure.** Write new files where that sphere already keeps files of that Type. NEVER create a second, parallel folder because a doc used a different name — a sphere with both `Diagnostics/` and `OPC-Diagnostics/` is corrupted state. If the discrepancy seems material, report it; restructuring is the operator's call, executed as an explicit migration, never as a side effect of saving a file.
 
 ## Anti-patterns
 

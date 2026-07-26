@@ -19,7 +19,7 @@ Three orienting reads, in order:
 
 1. `README.md` — what PLC is
 2. `_plc-engine/01-WHAT-IS-PLC.md` — the methodology's claim and boundary
-3. `_plc-engine/04-SCHEMA.md` — the 16-type data model
+3. `_plc-engine/04-SCHEMA.md` — the 17-type data model
 
 If you've never deployed PLC end-to-end, contributing engine-zone changes is premature. The methodology's correctness shows up in cycle-execution discipline; without that experience, proposed engine changes tend to ship the wrong abstraction.
 
@@ -33,17 +33,39 @@ PLC has four content zones. Contribution rules differ per zone.
 |------|--------------|-----------------------|------------------------|
 | **Engine** | `_plc-engine/`, `AI-BOOTSTRAP.md`, `BOOTSTRAP-NEW-SPHERE.md`, `_types/` | Yes, but high bar | Yes — minor or major depending on shape |
 | **Framework** | `_frameworks/`, `_PATTERNS/` | Yes (extensions); shipped substrate is Mode E | Minor (extensions); major (changes to shipped) |
+| **LSPI mirrors** (v1.2+) | `_frameworks/lspi/` | **No direct edits** — Mode C mirrors; changes originate UPSTREAM in the LSPI Formal Foundation build folder and are re-mirrored (upstream CURRENT-wins rule governs conflicts) | Minor (re-mirror); the upstream change follows the correction-log discipline below |
 | **Sphere** | `Spheres/<sphere>/` | No — spheres are per-operator | N/A — never shipped |
 | **Scaffolding** | `_plc-engine/_templates/`, `_plc-engine/_yaml/` | Yes | Minor |
+
+### The correction-log discipline (formal content; v1.2+)
+
+Any change to formal content — a mirrored LSPI spec, a gate formula, the estimation machinery, a meta-theorem claim — requires an **audit-style correction log**: per finding, state *(i)* the defect (internal inconsistency, type/scale error, or disagreement with the system's own worked examples), *(ii)* why it's wrong, *(iii)* the fix. The exemplar is the Matrix-Estimation v0.3 → v0.4 log (`_frameworks/lspi/Matrix-Estimation-Layer-v0.4.md` §15): ten findings, each falsified against the spec's own Rusty example or tightened by type-checking — including the load-bearing M1 gate repair (a per-resource marginal compared to a total margin).
+
+Two lessons that audit encoded, now house rules: **prose can be more correct than formulas** — check crisp formal statements against the worked cases before trusting them over the surrounding prose; and **do not build tooling on a formalism a correction log has flagged** — fix first, build second.
+
+**Where the log lives.** A correction log is not a separate file. It lives in `CHANGELOG.md`, inside the entry for the release that carries the change, under a `#### Correction log — <what was corrected>` subheading. That placement is deliberate: the log ships with the change it justifies, and a reader auditing any release can see what was found wrong and why without hunting a parallel document. The upstream spec keeps its own log (the Matrix-Estimation v0.4 §15 exemplar); the CHANGELOG entry carries the PLC-facing summary and points at it.
+
+**The per-finding shape.** One block per finding, in the order found. Fill all three parts — a finding without *(ii)* is an assertion, and a finding without *(iii)* is a complaint:
+
+```markdown
+#### Correction log — <spec or formula corrected>, <old-version> → <new-version>
+
+**Finding N — <short name>.**
+- *(i) The defect.* <What is wrong, stated precisely, with the location. Classify it: internal inconsistency | type/scale error | disagreement with the system's own worked examples.>
+- *(ii) Why it's wrong.* <The falsification. Cite the worked example it contradicts, the type that doesn't check, or the two statements that can't both hold.>
+- *(iii) The fix.* <The corrected statement, and what else moved because of it.>
+```
+
+Findings are numbered and never renumbered after the release ships — a later release referring to "M1" must still resolve.
 
 ### What goes where
 
 **Engine contributions** include:
 
-- Edits to engine chapters (`00-START-HERE.md` through `07-SHIPPING-CHECKLIST.md`) for clarity, accuracy, or new documented failure modes
-- New principles (P13+) — requires explicit justification and recurring evidence from multiple engagements
-- New session activities — requires showing the activity isn't expressible as a combination of existing 15
-- Changes to the 12 relation families — requires showing the family doesn't exist or has a documented analytic gap
+- Edits to engine chapters (`00-START-HERE.md` through `09-LSPI-RULES.md`) for clarity, accuracy, or new documented failure modes
+- New principles (P14+) — requires explicit justification and recurring evidence from multiple engagements
+- New session activities — requires showing the activity isn't expressible as a combination of the existing 16
+- Changes to the 13 relation families — requires showing the family doesn't exist or has a documented analytic gap
 - New mandatory gates inside RUN-CYCLE — extremely high bar; the current ALTERNATIVES-AUDIT + ETHICAL-ACCOUNTING gates are minimal-sufficient
 - Type definition changes (`_types/PLC_*.md`) — schema additions trigger minor bumps; required-field changes or removals trigger major bumps
 
@@ -83,7 +105,7 @@ Patch bumps may proceed without UPDATE-PROMPT changes; the operator runs `git pu
 - New YAML scaffolding (additive only)
 - New Catalogue tactics / theorists / clusters / strategies via the extensions namespaces
 - New shipped patterns in existing families
-- New engine principles (P13+) added
+- New engine principles (P14+) added
 - New session activities added
 - Engine chapter substantive revisions that don't change required fields or break references
 - Relation family additions
@@ -115,12 +137,12 @@ See `_plc-engine/07-SHIPPING-CHECKLIST.md` § "Major Bump Addendum" for the full
 
 Between `v1.0` and `v2.0`, these do not change:
 
-- The 16 Type types (additions are minor; removals are major)
+- The 17 Type types (additions are minor; removals are major)
 - The 5 durability modes (A/C/D/E/D→E)
-- The 12 relation families
+- The 13 relation families
 - The three reference systems (slash addressing / OPC hierarchical IDs / Catalogue Reference IDs)
-- The principle numbers (P1-P12 keep their identifiers even if their text refines)
-- The 15 session activities + 2 embedded gates
+- The principle numbers (P1-P13 keep their identifiers even if their text refines)
+- The 16 session activities + 2 embedded gates
 - The Catalogue Reference ID space (0001-0782 ships fixed; extensions use `EXT-` namespace)
 
 If your contribution would touch one of these, the answer is "open a major-bump proposal," not "edit and PR."
@@ -162,7 +184,7 @@ If your contribution doesn't match these, expect review pushback on tone alignme
 
 1. **Open an issue** describing the extension. Include: what's being added; what gap it fills; what source(s) ground it (for Catalogue/framework); how it fits the schema (for scaffolding).
 2. **Wait for discussion confirmation** before drafting PR content. Some extensions sound novel but are already covered; the maintainer can route you.
-3. **Draft in your fork.** Put extensions in the appropriate `*-extensions/` folder. Use the `EXT-` namespace for IDs to avoid collision with shipped 0001-0782 / 1-16 / C01-C84 ranges.
+3. **Draft in your fork.** Put extensions in the appropriate `*-extensions/` folder. Use the `EXT-` namespace for IDs to avoid collision with shipped 0001-0783 / 1-16 / C01–C96 ranges.
 4. **PR with the extension files + a CHANGELOG entry.** PR description should restate the issue's gap and how the extension fills it.
 
 ### For engine improvements
@@ -202,6 +224,7 @@ When opening an issue, include:
 - **Operator context:** what engagement context surfaced this; consultant or principal-self mode; how many engagements informed the proposal
 - **Substantiation:** for extensions, the source(s); for engine improvements, the evidence
 - **Backwards-compatibility:** for non-patch changes, what existing cartridges will need to do
+- **Correction log:** required if the change touches formal content (mirrored LSPI spec, gate formula, estimation machinery, meta-theorem claim). One block per finding in the three-part shape above — *(i)* the defect and its class, *(ii)* why it's wrong, *(iii)* the fix. The block lands in the release's `CHANGELOG.md` entry when the change ships; put the draft in the issue. Write "n/a — not formal content" if it doesn't apply.
 
 ## Code of conduct for substantive discussion
 

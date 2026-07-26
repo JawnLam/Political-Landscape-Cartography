@@ -4,7 +4,7 @@ timestamp: "2026-06-13T00:00:00Z"
 Item_ID: campaign-succession-q3
 title: "Succession-Q3 — Campaign"
 Date_Added: 2026-05-01
-Date_Modified: 2026-06-13
+Date_Modified: 2026-07-15
 Needs_Processing: false
 plc_Sphere: "[[acme-corp-manifest]]"
 plc_Campaign_Name: "Succession-Q3"
@@ -18,6 +18,7 @@ plc_Member_Actors:
   - "[[actor-elena-independent-director]]"
 plc_Active_Cycles:
   - "[[cycle-0008]]"
+  # cycle-0009 added 2026-06-20, removed 2026-07-15 on close; cycle-0010 added 2026-07-02, removed 2026-07-08 on close
 plc_Started_Date: 2026-05-01
 plc_Closed_Date: ""
 AI_Instructions: ""
@@ -33,7 +34,9 @@ Preserve Sam's operating mandate through the 2026 succession-planning cycle. Spe
 **Out of scope** (per sphere boundary `_sphere-decisions.md` § 001): family-personal succession dynamics that don't manifest at the board.
 
 ### Arc Summary
-**Two cycles closed within campaign (Cycles 6 + 7).** Cycle-0007 closed 2026-06-10 with Q2 mandate signal preserved; Sam's funnel sharpness advanced 3 → 4 in the close. **One cycle active** (Cycle-0008, status `engaged` past the capability-gate) — Robert coalition mapping. Trajectory: holding ground on family-bloc preservation; resource-shift detection on Carol's coalition expansion is the active monitoring focus. Next predicted cycle initiation: late June 2026 on Elena confidence-signal maintenance.
+**Four cycles closed within campaign (Cycles 6, 7, 9, 10).** Cycle-0007 closed 2026-06-10 with Q2 mandate signal preserved; Sam's funnel sharpness advanced 3 → 4 in the close. Cycle-0009 closed 2026-07-15 with Robert's Q3 alignment obtained — on a **revised** objective, after the original position turned out to be one Robert could not occupy; its sub-cycle Cycle-0010 closed 2026-07-08 having acquired the finance-committee procedural clearance the parent's gate demanded. **One cycle still active** (Cycle-0008, status `engaged` past the capability-gate) — Robert coalition mapping, whose lessons-extraction has now been open since 2026-06-13 and is overdue.
+
+Trajectory: campaign objective #2 (hold Robert, keep the bloc 3-1) is materially advanced — the Q3 agenda item is minuted with Robert's support on the record. Objective #1 (Carol's consolidation) is unchanged; the Q3 procurement-authority bid predicted at opc-2026-06-01 § 14.3 is still unobserved and is the next inflection point. What the campaign learned that it did not know in June: succession-adjacent items route through Carol's committee before they reach the board calendar, which puts a structural gate on the campaign's own path that no amount of actor-reading would have surfaced.
 
 ### Member Cohort
 
@@ -44,7 +47,9 @@ Preserve Sam's operating mandate through the 2026 succession-planning cycle. Spe
 
 ### Active Cycles
 
-- [[cycle-0008]] (active, engaged past the capability-gate as of 2026-06-13) — Robert coalition mapping; Tactic 0044 executed; phase log open for Robert-signal detection
+- [[cycle-0008]] (active, engaged past the capability-gate as of 2026-06-13) — Robert coalition mapping; Tactic 0044 executed; phase log open for Robert-signal detection. **Aging:** open 30+ days past its planned window; surfaced as a workflow-drift anomaly at the 2026-07-24 quarterly audit.
+
+Cycle-0009 and its sub-cycle Cycle-0010 were both carried here while running and were removed on close, per the closed-cycle rule. They are listed under Cross-References.
 
 ### Lifecycle Stage Notes
 **Stage `executing`** since Cycle-0007 capability-gate (2026-06-08). Will transition `archived` when:
@@ -66,5 +71,6 @@ Closes are operator-explicit, not automatic.
 - Principal: [[principal-sam-ceo]]
 - Sphere state: [[acme-corp-state]]
 - Active cycles: [[cycle-0008]]
-- Closed cycles in this campaign: [[cycle-0006]], [[cycle-0007]]
+- Closed cycles in this campaign, on disk: [[cycle-0007]], [[cycle-0009]], [[cycle-0010]] (sub-cycle of 0009)
+- Closed earlier in this campaign, referenced but not shipped in this cartridge: [[cycle-0006]]
 - Pattern manifestation: [[pattern-family-succession-pressure-loop]]

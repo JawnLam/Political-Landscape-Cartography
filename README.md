@@ -30,8 +30,8 @@ Three paths in, depending on what you want:
 
 ```bash
 # Clone or download the OV folder
-git clone https://github.com/<org>/Political-Landscape-Cartography-v1.0.git
-cd Political-Landscape-Cartography-v1.0
+git clone https://github.com/<org>/Political-Landscape-Cartography.git
+cd Political-Landscape-Cartography
 
 # Read the AI bootstrap (start here for the AI)
 cat AI-BOOTSTRAP.md
@@ -47,12 +47,12 @@ Read in this order: `README.md` (this file) → `_plc-engine/01-WHAT-IS-PLC.md` 
 
 ### Path 3 — Methodology study only
 
-If you're researching the methodology without intent to deploy: start with `_plc-engine/01-WHAT-IS-PLC.md`, then `_plc-engine/04-SCHEMA.md` (the 16-type data model), then the dissertation source at `_frameworks/sources/`. The Catalogue at `_frameworks/political-warfare-catalogue/` is browsable independently of the Operating Volume protocol.
+If you're researching the methodology without intent to deploy: start with `_plc-engine/01-WHAT-IS-PLC.md`, then `_plc-engine/04-SCHEMA.md` (the 17-type data model), then the dissertation source at `_frameworks/sources/`. The Catalogue at `_frameworks/political-warfare-catalogue/` is browsable independently of the Operating Volume protocol.
 
 ## How PLC is shipped
 
 ```
-Political-Landscape-Cartography-v1.0/
+Political-Landscape-Cartography/
 ├── README.md                          ← you are here
 ├── INSTALL.md                         ← installation + update mechanism
 ├── OPERATOR-GUIDE.md                  ← (or OPERATOR-GUIDE-CONSULTANT.md + OPERATOR-GUIDE-PRINCIPAL.md)
@@ -72,9 +72,12 @@ Political-Landscape-Cartography-v1.0/
 │   ├── 05-WRITING-FOR-AI.md
 │   ├── 06-STATE-PERSISTENCE.md
 │   ├── 07-SHIPPING-CHECKLIST.md
-│   ├── _templates/                    ← 22 starter scaffolds (1 per template variant)
+│   ├── 08-ESTIMATION.md
+│   ├── 09-LSPI-RULES.md
+│   ├── _templates/                    ← 25 starter scaffolds (1 per template variant)
 │   └── _yaml/                         ← export schema + 5 redaction profiles
-├── _types/                       ← 16 canonical Type definitions
+│       └── redaction-profiles/
+├── _types/                       ← 17 canonical Type definitions
 │   └── PLC_*.md
 ├── _frameworks/                       ← shipped substrate (sourced material)
 │   ├── sources/                       ← canonical PDFs + JSONs (ADAPT / dissertation / OPC / Catalogue source)
@@ -83,7 +86,9 @@ Political-Landscape-Cartography-v1.0/
 │   ├── dissertation-substrate.md      ← deep-schema reference
 │   ├── 4R.md                          ← simplest mnemonic
 │   ├── OPC-Assessment.md              ← 17-section sphere diagnostic
-│   ├── dissertation-table-3/          ← ~100 granular Moves
+│   ├── dissertation-table-3/          ← 148 granular Moves (Table 3 row manifest)
+│   ├── lspi/                          ← LSPI Formal Foundation mirrors (substrate authority 5)
+│   ├── reflexivity-frontier.md        ← flagged frontier summary (not operational)
 │   ├── strategies/                    ← 16 strategy definition atoms
 │   └── political-warfare-catalogue/   ← full Catalogue mirror
 │       ├── INDEX.json
@@ -91,7 +96,7 @@ Political-Landscape-Cartography-v1.0/
 │       ├── by-strategy/               ← 16 strategy facets
 │       ├── by-cluster/                ← 84 cluster facets
 │       └── by-theorist/               ← 50 theorist facets
-├── _PATTERNS/                         ← shipped pattern seeds (6 families)
+├── _PATTERNS/                         ← shipped pattern seeds (72 patterns across 6 families)
 │   ├── stakeholder-archetypes/
 │   ├── change-initiator-postures/
 │   ├── opposition-postures/
@@ -107,9 +112,10 @@ Political-Landscape-Cartography-v1.0/
         ├── Actors/
         ├── Campaigns/
         ├── Cycles/
+        ├── Detection/                 ← Detection Records (v1.2+)
         ├── OPC-Diagnostics/
         ├── Sessions/
-        └── Patterns/                  ← sphere-specific pattern extensions
+        └── Patterns/                  ← sphere-specific pattern extensions (the volume-level shared library is `_PATTERNS/`)
 ```
 
 The **four content zones** (Convention 8):
@@ -121,15 +127,17 @@ The **four content zones** (Convention 8):
 
 ## Foundations
 
-PLC stands on four substrate authorities (per [D14, D15]):
+PLC stands on five substrate authorities (per [D14, D15]):
 
-1. **Lam 2018 Pepperdine dissertation on political capital** — the grounded-theory foundation. 19 axial-coded categories; the interaction-cycle protocol (14 operational constituents per PLC's walk-through); the 9-type resource taxonomy (money / hard assets / credibility / attributes / legitimacy / information / access / title / tribe); slash-addressing notation; the Table 3 inventory of ~100 granular Moves. Lives in `_frameworks/sources/`.
+1. **Lam 2018 Pepperdine dissertation on political capital** — the grounded-theory foundation. 19 axial-coded categories; the interaction-cycle protocol (14 operational constituents per PLC's walk-through); the 9-type resource taxonomy (money / hard assets / credibility / attributes / legitimacy / information / access / title / tribe); slash-addressing notation; the Table 3 inventory of 148 granular Moves. Lives in `_frameworks/sources/`.
 
 2. **ADAPT Loop** — the commercialized 5-beat (Agenda → Decide → Act → Perceive → Track) the methodology author has been running in consulting practice. Layered atop the dissertation substrate as the operational coaching frame. Lives in `_frameworks/sources/` (42-page PDF) plus `_frameworks/ADAPT.md` (lookup card) and `_frameworks/ADAPT-as-consulting-engine.md` (craft layer).
 
 3. **OPC Assessment v3.0** — the 17-section structured sphere-diagnostic with 6-level hierarchical IDs. Sections include power structure, stakeholders, dynamics, trajectory, harm & ethical evaluation (gates ETHICAL-ACCOUNTING), legitimate alternatives (gates ALTERNATIVES-AUDIT), practitioner self-assessment (consultant pre-engagement), advisor engagement politics (consultant pre-engagement). Lives in `_frameworks/OPC-Assessment.md` with source at `_frameworks/sources/`.
 
 4. **Political Warfare Catalogue** — 782 tactics organized into 16 strategies and 84 thematic clusters, citing 50 theorists across the political-action canon. The defensible scholarly substrate from which PLC's tactical recommendations are sourced. Lives in `_frameworks/political-warfare-catalogue/` mirroring the source folder structure verbatim.
+
+5. **LSPI Formal Foundation** — the formal foundation for the dissertation's slash-addressing notation: **LSPI** (the Lam System for Political Interaction), a typed domain-specific language with a small-step operational semantics and six proven meta-theorems (constituent-address uniqueness, subject reduction, congruence decidability, resource conservation across nested cycles, strong normalization, oracle-relative confluence), validated against the dissertation's five worked engagements. Includes the **Matrix-Estimation Layer** (v0.4) — the estimator/actuator/gate machinery that operationalizes detection and resource worth — and the flagged reflexivity frontier. Lives in `_frameworks/lspi/` (Mode C mirrors of the upstream build folder; orientation at `_frameworks/lspi/_lspi-README.md`).
 
 ### The 50 theorists
 
@@ -205,7 +213,7 @@ PLC is designed to be run with **Claude Code** or a compatible agentic coding en
 - Asks one question at a time during intake (no multi-bullet questionnaires — per `02-PRINCIPLES.md` P3)
 - Refuses to fabricate theorists, tactics, or actor identities (per P4, P5)
 - Runs the mandatory ALTERNATIVES-AUDIT and ETHICAL-ACCOUNTING gates inside every RUN-CYCLE; logs any overrides with operator justification
-- Writes back disciplined updates with reciprocal-update integrity across the 24 named relations
+- Writes back disciplined updates with reciprocal-update integrity across the 27 named relations (13 relation families)
 - Treats Mode E files as immutable (closed cycles, shipped Catalogue, sealed retrospectives)
 
 ## What PLC does NOT do

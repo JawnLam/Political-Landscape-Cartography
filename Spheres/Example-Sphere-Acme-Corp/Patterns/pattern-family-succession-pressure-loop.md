@@ -12,7 +12,7 @@ plc_Pattern_Source_OPC_Section: "13.2"
 plc_Sphere: "[[acme-corp-manifest]]"
 plc_Related_Theorists:
   - "[[theorist-pfeffer]]"
-  - "[[theorist-tilly]]"
+  - "[[theorist-bourdieu]]"
 plc_Related_Strategies:
   - "[[strategy-7]]"
   - "[[strategy-13]]"
@@ -67,8 +67,8 @@ Four-stage arc:
 
 ### Recommended Strategies (against)
 
-- [[strategy-7]] (Coalition Preservation) — preserves the family voting bloc against fracturing pressure; does not directly contest the opposition actor but protects the principal's position
-- [[strategy-13]] (Counter-Consolidation) — directly contests specific committee staffing decisions when the consolidation move is structurally challengeable
+- [[strategy-7]] (Benefit Contrast, `B(X)↑ + B(Y)↓`) — raises what continuity under the principal is worth to the bloc while lowering what the consolidation framing is worth. Touches neither cost lever, which is precisely why it protects the principal's position without contesting the opposition actor directly
+- [[strategy-13]] (Y-Focused Triple, `B(X)↑ + B(Y)↓ + C(Y)↑`) — the same benefit pair plus the cost lever against the adverse path; use when a specific committee staffing decision is structurally challengeable and making it expensive is available
 
 ### Recommended Strategies (alignment)
 
@@ -77,7 +77,7 @@ N/A — this is an opposition pattern; alignment is not operative.
 ### Related Theorists
 
 - **Pfeffer** — resource-dependence theory illuminates the consolidation move as classic resource-dependence positioning. The opposition actor expands resource control because resources translate to organizational power; the principal must contest resources directly rather than relying on relationship moves alone.
-- **Tilly** — political-opportunity-structure framework illuminates the succession window as the opportunity-structure that makes the pattern possible. Without the succession window, the consolidation moves would be illegitimate. With it, they read as "responsible institutional stewardship."
+- **Bourdieu** — field and symbolic-capital theory illuminates why the succession window makes the pattern possible. The window changes what counts as legitimate in the field, so the same consolidation move that would read as a grab at any other time converts into "responsible institutional stewardship." Bourdieu is the most-cited theorist across the Catalogue's legitimation family (0022 co-optation, 0024 patronage systems, 0027 historical revisionism, 0112 lexicon control), which is the tactic neighbourhood this pattern draws from.
 
 ## Evidence History
 
